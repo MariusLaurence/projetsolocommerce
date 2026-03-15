@@ -113,6 +113,7 @@
 
     /* ─── PROMO BAR ─── */
     .promo-bar { position: fixed; top: 68px; left: 0; right: 0; z-index: 899; background: var(--gold); padding: 9px 5vw; display: flex; align-items: center; justify-content: center; }
+    @media (max-width: 900px) { .promo-bar { top: 100px; } }
     .promo-bar p { color: var(--black); font-weight: 700; font-size: .85rem; letter-spacing: .5px; text-align: center; }
     .promo-close { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 1.1rem; color: rgba(0,0,0,.5); transition: color .2s; }
     .promo-close:hover { color: var(--black); }
@@ -403,17 +404,25 @@
     @media (max-width: 900px) { .nav-citation { display: none; } }
 
     /* Citation mobile DANS la nav */
-    .nav-citation-mobile-inner {
-      display: none;
-    }
+    .nav-citation-mobile-inner { display: none; }
     @media (max-width: 900px) {
-      nav { justify-content: space-between; }
+      nav {
+        height: auto;
+        min-height: 68px;
+        flex-wrap: wrap;
+        padding: 10px 5vw;
+        row-gap: 6px;
+      }
+      .nav-logo { order: 1; }
+      .nav-controls { order: 2; }
       .nav-citation-mobile-inner {
-        display: flex; align-items: center; justify-content: center;
-        flex: 1; padding: 0 10px;
-        font-size: .62rem; font-style: italic; font-weight: 800;
-        color: #1A1612; letter-spacing: .2px; line-height: 1.3;
-        text-align: center; min-width: 0;
+        order: 3;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: .7rem; font-style: italic; font-weight: 800;
+        color: #1A1612; letter-spacing: .2px; line-height: 1.4;
+        padding-bottom: 6px;
       }
     }
     #citationTextMobile { transition: opacity .5s ease; }
@@ -1132,7 +1141,7 @@
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – Dimitri Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
-    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v25</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v26</p>
   </div>
 </footer>
 
