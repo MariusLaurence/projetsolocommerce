@@ -1130,13 +1130,14 @@
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – Dimitri Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v23</p>
   </div>
 </footer>
 
 <script>
-  // SCROLL TO TOP
-  window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+  // SCROLL TO TOP — fiable sur mobile
   if (history.scrollRestoration) history.scrollRestoration = 'manual';
+  document.addEventListener('DOMContentLoaded', () => { window.scrollTo(0, 0); });
   window.scrollTo(0, 0);
 
   // LOADER
