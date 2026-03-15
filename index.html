@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LDménage – Déménagement Professionnel | Île-de-France & France entière</title>
   <meta name="description" content="LDménage – Déménagement complet, emballage, manutention, piano, débarras. Île-de-France, France entière, Suisse, Belgique. 07 45 05 38 82." />
-  <script>if (history.scrollRestoration) history.scrollRestoration = 'manual'; window.scrollTo(0,0);</script>
+  <script>
+    if (history.scrollRestoration) history.scrollRestoration = 'manual';
+    window.addEventListener('load', function() { window.scrollTo({top:0,left:0,behavior:'instant'}); });
+    document.addEventListener('DOMContentLoaded', function() { document.documentElement.scrollTop = 0; document.body.scrollTop = 0; });
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet" />
   <style>
@@ -401,24 +405,19 @@
     /* Citation mobile DANS la nav */
     .nav-citation-mobile-inner {
       display: none;
-      flex: 1; text-align: center;
-      font-size: .65rem; font-style: italic; font-weight: 700;
-      color: #1A1612;
-      letter-spacing: .2px;
-      padding: 0 8px; min-width: 0;
     }
-    body.light .nav-citation-mobile-inner { color: #1A1612; }
-    #citationTextMobile {
-      display: block;
-      white-space: normal;
-      word-break: break-word;
-      line-height: 1.3;
-      transition: opacity .5s ease;
-    }
-    #citationTextMobile.fade-out { opacity: 0; }
     @media (max-width: 900px) {
-      .nav-citation-mobile-inner { display: block; }
+      nav { justify-content: space-between; }
+      .nav-citation-mobile-inner {
+        display: flex; align-items: center; justify-content: center;
+        flex: 1; padding: 0 10px;
+        font-size: .62rem; font-style: italic; font-weight: 800;
+        color: #1A1612; letter-spacing: .2px; line-height: 1.3;
+        text-align: center; min-width: 0;
+      }
     }
+    #citationTextMobile { transition: opacity .5s ease; }
+    #citationTextMobile.fade-out { opacity: 0; }
 
     /* ─── BARRE DE PROGRESSION ─── */
     .form-progress-wrap { margin-bottom: 8px; }
@@ -1133,7 +1132,7 @@
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – Dimitri Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
-    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v24</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v25</p>
   </div>
 </footer>
 
