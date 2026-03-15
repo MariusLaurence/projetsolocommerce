@@ -396,26 +396,7 @@
     #citationText.fade-out { opacity: 0; transform: translateY(-6px); }
     #citationText.fade-in { opacity: 1; transform: translateY(0); }
     @media (max-width: 900px) { .nav-citation { display: none; } }
-
-    /* Citation mobile DANS la nav */
-    .nav-citation-mobile-inner {
-      display: none;
-      flex: 1; text-align: center;
-      font-size: .65rem; font-style: italic; font-weight: 700;
-      color: var(--white); letter-spacing: .2px;
-      padding: 0 8px; min-width: 0;
-    }
-    #citationTextMobile {
-      display: block;
-      white-space: normal;
-      word-break: break-word;
-      line-height: 1.3;
-      transition: opacity .5s ease;
-    }
-    #citationTextMobile.fade-out { opacity: 0; }
-    @media (max-width: 900px) {
-      .nav-citation-mobile-inner { display: block; }
-    }
+    /* citation mobile supprimée */
 
     /* ─── BARRE DE PROGRESSION ─── */
     .form-progress-wrap { margin-bottom: 8px; }
@@ -521,11 +502,6 @@
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
 </div>
 
-<!-- CITATION MOBILE -->
-<div class="nav-citation-mobile">
-  <span id="citationTextMobile"></span>
-</div>
-
 <!-- PROMO BAR -->
 <div class="promo-bar" id="promoBar">
   <p>📦 <strong>Devis gratuit & sans engagement</strong> — Réponse rapide garantie · 07 45 05 38 82</p>
@@ -558,10 +534,6 @@
   </a>
   <div class="nav-citation" id="navCitation">
     <span id="citationText"></span>
-  </div>
-  <!-- Citation mobile dans la nav -->
-  <div class="nav-citation-mobile-inner">
-    <span id="citationTextMobile"></span>
   </div>
   <ul class="nav-links">
     <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
@@ -809,7 +781,7 @@
         <div class="contact-icon">📧</div>
         <div>
           <div class="contact-label">Email</div>
-          <a href="/cdn-cgi/l/email-protection#a5c9c1c8c0cbc4c2c09292e5c2c8c4ccc98bc6cac8" class="contact-value"><span class="__cf_email__" data-cfemail="7d11191018131c1a184a4a3d1a101c1411531e1210">[email&#160;protected]</span></a>
+          <a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'ldmenage77'+'@'+'gmail.com'" class="contact-value">ldmenage77@gmail.com</a>
           <p class="contact-note">Réponse sous 24h</p>
         </div>
       </div>
@@ -1128,7 +1100,7 @@
       <div class="footer-contact-items">
         <a href="tel:0745053882">📞 07 45 05 38 82</a>
         <a href="https://wa.me/33745053882" target="_blank">💬 WhatsApp</a>
-        <a href="/cdn-cgi/l/email-protection#e68a828b8388878183d1d1a6818b878f8ac885898b">📧 <span class="__cf_email__" data-cfemail="8ee2eae3ebe0efe9ebb9b9cee9e3efe7e2a0ede1e3">[email&#160;protected]</span></a>
+        <a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'ldmenage77'+'@'+'gmail.com'">📧 ldmenage77@gmail.com</a>
         <a href="https://www.instagram.com/ldmenage/" target="_blank">📸 @ldmenage</a>
       </div>
     </div>
@@ -1136,7 +1108,7 @@
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – Dimitri Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
-    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v28</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v30</p>
   </div>
 </footer>
 
