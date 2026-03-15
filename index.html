@@ -738,6 +738,8 @@
 
 
     <form class="contact-form-side reveal" id="devisForm" action="https://formspree.io/f/meerlvrq" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="Nouvelle demande de devis LDménage" />
+      <input type="text" name="_gotcha" style="display:none" />
       <h3 data-fr="Demande de devis détaillée" data-en="Detailed quote request">Demande de devis détaillée</h3>
       <p data-fr="Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement." data-en="The more details you give, the faster and more accurate the quote. Everything is free, no commitment.">Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement.</p>
 
@@ -754,8 +756,8 @@
           </div>
         </div>
         <div class="form-group">
-          <label data-fr="Email" data-en="Email">Email</label>
-          <input type="email" name="email" id="inp-email" placeholder="votre@email.com" />
+          <label data-fr="Email *" data-en="Email *">Email *</label>
+          <input type="email" name="email" id="inp-email" placeholder="votre@email.com" required />
         </div>
         <div class="form-group">
           <label data-fr="Date souhaitée *" data-en="Desired date *">Date souhaitée *</label>
