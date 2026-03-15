@@ -120,7 +120,7 @@
 
     /* Logo RECTANGLE */
     .nav-logo-badge {
-      height: 40px; width: auto; max-width: 140px;
+      height: 52px; width: auto; max-width: 180px;
       border-radius: 4px; border: 1px solid rgba(201,168,76,.3);
       object-fit: contain; flex-shrink: 0; display: block; background: transparent;
     }
@@ -424,6 +424,13 @@
       .counter-item { border-right: none; border-bottom: 1px solid var(--black-border); }
       .counter-item:nth-child(even) { border-right: none; }
       .photos-grid { grid-template-columns: 1fr; }
+      .check-grid { grid-template-columns: 1fr; }
+      .radio-inline { flex-direction: column; gap: 6px; }
+      .radio-opt { width: 100%; }
+      .check-opt { width: 100%; }
+      .devis-banner { flex-direction: column; text-align: center; }
+      .devis-banner-icon { font-size: 1.8rem; }
+      .form-bloc { padding: 16px 14px; }
     }
   </style>
 </head>
@@ -464,7 +471,7 @@
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
-    <img src="coco.png" class="nav-logo-badge" alt="Logo LDménage" />
+    <img src="logo-ld.png" class="nav-logo-badge" alt="Logo LDménage" />
   </a>
   <ul class="nav-links">
     <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
@@ -512,7 +519,7 @@
       </p>
       <div class="hero-pills">
         <span class="hero-pill">📦 Déménagement complet</span>
-        <span class="hero-pill">🚛 Camion 20m³</span>
+        <span class="hero-pill">🚛 Tous volumes acceptés</span>
         <span class="hero-pill">🔧 Montage / Démontage</span>
         <span class="hero-pill">🎹 Piano & objets lourds</span>
         <span class="hero-pill">7j/7</span>
@@ -527,8 +534,8 @@
           <div class="stat-label">Disponible</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">20m³</div>
-          <div class="stat-label">Camion</div>
+          <div class="stat-num" style="font-size:1.6rem;line-height:1.2;">SANS<br><span style="color:var(--gold)">LIMITE</span></div>
+          <div class="stat-label">Volume accepté</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">100%</div>
@@ -538,7 +545,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-logo-rect reveal">
-        <img src="logo-ld.png" id="heroLogo" alt="LDménage" />
+        <img src="grologo.png" id="heroLogo" alt="LDménage" />
       </div>
     </div>
   </div>
@@ -558,9 +565,12 @@
       <div class="counter-sublabel">Même le week-end</div>
     </div>
     <div class="counter-item reveal">
-      <div class="counter-top"><span class="counter-num" data-target="20">0</span><span class="counter-suffix">m³</span></div>
-      <div class="counter-label">Camion dédié</div>
-      <div class="counter-sublabel">Toutes tailles de logement</div>
+      <div class="counter-top" style="flex-direction:column;gap:2px;">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);color:var(--white);line-height:1;letter-spacing:1px;">SANS</span>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.5vw,3rem);color:var(--gold);line-height:1;letter-spacing:1px;">LIMITE</span>
+      </div>
+      <div class="counter-label">Volume accepté</div>
+      <div class="counter-sublabel">Studio, maison, entrepôt</div>
     </div>
     <div class="counter-item reveal">
       <div class="counter-top"><span class="counter-num" data-target="100">0</span><span class="counter-suffix">%</span></div>
@@ -621,8 +631,8 @@
     <div class="service-card reveal">
       <span class="service-icon">🚐</span>
       <h3>Location camion + chauffeur</h3>
-      <p>Camion 20m³ avec chauffeur disponible à la location pour votre déménagement à votre rythme.</p>
-      <span class="service-badge">Camion 20m³</span>
+      <p>Camion avec chauffeur disponible à la location pour votre déménagement, adapté à tous les volumes.</p>
+      <span class="service-badge">Tous volumes</span>
     </div>
     <div class="service-card reveal">
       <span class="service-icon">🎹</span>
@@ -675,9 +685,6 @@
         <h4>📅 7 jours / 7</h4>
         <p>Disponible tous les jours, week-end compris. On s'adapte à votre planning.</p>
       </div>
-      <a href="https://wa.me/33745053882" class="btn-primary" target="_blank" style="display:inline-flex;margin-top:8px;">
-        💬 Vérifier votre zone
-      </a>
     </div>
   </div>
 </section>
@@ -746,161 +753,180 @@
       </div>
     </div>
 
-    <div class="contact-form-side reveal">
-      <h3>Demande de devis détaillée</h3>
-      <p>Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement.</p>
 
-      <!-- BLOC 1 : Identité -->
-      <div class="form-bloc">
-        <div class="form-bloc-title">👤 Vos coordonnées</div>
-        <div class="form-row">
-          <div class="form-group"><label>Prénom *</label><input type="text" placeholder="Votre prénom" /></div>
-          <div class="form-group"><label>Téléphone *</label><input type="tel" placeholder="06 XX XX XX XX" /></div>
-        </div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com" /></div>
-        <div class="form-group"><label>Date souhaitée *</label><input type="text" placeholder="Ex : 15 avril, début mai, flexible..." /></div>
-      </div>
+    <form class="contact-form-side reveal" id="devisForm" action="https://formspree.io/f/meerlvrq" method="POST" enctype="multipart/form-data">
+      <h3 data-fr="Demande de devis détaillée" data-en="Detailed quote request">Demande de devis détaillée</h3>
+      <p data-fr="Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement." data-en="The more details you give, the faster and more accurate the quote. Everything is free, no commitment.">Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement.</p>
 
-      <!-- BLOC 2 : Trajet -->
       <div class="form-bloc">
-        <div class="form-bloc-title">📍 Le trajet</div>
-        <div class="form-row">
-          <div class="form-group"><label>Ville de départ *</label><input type="text" placeholder="Ex : Paris 75011" /></div>
-          <div class="form-group"><label>Ville d'arrivée *</label><input type="text" placeholder="Ex : Lyon 69001" /></div>
-        </div>
-      </div>
-
-      <!-- BLOC 3 : Logement départ -->
-      <div class="form-bloc">
-        <div class="form-bloc-title">🏠 Logement de départ</div>
+        <div class="form-bloc-title" data-fr="👤 Vos coordonnées" data-en="👤 Your details">👤 Vos coordonnées</div>
         <div class="form-row">
           <div class="form-group">
-            <label>Type de logement *</label>
-            <select>
-              <option value="">Choisissez</option>
-              <option>Studio</option>
-              <option>T2 (2 pièces)</option>
-              <option>T3 (3 pièces)</option>
-              <option>T4 (4 pièces)</option>
-              <option>T5 et plus</option>
-              <option>Maison</option>
-              <option>Bureau / Local professionnel</option>
+            <label data-fr="Prénom *" data-en="First name *">Prénom *</label>
+            <input type="text" name="prenom" id="inp-prenom" placeholder="Votre prénom" required />
+          </div>
+          <div class="form-group">
+            <label data-fr="Téléphone *" data-en="Phone *">Téléphone *</label>
+            <input type="tel" name="telephone" placeholder="06 XX XX XX XX" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-fr="Email" data-en="Email">Email</label>
+          <input type="email" name="email" id="inp-email" placeholder="votre@email.com" />
+        </div>
+        <div class="form-group">
+          <label data-fr="Date souhaitée *" data-en="Desired date *">Date souhaitée *</label>
+          <input type="text" name="date" id="inp-date" placeholder="Ex : 15 avril, début mai, flexible..." />
+        </div>
+      </div>
+
+      <div class="form-bloc">
+        <div class="form-bloc-title" data-fr="📍 Le trajet" data-en="📍 The route">📍 Le trajet</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-fr="Ville de départ *" data-en="City of departure *">Ville de départ *</label>
+            <input type="text" name="ville_depart" placeholder="Ex : Paris 75011" required />
+          </div>
+          <div class="form-group">
+            <label data-fr="Ville d'arrivée *" data-en="City of arrival *">Ville d'arrivée *</label>
+            <input type="text" name="ville_arrivee" placeholder="Ex : Lyon 69001" required />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-bloc">
+        <div class="form-bloc-title" data-fr="🏠 Logement de départ" data-en="🏠 Departure home">🏠 Logement de départ</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-fr="Type de logement *" data-en="Type of property *">Type de logement *</label>
+            <select name="type_logement" id="sel-type">
+              <option value="" data-fr="Choisissez" data-en="Choose">Choisissez</option>
+              <option data-fr="Studio" data-en="Studio">Studio</option>
+              <option data-fr="T2 (2 pièces)" data-en="1 bedroom">T2 (2 pièces)</option>
+              <option data-fr="T3 (3 pièces)" data-en="2 bedrooms">T3 (3 pièces)</option>
+              <option data-fr="T4 (4 pièces)" data-en="3 bedrooms">T4 (4 pièces)</option>
+              <option data-fr="T5 et plus" data-en="4+ bedrooms">T5 et plus</option>
+              <option data-fr="Maison" data-en="House">Maison</option>
+              <option data-fr="Bureau / Local professionnel" data-en="Office / Business premises">Bureau / Local professionnel</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Étage départ</label>
-            <select>
-              <option value="">Choisissez</option>
-              <option>Rez-de-chaussée</option>
-              <option>1er étage</option>
-              <option>2ème étage</option>
-              <option>3ème étage</option>
-              <option>4ème étage</option>
-              <option>5ème étage et +</option>
+            <label data-fr="Étage départ" data-en="Departure floor">Étage départ</label>
+            <select name="etage_depart" id="sel-etage-dep">
+              <option value="" data-fr="Choisissez" data-en="Choose">Choisissez</option>
+              <option data-fr="Rez-de-chaussée" data-en="Ground floor">Rez-de-chaussée</option>
+              <option data-fr="1er étage" data-en="1st floor">1er étage</option>
+              <option data-fr="2ème étage" data-en="2nd floor">2ème étage</option>
+              <option data-fr="3ème étage" data-en="3rd floor">3ème étage</option>
+              <option data-fr="4ème étage" data-en="4th floor">4ème étage</option>
+              <option data-fr="5ème étage et +" data-en="5th floor and above">5ème étage et +</option>
             </select>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>Ascenseur au départ ?</label>
+            <label data-fr="Ascenseur au départ ?" data-en="Lift at departure ?">Ascenseur au départ ?</label>
             <div class="radio-inline">
-              <label class="radio-opt"><input type="radio" name="asc-dep" /> Oui</label>
-              <label class="radio-opt"><input type="radio" name="asc-dep" /> Non</label>
-              <label class="radio-opt"><input type="radio" name="asc-dep" /> Monte-charge</label>
+              <label class="radio-opt"><input type="radio" name="asc-dep" value="Oui" /> <span data-fr="Oui" data-en="Yes">Oui</span></label>
+              <label class="radio-opt"><input type="radio" name="asc-dep" value="Non" /> <span data-fr="Non" data-en="No">Non</span></label>
+              <label class="radio-opt"><input type="radio" name="asc-dep" value="Monte-charge" /> <span data-fr="Monte-charge" data-en="Goods lift">Monte-charge</span></label>
             </div>
           </div>
           <div class="form-group">
-            <label>Parking / accès camion départ ?</label>
+            <label data-fr="Parking / accès camion départ ?" data-en="Parking / truck access at departure ?">Parking / accès camion départ ?</label>
             <div class="radio-inline">
-              <label class="radio-opt"><input type="radio" name="park-dep" /> Facile</label>
-              <label class="radio-opt"><input type="radio" name="park-dep" /> Difficile</label>
-              <label class="radio-opt"><input type="radio" name="park-dep" /> Pas de place</label>
+              <label class="radio-opt"><input type="radio" name="park-dep" value="Facile" /> <span data-fr="Facile" data-en="Easy">Facile</span></label>
+              <label class="radio-opt"><input type="radio" name="park-dep" value="Difficile" /> <span data-fr="Difficile" data-en="Difficult">Difficile</span></label>
+              <label class="radio-opt"><input type="radio" name="park-dep" value="Pas de place" /> <span data-fr="Pas de place" data-en="No space">Pas de place</span></label>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- BLOC 4 : Logement arrivée -->
       <div class="form-bloc">
-        <div class="form-bloc-title">🏡 Logement d'arrivée</div>
+        <div class="form-bloc-title" data-fr="🏡 Logement d'arrivée" data-en="🏡 Arrival home">🏡 Logement d'arrivée</div>
         <div class="form-row">
           <div class="form-group">
-            <label>Étage arrivée</label>
-            <select>
-              <option value="">Choisissez</option>
-              <option>Rez-de-chaussée</option>
-              <option>1er étage</option>
-              <option>2ème étage</option>
-              <option>3ème étage</option>
-              <option>4ème étage</option>
-              <option>5ème étage et +</option>
+            <label data-fr="Étage arrivée" data-en="Arrival floor">Étage arrivée</label>
+            <select name="etage_arrivee" id="sel-etage-arr">
+              <option value="" data-fr="Choisissez" data-en="Choose">Choisissez</option>
+              <option data-fr="Rez-de-chaussée" data-en="Ground floor">Rez-de-chaussée</option>
+              <option data-fr="1er étage" data-en="1st floor">1er étage</option>
+              <option data-fr="2ème étage" data-en="2nd floor">2ème étage</option>
+              <option data-fr="3ème étage" data-en="3rd floor">3ème étage</option>
+              <option data-fr="4ème étage" data-en="4th floor">4ème étage</option>
+              <option data-fr="5ème étage et +" data-en="5th floor and above">5ème étage et +</option>
             </select>
           </div>
           <div class="form-group">
-            <label>Ascenseur à l'arrivée ?</label>
+            <label data-fr="Ascenseur à l'arrivée ?" data-en="Lift at arrival ?">Ascenseur à l'arrivée ?</label>
             <div class="radio-inline">
-              <label class="radio-opt"><input type="radio" name="asc-arr" /> Oui</label>
-              <label class="radio-opt"><input type="radio" name="asc-arr" /> Non</label>
-              <label class="radio-opt"><input type="radio" name="asc-arr" /> Monte-charge</label>
+              <label class="radio-opt"><input type="radio" name="asc-arr" value="Oui" /> <span data-fr="Oui" data-en="Yes">Oui</span></label>
+              <label class="radio-opt"><input type="radio" name="asc-arr" value="Non" /> <span data-fr="Non" data-en="No">Non</span></label>
+              <label class="radio-opt"><input type="radio" name="asc-arr" value="Monte-charge" /> <span data-fr="Monte-charge" data-en="Goods lift">Monte-charge</span></label>
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label>Parking / accès camion arrivée ?</label>
+          <label data-fr="Parking / accès camion arrivée ?" data-en="Parking / truck access at arrival ?">Parking / accès camion arrivée ?</label>
           <div class="radio-inline">
-            <label class="radio-opt"><input type="radio" name="park-arr" /> Facile</label>
-            <label class="radio-opt"><input type="radio" name="park-arr" /> Difficile</label>
-            <label class="radio-opt"><input type="radio" name="park-arr" /> Pas de place</label>
+            <label class="radio-opt"><input type="radio" name="park-arr" value="Facile" /> <span data-fr="Facile" data-en="Easy">Facile</span></label>
+            <label class="radio-opt"><input type="radio" name="park-arr" value="Difficile" /> <span data-fr="Difficile" data-en="Difficult">Difficile</span></label>
+            <label class="radio-opt"><input type="radio" name="park-arr" value="Pas de place" /> <span data-fr="Pas de place" data-en="No space">Pas de place</span></label>
           </div>
         </div>
       </div>
 
-      <!-- BLOC 5 : Services -->
       <div class="form-bloc">
-        <div class="form-bloc-title">🔧 Services souhaités</div>
+        <div class="form-bloc-title" data-fr="🔧 Services souhaités" data-en="🔧 Requested services">🔧 Services souhaités</div>
         <div class="check-grid">
-          <label class="check-opt"><input type="checkbox" /> Déménagement complet</label>
-          <label class="check-opt"><input type="checkbox" /> Mise en cartons</label>
-          <label class="check-opt"><input type="checkbox" /> Emballage / protection</label>
-          <label class="check-opt"><input type="checkbox" /> Déballage à l'arrivée</label>
-          <label class="check-opt"><input type="checkbox" /> Montage meubles</label>
-          <label class="check-opt"><input type="checkbox" /> Démontage meubles</label>
-          <label class="check-opt"><input type="checkbox" /> Piano / objets lourds</label>
-          <label class="check-opt"><input type="checkbox" /> Débarras / évacuation</label>
-          <label class="check-opt"><input type="checkbox" /> Main d'œuvre uniquement</label>
-          <label class="check-opt"><input type="checkbox" /> Location camion + chauffeur</label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Déménagement complet" /> <span data-fr="Déménagement complet" data-en="Full moving service">Déménagement complet</span></label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Mise en cartons" /> <span data-fr="Mise en cartons" data-en="Packing into boxes">Mise en cartons</span></label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Emballage / protection" /> <span data-fr="Emballage / protection" data-en="Wrapping / protection">Emballage / protection</span></label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Déballage à l'arrivée" /> <span data-fr="Déballage à l'arrivée" data-en="Unpacking on arrival">Déballage à l'arrivée</span></label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Montage meubles" /> <span data-fr="Montage meubles" data-en="Furniture assembly">Montage meubles</span></label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Démontage meubles" /> <span data-fr="Démontage meubles" data-en="Furniture disassembly">Démontage meubles</span></label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Piano / objets lourds" /> <span data-fr="Piano / objets lourds" data-en="Piano / heavy items">Piano / objets lourds</span></label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Débarras / évacuation" /> <span data-fr="Débarras / évacuation" data-en="Clearance / disposal">Débarras / évacuation</span></label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Main d'œuvre uniquement" /> <span data-fr="Main d'œuvre uniquement" data-en="Labour only">Main d'œuvre uniquement</span></label>
+          <label class="check-opt"><input type="checkbox" name="service[]" value="Location camion + chauffeur" /> <span data-fr="Location camion + chauffeur" data-en="Truck + driver hire">Location camion + chauffeur</span></label>
         </div>
       </div>
 
-      <!-- BLOC 6 : Objets particuliers -->
       <div class="form-bloc">
-        <div class="form-bloc-title">📦 Objets particuliers ou fragiles</div>
+        <div class="form-bloc-title" data-fr="📦 Objets particuliers ou fragiles" data-en="📦 Special or fragile items">📦 Objets particuliers ou fragiles</div>
         <div class="check-grid">
-          <label class="check-opt"><input type="checkbox" /> Piano</label>
-          <label class="check-opt"><input type="checkbox" /> Coffre-fort</label>
-          <label class="check-opt"><input type="checkbox" /> Aquarium</label>
-          <label class="check-opt"><input type="checkbox" /> Billard</label>
-          <label class="check-opt"><input type="checkbox" /> Œuvres d'art / antiquités</label>
-          <label class="check-opt"><input type="checkbox" /> Électroménager encastré</label>
-          <label class="check-opt"><input type="checkbox" /> Matériel informatique</label>
-          <label class="check-opt"><input type="checkbox" /> Aucun objet particulier</label>
+          <label class="check-opt"><input type="checkbox" name="objet[]" value="Piano" /> <span data-fr="Piano" data-en="Piano">Piano</span></label>
+          <label class="check-opt"><input type="checkbox" name="objet[]" value="Coffre-fort" /> <span data-fr="Coffre-fort" data-en="Safe">Coffre-fort</span></label>
+          <label class="check-opt"><input type="checkbox" name="objet[]" value="Aquarium" /> <span data-fr="Aquarium" data-en="Aquarium">Aquarium</span></label>
+          <label class="check-opt"><input type="checkbox" name="objet[]" value="Billard" /> <span data-fr="Billard" data-en="Billiard table">Billard</span></label>
+          <label class="check-opt"><input type="checkbox" name="objet[]" value="Œuvres d'art / antiquités" /> <span data-fr="Œuvres d'art / antiquités" data-en="Artwork / antiques">Œuvres d'art / antiquités</span></label>
+          <label class="check-opt"><input type="checkbox" name="objet[]" value="Électroménager encastré" /> <span data-fr="Électroménager encastré" data-en="Built-in appliances">Électroménager encastré</span></label>
+          <label class="check-opt"><input type="checkbox" name="objet[]" value="Matériel informatique" /> <span data-fr="Matériel informatique" data-en="Computer equipment">Matériel informatique</span></label>
+          <label class="check-opt"><input type="checkbox" name="objet[]" value="Aucun objet particulier" /> <span data-fr="Aucun objet particulier" data-en="No special items">Aucun objet particulier</span></label>
         </div>
       </div>
 
-      <!-- BLOC 7 : Photos + infos libres -->
       <div class="form-bloc">
-        <div class="form-bloc-title">📸 Photos & informations supplémentaires</div>
+        <div class="form-bloc-title" data-fr="📸 Photos & informations supplémentaires" data-en="📸 Photos & additional information">📸 Photos & informations supplémentaires</div>
         <div class="form-group">
-          <label>Décrivez votre situation</label>
-          <textarea style="min-height:120px;" placeholder="Toute info utile : nombre de cartons approximatif, cave ou grenier à vider, garde-meuble, contrainte d'horaire, code d'accès, animaux, plantes... Plus c'est précis, plus le devis sera juste !"></textarea>
+          <label data-fr="Décrivez votre situation" data-en="Describe your situation">Décrivez votre situation</label>
+          <textarea name="message" id="inp-message" style="min-height:120px;" placeholder="Toute info utile..."></textarea>
         </div>
-        <div class="photo-upload-hint">
-          <span>📷</span>
-          <p>Pour envoyer des <strong>photos</strong> de votre logement, envoyez-les directement sur <a href="https://wa.me/33745053882" target="_blank">WhatsApp</a> ou par <a href="mailto:ldmenage77@gmail.com">email</a> — c'est le moyen le plus rapide pour un devis précis !</p>
+        <div class="form-group">
+          <label data-fr="📎 Ajouter des photos (optionnel)" data-en="📎 Add photos (optional)">📎 Ajouter des photos (optionnel)</label>
+          <input type="file" name="photos" multiple accept="image/*" style="background:var(--black-card);border:1px solid var(--black-border);color:var(--text);padding:10px 14px;font-family:'Barlow',sans-serif;font-size:.88rem;cursor:pointer;width:100%;" />
+          <span data-fr="Vous pouvez sélectionner plusieurs photos de votre logement" data-en="You can select multiple photos of your home" style="font-size:.75rem;color:var(--text-muted);margin-top:4px;">Vous pouvez sélectionner plusieurs photos de votre logement</span>
         </div>
       </div>
 
-      <button class="btn-submit" onclick="handleSubmit()">📦 Envoyer ma demande</button>
+      <button type="submit" class="btn-submit" id="submitBtn" data-fr="📦 Envoyer ma demande par email" data-en="📦 Send my request by email">📦 Envoyer ma demande par email</button>
+      <div id="formSuccess" style="display:none;text-align:center;padding:18px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:4px;color:#25D366;font-weight:700;font-size:.95rem;"
+        data-fr="✅ Demande envoyée ! Dimitri vous contacte dans les plus brefs délais."
+        data-en="✅ Request sent! Dimitri will contact you as soon as possible.">
+        ✅ Demande envoyée ! Dimitri vous contacte dans les plus brefs délais.
+      </div>
+    </form>
     </div>
   </div>
 </section>
@@ -910,20 +936,19 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="brand-name">LDménage</div>
-      <p>Déménagement professionnel pour particuliers et entreprises. Île-de-France, France entière et pays voisins. Disponible 7j/7.</p>
+      <p data-fr="Déménagement professionnel pour particuliers et entreprises. Île-de-France, France entière et pays voisins. Disponible 7j/7." data-en="Professional moving service for individuals and businesses. Paris area, all of France and neighbouring countries. Available 7 days a week.">Déménagement professionnel pour particuliers et entreprises. Île-de-France, France entière et pays voisins. Disponible 7j/7.</p>
     </div>
     <div class="footer-nav">
-      <h5>Navigation</h5>
+      <h5 data-fr="Navigation" data-en="Navigation">Navigation</h5>
       <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#zone">Zone d'intervention</a></li>
-        <li><a href="#realisations">Photos</a></li>
-        <li><a href="#reseaux">Instagram</a></li>
-        <li><a href="#contact">Contact & Devis</a></li>
+        <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
+        <li><a href="#zone" data-fr="Zone d'intervention" data-en="Coverage area">Zone d'intervention</a></li>
+        <li><a href="#realisations" data-fr="Photos" data-en="Photos">Photos</a></li>
+        <li><a href="#contact" data-fr="Contact & Devis" data-en="Contact & Quote">Contact & Devis</a></li>
       </ul>
     </div>
     <div class="footer-contact">
-      <h5>Contact</h5>
+      <h5 data-fr="Contact" data-en="Contact">Contact</h5>
       <div class="footer-contact-items">
         <a href="tel:0745053882">📞 07 45 05 38 82</a>
         <a href="https://wa.me/33745053882" target="_blank">💬 WhatsApp</a>
@@ -933,8 +958,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
-    <p class="footer-gold">Devis gratuit · 7j/7</p>
+    <p data-fr="© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – Dimitri Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
+    <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
   </div>
 </footer>
 
@@ -980,10 +1005,34 @@
     btn.textContent = '✅'; btn.style.background = '#25D366';
     setTimeout(() => { window.open(`https://wa.me/33745053882?text=Bonjour Dimitri, rappel au ${num}.`, '_blank'); closeModal(); btn.textContent = currentLang === 'fr' ? '📞 Me faire rappeler' : '📞 Call me back'; btn.style.background = ''; }, 800);
   }
-  function handleSubmit() {
-    const btn = document.querySelector('.btn-submit');
-    btn.textContent = currentLang === 'fr' ? '✅ Envoyé !' : '✅ Sent!'; btn.style.background = '#25D366'; btn.disabled = true;
-    setTimeout(() => window.open('https://wa.me/33745053882?text=Bonjour Dimitri, devis déménagement.', '_blank'), 800);
+  // FORMSPREE — envoi par email
+  const devisForm = document.getElementById('devisForm');
+  if (devisForm) {
+    devisForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const success = document.getElementById('formSuccess');
+      btn.textContent = '⏳ Envoi en cours...';
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/meerlvrq', {
+          method: 'POST',
+          body: new FormData(devisForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          btn.style.display = 'none';
+          success.style.display = 'block';
+          devisForm.reset();
+        } else {
+          btn.textContent = '❌ Erreur — Réessayez ou appelez le 07 45 05 38 82';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = '❌ Erreur réseau — Réessayez';
+        btn.disabled = false;
+      }
+    });
   }
 
   // MODE CLAIR UNIQUEMENT
@@ -997,21 +1046,43 @@
       'hero-label':'Île-de-France · France · Europe',
       'line1':'VOTRE','line2':'DÉMÉNAGEMENT','line3':'Entre de bonnes mains',
       'hero-desc':'LDménage prend en charge <strong>votre déménagement de A à Z</strong> — emballage, transport, montage — avec soin et professionnalisme. Île-de-France, France entière et pays voisins.',
-      'pill1':'📦 Déménagement complet','pill2':'🚛 Camion 20m³','pill3':'🔧 Montage / Démontage','pill4':'🎹 Piano & objets lourds','pill5':'7j/7',
-      'stat1':'Disponible','stat2':'Camion','stat3':'Devis gratuit',
+      'pill1':'📦 Déménagement complet','pill2':'🚛 Tous volumes acceptés','pill3':'🔧 Montage / Démontage','pill4':'🎹 Piano & objets lourds','pill5':'7j/7',
+      'stat1':'Disponible','stat2':'Sans limite','stat3':'Devis gratuit',
       'promo':'📦 <strong>Devis gratuit & sans engagement</strong> — Réponse rapide · 07 45 05 38 82',
       'modal-title':'Être rappelé','modal-desc':'Laissez votre numéro, Dimitri vous rappelle rapidement.','modal-btn':'📞 Me faire rappeler','modal-note':'Rappel rapide · 7j/7',
       'cb-float':'📞 Être rappelé',
+      'services-label':'Ce qu\'on propose','services-sub':'Tout ce dont vous avez besoin pour un déménagement serein, pris en charge par une équipe sérieuse et efficace.',
+      'banner-title':'Aucun tarif fixe — tout est sur devis','banner-text':'Chaque déménagement est unique. Contactez-nous pour recevoir un devis personnalisé, <em>100% gratuit et sans engagement</em>.','banner-btn':'Devis gratuit →',
+      'zone-label':'Où on intervient','zone-title':'On va <span>partout</span>','zone-desc':'LDménage ne s\'arrête pas à l\'Île-de-France. On intervient sur <strong>toute la France</strong> et les pays frontaliers selon votre besoin.',
+      'photos-label':'Nos réalisations','photos-sub':'Quelques aperçus de notre travail sur le terrain.',
+      'contact-label':'Devis gratuit','contact-title':'<span>Contactez</span> Dimitri','contact-sub':'Réponse rapide garantie. Devis gratuit et sans engagement, 7j/7.',
+      'form-title':'Demande de devis détaillée','form-desc':'Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement.',
+      'form-submit':'📦 Envoyer ma demande par email',
+      'c1l':'Déménagements réalisés','c1s':'Particuliers & professionnels',
+      'c2l':'Disponibilité','c2s':'Même le week-end',
+      'c3l':'Volume accepté','c3s':'Studio, maison, entrepôt',
+      'c4l':'Devis gratuit','c4s':'Sans engagement',
     },
     en: {
       'hero-label':'Île-de-France · All France · Europe',
       'line1':'YOUR','line2':'MOVE','line3':'In good hands',
       'hero-desc':'LDménage handles <strong>your entire move</strong> — packing, transport, assembly — with care and professionalism. Paris area, all of France and neighboring countries.',
-      'pill1':'📦 Full moving service','pill2':'🚛 20m³ truck','pill3':'🔧 Assembly / Disassembly','pill4':'🎹 Piano & heavy items','pill5':'7 days/week',
-      'stat1':'Available','stat2':'Truck','stat3':'Free quote',
+      'pill1':'📦 Full moving service','pill2':'🚛 All volumes accepted','pill3':'🔧 Assembly / Disassembly','pill4':'🎹 Piano & heavy items','pill5':'7 days/week',
+      'stat1':'Available','stat2':'No limit','stat3':'Free quote',
       'promo':'📦 <strong>Free & no-commitment quote</strong> — Fast response · 07 45 05 38 82',
       'modal-title':'Get a callback','modal-desc':'Leave your number and Dimitri will call you back quickly.','modal-btn':'📞 Call me back','modal-note':'Quick callback · 7 days/week',
       'cb-float':'📞 Get a callback',
+      'services-label':'What we offer','services-sub':'Everything you need for a stress-free move, handled by a serious and efficient team.',
+      'banner-title':'No fixed rates — everything is quoted','banner-text':'Every move is unique. Contact us for a personalised quote, <em>100% free and no commitment</em>.','banner-btn':'Free quote →',
+      'zone-label':'Where we operate','zone-title':'We go <span>everywhere</span>','zone-desc':'LDménage goes beyond the Paris area. We operate across <strong>all of France</strong> and neighboring countries.',
+      'photos-label':'Our work','photos-sub':'A few glimpses of our work in the field.',
+      'contact-label':'Free quote','contact-title':'<span>Contact</span> Dimitri','contact-sub':'Fast response guaranteed. Free and no-commitment quote, 7 days a week.',
+      'form-title':'Detailed quote request','form-desc':'The more details you give, the faster and more accurate the quote. Everything is free, no commitment.',
+      'form-submit':'📦 Send my request by email',
+      'c1l':'Moves completed','c1s':'Individuals & businesses',
+      'c2l':'Availability','c2s':'Including weekends',
+      'c3l':'Volume accepted','c3s':'Studio, house, warehouse',
+      'c4l':'Free quote','c4s':'No commitment',
     }
   };
 
@@ -1020,34 +1091,79 @@
     localStorage.setItem('ldmenage-lang', lang);
     const t = T[lang];
     document.documentElement.lang = lang;
+    const q = s => document.querySelector(s);
+    const qa = s => document.querySelectorAll(s);
 
-    const q = sel => document.querySelector(sel);
-    const qa = sel => document.querySelectorAll(sel);
-
-    const promoP = q('.promo-bar p'); if(promoP) promoP.innerHTML = t['promo'];
+    // Promo & hero
+    const pp = q('.promo-bar p'); if(pp) pp.innerHTML = t['promo'];
     const hl = q('.hero-label'); if(hl) hl.textContent = t['hero-label'];
-    const l1 = q('.line1'); if(l1) l1.textContent = t['line1'];
-    const l2 = q('.line2'); if(l2) l2.textContent = t['line2'];
-    const l3 = q('.line3'); if(l3) l3.textContent = t['line3'];
+    ['line1','line2','line3'].forEach(k => { const el=q('.'+k); if(el) el.textContent=t[k]; });
     const hd = q('.hero-desc'); if(hd) hd.innerHTML = t['hero-desc'];
+    qa('.hero-pill').forEach((el,i) => { const k='pill'+(i+1); if(t[k]) el.textContent=t[k]; });
+    qa('.stat-label').forEach((el,i) => { const k=['stat1','stat2','stat3'][i]; if(k&&t[k]) el.textContent=t[k]; });
 
-    const pills = qa('.hero-pill');
-    ['pill1','pill2','pill3','pill4','pill5'].forEach((k,i) => { if(pills[i]) pills[i].textContent = t[k]; });
+    // Modal & float
+    const mt=q('.modal-box h3'); if(mt) mt.textContent=t['modal-title'];
+    const md=q('#callbackModal .modal-box p'); if(md) md.textContent=t['modal-desc'];
+    const mb=q('.modal-submit'); if(mb) mb.textContent=t['modal-btn'];
+    const mn=q('.modal-note'); if(mn) mn.textContent=t['modal-note'];
+    const cb=q('.callback-float'); if(cb) cb.textContent=t['cb-float'];
 
-    const stats = qa('.stat-label');
-    ['stat1','stat2','stat3'].forEach((k,i) => { if(stats[i]) stats[i].textContent = t[k]; });
+    // Sections labels & subs
+    const sLabels = qa('.section-label');
+    const lKeys = ['services-label','zone-label','photos-label','contact-label'];
+    sLabels.forEach((el,i) => { if(lKeys[i]&&t[lKeys[i]]) el.textContent=t[lKeys[i]]; });
+    const sSubs = qa('.section-sub');
+    const sKeys = ['services-sub','photos-sub','contact-sub'];
+    sSubs.forEach((el,i) => { if(sKeys[i]&&t[sKeys[i]]) el.textContent=t[sKeys[i]]; });
 
-    const mt = q('.modal-box h3'); if(mt) mt.textContent = t['modal-title'];
-    const md = q('.modal-box > p'); if(md) md.textContent = t['modal-desc'];
-    const mb = q('.modal-submit'); if(mb) mb.textContent = t['modal-btn'];
-    const mn = q('.modal-note'); if(mn) mn.textContent = t['modal-note'];
-    const cb = q('.callback-float'); if(cb) cb.textContent = t['cb-float'];
+    // Banner
+    const bT=q('.devis-banner-text strong'); if(bT) bT.textContent=t['banner-title'];
+    const bS=q('.devis-banner-text span'); if(bS) bS.innerHTML=t['banner-text'];
+    const bB=q('.devis-banner .btn-primary'); if(bB) bB.textContent=t['banner-btn'];
 
-    // data-fr/en elements
-    qa('[data-fr]').forEach(el => { el.textContent = lang === 'fr' ? el.dataset.fr : el.dataset.en; });
+    // Zone
+    const zt=q('.zone-info .section-title'); if(zt) zt.innerHTML=t['zone-title'];
+    const zd=q('.zone-info > p'); if(zd) zd.innerHTML=t['zone-desc'];
+
+    // Contact
+    const ct=q('#contact .section-title'); if(ct) ct.innerHTML=t['contact-title'];
+
+    // Form
+    const fh=q('.contact-form-side h3'); if(fh) fh.textContent=t['form-title'];
+    const fd=q('.contact-form-side > p'); if(fd) fd.textContent=t['form-desc'];
+    const fb=q('#submitBtn'); if(fb&&!fb.disabled) fb.textContent=t['form-submit'];
+
+    // Counters
+    qa('.counter-label').forEach((el,i) => { const k='c'+(i+1)+'l'; if(t[k]) el.textContent=t[k]; });
+    qa('.counter-sublabel').forEach((el,i) => { const k='c'+(i+1)+'s'; if(t[k]) el.textContent=t[k]; });
+
+    // data-fr/en ALL elements
+    qa('[data-fr]').forEach(el => {
+      const val = lang === 'fr' ? el.dataset.fr : el.dataset.en;
+      if (!val) return;
+      if (el.tagName === 'BUTTON' && el.id === 'submitBtn' && el.disabled) return;
+      el.textContent = val;
+    });
+
+    // Select options
+    qa('select option[data-fr]').forEach(opt => {
+      opt.textContent = lang === 'fr' ? opt.dataset.fr : opt.dataset.en;
+    });
+
+    // Placeholders
+    const ph = {
+      fr: { prenom:'Votre prénom', date:'Ex : 15 avril, début mai, flexible...', message:'Toute info utile : cartons approximatif, cave, contrainte d\'horaire, animaux...' },
+      en: { prenom:'Your first name', date:'E.g. April 15, early May, flexible...', message:'Any useful info: approx. boxes, cellar to clear, time constraints, pets...' }
+    };
+    const gi = id => document.getElementById(id);
+    if(gi('inp-prenom')) gi('inp-prenom').placeholder = ph[lang].prenom;
+    if(gi('inp-date')) gi('inp-date').placeholder = ph[lang].date;
+    if(gi('inp-message')) gi('inp-message').placeholder = ph[lang].message;
+    if(gi('inp-email')) gi('inp-email').placeholder = lang==='fr' ? 'votre@email.com' : 'your@email.com';
 
     // Lang button states
-    qa('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === lang.toUpperCase()));
+    qa('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent===lang.toUpperCase()));
   }
 
   setLang(currentLang);
