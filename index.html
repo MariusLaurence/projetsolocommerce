@@ -398,20 +398,19 @@
     #citationText.fade-in { opacity: 1; transform: translateY(0); }
     @media (max-width: 900px) { .nav-citation { display: none; } }
 
-    /* Citation mobile — sous la nav */
-    .nav-citation-mobile {
+    /* Citation mobile DANS la nav */
+    .nav-citation-mobile-inner {
       display: none;
-      position: fixed; top: 68px; left: 0; right: 0; z-index: 898;
-      background: var(--nav-bg); backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--black-border);
-      padding: 7px 5vw; text-align: center;
-      font-size: .72rem; font-style: italic; font-weight: 700;
+      flex: 1; text-align: center;
+      font-size: .68rem; font-style: italic; font-weight: 700;
       color: var(--white); letter-spacing: .3px;
-      overflow: hidden; white-space: nowrap;
+      padding: 0 10px; overflow: hidden;
     }
-    #citationTextMobile { display: inline-block; transition: opacity .6s ease, transform .6s ease; }
-    #citationTextMobile.fade-out { opacity: 0; transform: translateY(-5px); }
-    @media (max-width: 900px) { .nav-citation-mobile { display: block; } }
+    #citationTextMobile { display: inline-block; transition: opacity .5s ease; }
+    #citationTextMobile.fade-out { opacity: 0; }
+    @media (max-width: 900px) {
+      .nav-citation-mobile-inner { display: block; }
+    }
 
     /* ─── BARRE DE PROGRESSION ─── */
     .form-progress-wrap { margin-bottom: 8px; }
@@ -554,6 +553,10 @@
   </a>
   <div class="nav-citation" id="navCitation">
     <span id="citationText"></span>
+  </div>
+  <!-- Citation mobile dans la nav -->
+  <div class="nav-citation-mobile-inner">
+    <span id="citationTextMobile"></span>
   </div>
   <ul class="nav-links">
     <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
