@@ -1167,6 +1167,7 @@
         <a href="tel:0745053882">📞 07 45 05 38 82</a>
         <a href="https://wa.me/33745053882" target="_blank">💬 WhatsApp</a>
         <a href="/cdn-cgi/l/email-protection#e38f878e868d828486d4d4a3848e828a8fcd808c8e">📧 <span class="__cf_email__" data-cfemail="f09c949d959e919795c7c7b0979d91999cde939f9d">[email&#160;protected]</span></a>
+        <a href="https://www.instagram.com/ldmenage/" target="_blank">📸 @ldmenage</a>
       </div>
     </div>
   </div>
@@ -1481,4 +1482,23 @@
     syncFilesToInput();
   }
 
-  function removePhoto(inde
+  function removePhoto(index) {
+    selectedFiles.splice(index, 1);
+    renderPhotoGrid();
+  }
+
+  function clearAllPhotos() {
+    selectedFiles = [];
+    renderPhotoGrid();
+  }
+
+  function syncFilesToInput() {
+    const dt = new DataTransfer();
+    selectedFiles.forEach(f => dt.items.add(f));
+    document.getElementById('photoInput').files = dt.files;
+  }
+
+  setLang(currentLang);
+</script>
+</body>
+</html>
