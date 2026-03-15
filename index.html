@@ -96,7 +96,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     body { background: var(--black); color: var(--text); font-family: 'Barlow', sans-serif; overflow-x: hidden; line-height: 1.6; }
-
     /* ─── LOADER ─── */
     #loader { position: fixed; inset: 0; background: var(--black); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; z-index: 9999; transition: opacity .5s ease .2s, visibility .5s .2s; }
     #loader.hidden { opacity: 0; visibility: hidden; }
@@ -114,9 +113,9 @@
     .promo-close:hover { color: var(--black); }
 
     /* ─── NAV ─── */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; background: var(--nav-bg); backdrop-filter: blur(14px); border-bottom: 1px solid var(--black-border); transition: box-shadow .3s; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; background: var(--nav-bg); backdrop-filter: blur(14px); border-bottom: 1px solid var(--black-border); transition: box-shadow .3s; overflow: visible; }
     nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.8); }
-    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
 
     /* Logo RECTANGLE */
     .nav-logo-badge {
@@ -402,11 +401,17 @@
     .nav-citation-mobile-inner {
       display: none;
       flex: 1; text-align: center;
-      font-size: .68rem; font-style: italic; font-weight: 700;
-      color: var(--white); letter-spacing: .3px;
-      padding: 0 10px; overflow: hidden;
+      font-size: .65rem; font-style: italic; font-weight: 700;
+      color: var(--white); letter-spacing: .2px;
+      padding: 0 8px; min-width: 0;
     }
-    #citationTextMobile { display: inline-block; transition: opacity .5s ease; }
+    #citationTextMobile {
+      display: block;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.3;
+      transition: opacity .5s ease;
+    }
     #citationTextMobile.fade-out { opacity: 0; }
     @media (max-width: 900px) {
       .nav-citation-mobile-inner { display: block; }
@@ -1129,6 +1134,11 @@
 </footer>
 
 <script>
+  // SCROLL TO TOP
+  window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+  if (history.scrollRestoration) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
   // LOADER
   window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1400));
 
