@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LDménage – Déménagement Professionnel | Île-de-France & France entière</title>
+  <meta name="description" content="LDménage – Déménagement complet, emballage, manutention, piano, débarras. Île-de-France, France entière, Suisse, Belgique. 07 45 05 38 82." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-glow: rgba(201,168,76,0.25);
+      --black: #080808;
+      --black-soft: #0E0E0E;
+      --black-card: #141414;
+      --black-border: #222222;
+      --white: #F5F5F5;
+      --silver: #AAAAAA;
+      --silver-light: #DDDDDD;
+      --silver-dark: #666;
+      --text: #CCCCCC;
+      --text-muted: #777;
+      --nav-bg: rgba(8,8,8,.97);
+      --mobile-bg: rgba(8,8,8,.99);
+    }
+
+    /* ─── LIGHT MODE — crème luxe ─── */
+    body.light {
+      --black: #FAF8F5;
+      --black-soft: #F2EFE9;
+      --black-card: #FFFFFF;
+      --black-border: #E0DAD0;
+      --white: #1A1612;
+      --silver: #5A5045;
+      --silver-light: #2A2018;
+      --silver-dark: #9A9080;
+      --text: #3A3028;
+      --text-muted: #8A7A6A;
+      --nav-bg: rgba(250,248,245,.97);
+      --mobile-bg: rgba(250,248,245,.99);
+    }
+    body.light .hero { background: #FAF8F5; }
+    body.light .hero::before { background: repeating-linear-gradient(-55deg, transparent, transparent 80px, rgba(201,168,76,.025) 80px, rgba(201,168,76,.025) 81px); }
+    body.light .hero::after { background: linear-gradient(to left, rgba(201,168,76,.06), transparent); }
+    body.light .logo-circle { background: radial-gradient(circle at 40% 35%, #FFFFFF, #F5F0E8); border: 1px solid rgba(201,168,76,.2); box-shadow: 0 0 40px rgba(201,168,76,.1); }
+    body.light .hero-logo-ring::before { border-color: rgba(0,0,0,.06); }
+    body.light .hero-logo-ring::after { border-color: rgba(201,168,76,.12); }
+    body.light #heroLogo { filter: none; }
+    body.light .nav-logo-badge { filter: none; }
+    body.light nav { background: var(--nav-bg); border-bottom-color: var(--black-border); }
+    body.light .mobile-menu { background: var(--mobile-bg); }
+    body.light .btn-primary { background: #1A1612; color: #FAF8F5; box-shadow: 0 4px 16px rgba(0,0,0,.2); }
+    body.light .btn-primary:hover { background: #3A3028; }
+    body.light .btn-secondary { border-color: #C8C0B0; color: #3A3028; }
+    body.light .btn-secondary:hover { border-color: #1A1612; color: #1A1612; }
+    body.light .nav-cta { background: #1A1612 !important; color: #FAF8F5 !important; }
+    body.light .nav-cta:hover { background: #3A3028 !important; }
+    body.light .mobile-menu .m-cta { background: #1A1612; color: #FAF8F5 !important; }
+    body.light .loader-text { color: #1A1612; }
+    body.light .loader-bar-wrap { background: #E0DAD0; }
+    body.light .loader-bar { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+    body.light #loader { background: #FAF8F5; }
+    body.light .zone-big::before { color: rgba(0,0,0,.03); }
+    body.light .services-grid { background: #E0DAD0; border-color: #E0DAD0; }
+    body.light .service-card { background: #FFFFFF; }
+    body.light .service-card:hover { background: #FFFCF7; }
+    body.light .btn-submit { background: #1A1612; color: #FAF8F5; }
+    body.light .btn-submit:hover { background: #3A3028; }
+    body.light .insta-cta-box { background: #FFFFFF; border-color: #E0DAD0; }
+    body.light .section-title { color: #1A1612; }
+    body.light .counter-num { color: #1A1612; }
+    body.light .counter-item:hover { background: rgba(201,168,76,.04); }
+    body.light .zone-big { background: #FFFFFF; }
+    body.light .zone-avantage { background: #FFFFFF; border-color: #E0DAD0; }
+    body.light .contact-card { background: #FFFFFF; border-color: #E0DAD0; }
+    body.light .zone-card { background: #FFFFFF; border-color: #E0DAD0; }
+    body.light .contact-icon { background: rgba(201,168,76,.08); border-color: rgba(201,168,76,.2); }
+    body.light .modal-box { background: #FFFFFF; border-color: #E0DAD0; }
+    body.light .modal-input { background: #FAF8F5; border-color: #E0DAD0; color: #1A1612; }
+    body.light .modal-submit { background: #1A1612; color: #FAF8F5; }
+    body.light .form-group input,
+    body.light .form-group textarea,
+    body.light .form-group select { background: #FFFFFF; border-color: #E0DAD0; color: #1A1612; }
+    body.light footer { background: #F2EFE9; border-color: #E0DAD0; }
+    body.light .lang-switch { background: rgba(0,0,0,.04); border-color: #E0DAD0; }
+    body.light .lang-btn { color: #9A9080; }
+    body.light .lang-btn.active { background: #1A1612; color: #FAF8F5; }
+    body.light .wa-float { box-shadow: 0 6px 24px rgba(37,211,102,.3); }
+    body.light .callback-float { background: #1A1612; color: #FAF8F5; box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+    body.light .hero-label { background: rgba(201,168,76,.08); border-color: rgba(201,168,76,.2); color: #8A6A30; }
+    body.light .hero-pill { background: rgba(0,0,0,.04); border-color: #E0DAD0; color: #5A5045; }
+    body.light .promo-bar p { color: #080808; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { background: var(--black); color: var(--text); font-family: 'Barlow', sans-serif; overflow-x: hidden; line-height: 1.6; }
+
+    /* ─── LOADER ─── */
+    #loader { position: fixed; inset: 0; background: var(--black); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; z-index: 9999; transition: opacity .5s ease .2s, visibility .5s .2s; }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-text { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--white); letter-spacing: 10px; animation: pulseLoad 1s ease-in-out infinite alternate; }
+    .loader-sub { font-size: .7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--silver-dark); }
+    .loader-bar-wrap { width: 160px; height: 1px; background: #222; margin-top: 10px; }
+    .loader-bar { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); animation: loadBar 1.4s ease forwards; }
+    @keyframes pulseLoad { from { opacity: .2; } to { opacity: 1; } }
+    @keyframes loadBar { from { width: 0%; } to { width: 100%; } }
+
+    /* ─── PROMO BAR ─── */
+    .promo-bar { position: fixed; top: 68px; left: 0; right: 0; z-index: 899; background: var(--gold); padding: 9px 5vw; display: flex; align-items: center; justify-content: center; }
+    .promo-bar p { color: var(--black); font-weight: 700; font-size: .85rem; letter-spacing: .5px; text-align: center; }
+    .promo-close { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 1.1rem; color: rgba(0,0,0,.5); transition: color .2s; }
+    .promo-close:hover { color: var(--black); }
+
+    /* ─── NAV ─── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; background: var(--nav-bg); backdrop-filter: blur(14px); border-bottom: 1px solid var(--black-border); transition: box-shadow .3s; }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.8); }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+
+    /* Logo RECTANGLE */
+    .nav-logo-badge {
+      height: 40px; width: auto; max-width: 140px;
+      border-radius: 4px; border: 1px solid rgba(201,168,76,.3);
+      object-fit: contain; flex-shrink: 0; display: block; background: transparent;
+    }
+    body.light .nav-logo-badge { filter: invert(1); }
+
+    .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 3px; color: var(--white); }
+    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--silver); font-size: .78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; transition: color .2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--white); transform: scaleX(0); transition: transform .2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { background: var(--white) !important; color: var(--black) !important; padding: 9px 20px; border-radius: 2px; font-weight: 800 !important; letter-spacing: 2px !important; transition: background .2s !important; }
+    .nav-cta:hover { background: var(--silver-light) !important; }
+    .nav-cta::after { display: none !important; }
+
+    /* ─── LANG & THEME SWITCHERS ─── */
+    .nav-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+    .lang-switch {
+      display: flex; align-items: center;
+      background: rgba(255,255,255,.06); border: 1px solid var(--black-border);
+      border-radius: 2px; overflow: hidden;
+    }
+    .lang-btn {
+      padding: 6px 10px; background: none; border: none; cursor: pointer;
+      font-family: 'Barlow', sans-serif; font-size: .72rem; font-weight: 700;
+      letter-spacing: 1px; color: var(--silver-dark); transition: background .2s, color .2s;
+    }
+    .lang-btn.active { background: var(--white); color: var(--black); }
+    .lang-btn:hover:not(.active) { color: var(--white); }
+
+    /* Theme toggle demi-cercle style Chrome */
+    .theme-toggle {
+      width: 32px; height: 32px; border-radius: 50%;
+      cursor: pointer; border: 1.5px solid var(--black-border);
+      background: linear-gradient(90deg, #111 50%, #F5F0E8 50%);
+      flex-shrink: 0; transition: transform .2s, box-shadow .2s;
+      position: relative;
+    }
+    .theme-toggle:hover { transform: scale(1.12); box-shadow: 0 0 0 3px rgba(201,168,76,.2); }
+    body.light .theme-toggle { background: linear-gradient(90deg, #111 50%, #FAF8F5 50%); border-color: #C8C0B0; }
+
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .burger span { display: block; width: 26px; height: 2px; background: var(--white); border-radius: 2px; transition: .3s; }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--mobile-bg); backdrop-filter: blur(14px); border-bottom: 1px solid var(--black-border); z-index: 899; padding: 20px 5vw 28px; flex-direction: column; gap: 20px; transform: translateY(-10px); opacity: 0; transition: transform .3s, opacity .3s; }
+    .mobile-menu.open { display: flex; transform: translateY(0); opacity: 1; }
+    .mobile-menu a { text-decoration: none; color: var(--silver); font-size: 1.1rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 10px 0; border-bottom: 1px solid var(--black-border); transition: color .2s; }
+    .mobile-menu a:hover { color: var(--white); }
+    .mobile-menu .m-cta { background: var(--white); color: var(--black) !important; border: none; padding: 14px; text-align: center; border-radius: 2px; font-weight: 800 !important; margin-top: 6px; }
+    .mobile-controls { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--black-border); }
+
+    /* ─── HERO ─── */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 140px 5vw 60px; position: relative; overflow: hidden; background: var(--black); }
+    .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-55deg, transparent, transparent 80px, rgba(255,255,255,.012) 80px, rgba(255,255,255,.012) 81px); pointer-events: none; }
+    .hero::after { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(to left, rgba(201,168,76,.03), transparent); pointer-events: none; }
+    .hero-inner { position: relative; z-index: 2; max-width: 1200px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.05); border: 1px solid var(--black-border); padding: 6px 14px; border-radius: 2px; margin-bottom: 20px; font-size: .72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--silver); }
+    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: .92; letter-spacing: 2px; margin-bottom: 28px; }
+    .hero h1 .line1 { color: var(--white); display: block; }
+    .hero h1 .line2 { color: var(--gold); display: block; }
+    .hero h1 .line3 { color: var(--silver-dark); display: block; font-size: 45%; letter-spacing: 8px; margin-top: 6px; }
+    .hero-desc { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 36px; max-width: 480px; }
+    .hero-desc strong { color: var(--silver-light); font-weight: 600; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+    .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.04); border: 1px solid var(--black-border); padding: 5px 12px; border-radius: 2px; font-size: .75rem; font-weight: 600; color: var(--silver); letter-spacing: 1px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 44px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--black); padding: 15px 30px; border-radius: 2px; font-weight: 800; font-size: .92rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: background .2s, transform .15s; }
+    .btn-primary:hover { background: var(--silver-light); transform: translateY(-2px); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--silver-light); padding: 15px 30px; border-radius: 2px; border: 1px solid var(--black-border); font-weight: 600; font-size: .92rem; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: border-color .2s, color .2s, transform .15s; }
+    .btn-secondary:hover { border-color: var(--white); color: var(--white); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 32px; padding-top: 28px; border-top: 1px solid var(--black-border); }
+    .stat-item { text-align: left; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--white); letter-spacing: 2px; line-height: 1; }
+    .stat-label { font-size: .72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-top: 2px; }
+
+    /* Hero visual — logo rectangulaire simple */
+    .hero-visual { display: flex; align-items: center; justify-content: center; position: relative; }
+    .hero-logo-rect {
+      position: relative;
+      max-width: clamp(280px, 38vw, 460px);
+      width: 100%;
+    }
+    .hero-logo-rect img {
+      width: 100%; height: auto;
+      object-fit: contain; display: block;
+      filter: invert(1) brightness(1.1);
+      drop-shadow: 0 8px 40px rgba(0,0,0,.4);
+    }
+    body.light .hero-logo-rect img { filter: none; }
+
+    /* ─── SECTIONS SHARED ─── */
+    section { padding: 90px 5vw; }
+    .section-label { font-size: .72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); letter-spacing: 2px; line-height: 1.05; margin-bottom: 18px; color: var(--white); }
+    .section-title span { color: var(--gold); }
+    .section-sub { font-size: .98rem; color: var(--text-muted); max-width: 540px; line-height: 1.8; }
+    .section-header { margin-bottom: 56px; }
+    .section-header.centered { text-align: center; }
+    .section-header.centered .section-label { justify-content: center; }
+    .section-header.centered .section-label::before { display: none; }
+    .section-header.centered .section-sub { margin: 0 auto; }
+
+    /* ─── COMPTEUR ─── */
+    #compteur { background: var(--black); border-top: 1px solid var(--black-border); border-bottom: 1px solid var(--black-border); padding: 0 5vw; }
+    .counter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 1000px; margin: 0 auto; }
+    .counter-item { text-align: center; padding: 50px 24px; border-right: 1px solid var(--black-border); transition: background .3s; }
+    .counter-item:last-child { border-right: none; }
+    .counter-item:hover { background: rgba(255,255,255,.02); }
+    .counter-top { display: flex; align-items: baseline; justify-content: center; gap: 2px; margin-bottom: 10px; }
+    .counter-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 5vw, 5rem); color: var(--white); line-height: 1; letter-spacing: 1px; }
+    .counter-suffix { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1; }
+    .counter-label { font-size: .75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--silver-dark); }
+    .counter-sublabel { font-size: .7rem; color: var(--text-muted); margin-top: 5px; letter-spacing: .5px; }
+
+    /* ─── DEVIS BANNER ─── */
+    .devis-banner {
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+      background: var(--black-card);
+      border: 1px solid var(--gold);
+      border-left: 4px solid var(--gold);
+      border-radius: 4px; padding: 24px 28px; margin-bottom: 40px;
+      box-shadow: 0 0 30px rgba(201,168,76,.08);
+    }
+    .devis-banner-icon { font-size: 2.2rem; flex-shrink: 0; }
+    .devis-banner-text { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 5px; }
+    .devis-banner-text strong { font-size: 1.05rem; font-weight: 800; color: var(--white); letter-spacing: .3px; }
+    .devis-banner-text span { font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
+    .devis-banner-text em { color: var(--gold); font-style: normal; font-weight: 700; }
+    body.light .devis-banner { background: #FFFDF7; box-shadow: 0 0 20px rgba(201,168,76,.1); }
+    #services { background: var(--black-soft); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--black-border); border: 1px solid var(--black-border); }
+    .service-card { background: var(--black-card); padding: 36px 30px; position: relative; overflow: hidden; transition: background .25s; cursor: default; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--white); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+    .service-card:hover { background: #191919; }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon { font-size: 2rem; margin-bottom: 18px; display: block; }
+    .service-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; color: var(--white); }
+    .service-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.7; }
+    .service-badge { display: inline-block; margin-top: 14px; background: rgba(255,255,255,.05); border: 1px solid var(--black-border); color: var(--silver-dark); font-size: .68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 3px 10px; border-radius: 1px; }
+
+    /* ─── ZONE ─── */
+    #zone { background: var(--black); }
+    .zone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .zone-big { background: var(--black-card); border: 1px solid var(--black-border); padding: 50px 40px; position: relative; overflow: hidden; }
+    .zone-big::before { content: 'FR'; font-family: 'Bebas Neue', sans-serif; font-size: 12rem; color: rgba(255,255,255,.025); position: absolute; right: -20px; bottom: -30px; line-height: 1; pointer-events: none; }
+    .zone-main { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--white); letter-spacing: 3px; margin-bottom: 8px; }
+    .zone-sub { font-size: .85rem; color: var(--text-muted); margin-bottom: 28px; line-height: 1.6; }
+    .zone-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .zone-tag { background: rgba(255,255,255,.04); border: 1px solid var(--black-border); color: var(--silver); font-size: .75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 5px 12px; }
+    .zone-info { display: flex; flex-direction: column; gap: 20px; }
+    .zone-info p { font-size: .97rem; color: var(--text-muted); line-height: 1.8; }
+    .zone-info strong { color: var(--white); }
+    .zone-avantage { padding: 20px 22px; background: var(--black-card); border: 1px solid var(--black-border); border-left: 2px solid var(--white); }
+    .zone-avantage h4 { font-weight: 700; font-size: .88rem; color: var(--white); margin-bottom: 5px; letter-spacing: .5px; text-transform: uppercase; }
+    .zone-avantage p { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ─── RÉALISATIONS / PHOTOS ─── */
+    #realisations { background: var(--black-soft); }
+    .photos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; max-width: 900px; margin: 0 auto 20px; }
+    .photo-item { position: relative; overflow: hidden; aspect-ratio: 4/3; background: var(--black-card); border: 1px solid var(--black-border); }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+    .photo-item:hover img { transform: scale(1.04); }
+    .photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--text-muted); }
+    .photo-placeholder .pp-icon { font-size: 2.5rem; opacity: .3; }
+    .photo-placeholder .pp-name { font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: .4; }
+    .insta-cta-box { background: var(--black-card); border: 1px solid var(--black-border); border-left: 2px solid var(--gold); padding: 28px 30px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
+    .insta-cta-box p { font-size: 1rem; color: var(--text-muted); line-height: 1.7; }
+    .insta-cta-box p strong { color: var(--white); font-size: 1.1rem; font-weight: 800; display: block; margin-bottom: 4px; }
+    .insta-cta-box a { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); color: #fff; padding: 12px 24px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: .85rem; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; transition: opacity .2s, transform .15s; flex-shrink: 0; }
+    .insta-cta-box a:hover { opacity: .88; transform: translateY(-1px); }
+
+    /* ─── RÉSEAUX ─── */
+    #reseaux { background: var(--black); }
+    .social-grid-ld { display: flex; justify-content: center; }
+    .social-card-ld { display: flex; align-items: center; gap: 20px; padding: 30px 36px; border: 1px solid var(--black-border); background: var(--black-card); text-decoration: none; transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; overflow: hidden; max-width: 400px; width: 100%; }
+    .social-card-ld::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(193,53,132,.06), rgba(252,176,69,.04)); opacity: 0; transition: opacity .3s; }
+    .social-card-ld:hover { transform: translateY(-4px); border-color: rgba(193,53,132,.3); box-shadow: 0 16px 40px rgba(0,0,0,.5); }
+    .social-card-ld:hover::before { opacity: 1; }
+    .social-icon-wrap { width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .social-icon-wrap svg { width: 30px; height: 30px; }
+    .social-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 3px; }
+    .social-handle { font-size: .85rem; color: var(--text-muted); }
+    .social-arrow { margin-left: auto; font-size: 1.2rem; color: var(--silver-dark); transition: transform .2s, color .2s; }
+    .social-card-ld:hover .social-arrow { transform: translateX(5px); color: var(--white); }
+
+    /* ─── FORM BLOCS ─── */
+    .form-bloc { background: var(--black-card); border: 1px solid var(--black-border); border-radius: 6px; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; }
+    .form-bloc-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--white); padding-bottom: 10px; border-bottom: 1px solid var(--black-border); }
+    .radio-inline { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+    .radio-opt { display: flex; align-items: center; gap: 6px; background: var(--black); border: 1px solid var(--black-border); padding: 6px 12px; border-radius: 2px; cursor: pointer; font-size: .85rem; color: var(--text); transition: border-color .2s; }
+    .radio-opt:hover { border-color: var(--gold); }
+    .radio-opt input { accent-color: var(--gold); cursor: pointer; }
+    .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .check-opt { display: flex; align-items: center; gap: 8px; background: var(--black); border: 1px solid var(--black-border); padding: 8px 12px; border-radius: 2px; cursor: pointer; font-size: .85rem; color: var(--text); transition: border-color .2s; }
+    .check-opt:hover { border-color: var(--gold); }
+    .check-opt input { accent-color: var(--gold); cursor: pointer; flex-shrink: 0; }
+    .photo-upload-hint { display: flex; align-items: flex-start; gap: 12px; background: rgba(201,168,76,.06); border: 1px solid rgba(201,168,76,.2); border-radius: 4px; padding: 14px 16px; }
+    .photo-upload-hint span { font-size: 1.4rem; flex-shrink: 0; }
+    .photo-upload-hint p { font-size: .85rem; color: var(--text-muted); line-height: 1.6; }
+    .photo-upload-hint strong { color: var(--white); }
+    .photo-upload-hint a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .photo-upload-hint a:hover { text-decoration: underline; }
+    body.light .form-bloc { background: #FFFFFF; border-color: #E0DAD0; }
+    body.light .radio-opt, body.light .check-opt { background: #FAF8F5; border-color: #E0DAD0; color: #3A3028; }
+    body.light .photo-upload-hint p { color: #8A7A6A; }
+    body.light .photo-upload-hint strong { color: #1A1612; }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--black-soft); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-card { background: var(--black-card); border: 1px solid var(--black-border); padding: 26px; display: flex; align-items: flex-start; gap: 18px; transition: border-color .25s; margin-bottom: 14px; }
+    .contact-card:hover { border-color: rgba(255,255,255,.15); }
+    .contact-icon { width: 46px; height: 46px; border-radius: 2px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; background: rgba(255,255,255,.04); border: 1px solid var(--black-border); }
+    .contact-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 5px; }
+    .contact-value { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.3rem; letter-spacing: 1px; color: var(--white); text-decoration: none; transition: color .2s; display: block; }
+    .contact-value:hover { color: var(--gold); }
+    .contact-note { font-size: .78rem; color: var(--text-muted); margin-top: 3px; }
+    .zone-card { background: var(--black-card); border: 1px solid var(--black-border); border-left: 2px solid var(--gold); padding: 20px 22px; }
+    .zone-card h4 { font-weight: 700; font-size: .82rem; color: var(--gold); margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
+    .zone-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.7; }
+    .contact-form-side { display: flex; flex-direction: column; gap: 16px; }
+    .contact-form-side h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
+    .contact-form-side > p { font-size: .88rem; color: var(--text-muted); line-height: 1.6; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: .72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--silver-dark); }
+    .form-group input, .form-group textarea, .form-group select { background: var(--black-card); border: 1px solid var(--black-border); color: var(--text); padding: 12px 16px; font-family: 'Barlow', sans-serif; font-size: .92rem; outline: none; transition: border-color .2s; width: 100%; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .btn-submit { background: var(--white); color: var(--black); padding: 15px 28px; border: none; font-family: 'Barlow', sans-serif; font-weight: 800; font-size: .92rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background .2s, transform .15s; width: 100%; }
+    .btn-submit:hover { background: var(--silver-light); transform: translateY(-1px); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--black); border-top: 1px solid var(--black-border); padding: 50px 5vw 30px; }
+    .footer-inner { display: grid; grid-template-columns: 1fr auto 1fr; gap: 40px; align-items: start; margin-bottom: 40px; }
+    .footer-brand .brand-name { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; letter-spacing: 4px; color: var(--white); margin-bottom: 8px; }
+    .footer-brand p { font-size: .85rem; color: var(--text-muted); line-height: 1.65; max-width: 280px; }
+    .footer-nav h5 { font-size: .7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--silver-dark); margin-bottom: 14px; }
+    .footer-nav ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-nav a { text-decoration: none; color: var(--text-muted); font-size: .88rem; transition: color .2s; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-contact h5 { font-size: .7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--silver-dark); margin-bottom: 14px; text-align: right; }
+    .footer-contact-items { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .footer-contact a { text-decoration: none; color: var(--text-muted); font-size: .88rem; display: flex; align-items: center; gap: 8px; transition: color .2s; flex-direction: row-reverse; }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid var(--black-border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .75rem; color: var(--text-muted); }
+    .footer-gold { font-size: .72rem; color: var(--gold); letter-spacing: 1px; }
+
+    /* ─── FLOATS ─── */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 800; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.6rem; box-shadow: 0 6px 24px rgba(37,211,102,.4); transition: transform .2s; animation: waPulse 2.5s ease-in-out infinite; }
+    .wa-float:hover { transform: scale(1.12); }
+    @keyframes waPulse { 0%,100% { box-shadow: 0 6px 24px rgba(37,211,102,.4); } 50% { box-shadow: 0 6px 40px rgba(37,211,102,.6), 0 0 0 10px rgba(37,211,102,.08); } }
+    .callback-float { position: fixed; bottom: 100px; right: 28px; z-index: 800; background: var(--white); color: var(--black); border: none; border-radius: 2px; padding: 11px 18px; font-family: 'Barlow', sans-serif; font-weight: 800; font-size: .78rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.5); transition: transform .2s; display: flex; align-items: center; gap: 7px; }
+    .callback-float:hover { transform: translateY(-2px); }
+
+    /* ─── MODAL ─── */
+    .modal-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,.82); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s; }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal-box { background: var(--black-card); border: 1px solid var(--black-border); border-top: 2px solid var(--white); padding: 36px; max-width: 420px; width: 100%; position: relative; transform: translateY(20px); transition: transform .3s; }
+    .modal-overlay.open .modal-box { transform: translateY(0); }
+    .modal-close { position: absolute; top: 14px; right: 16px; background: none; border: none; cursor: pointer; font-size: 1.4rem; color: var(--text-muted); transition: color .2s; }
+    .modal-close:hover { color: var(--white); }
+    .modal-icon { font-size: 2.5rem; margin-bottom: 14px; }
+    .modal-box h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: var(--white); margin-bottom: 8px; }
+    .modal-box p { font-size: .9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 22px; }
+    .modal-input { background: var(--black); border: 1px solid var(--black-border); color: var(--text); padding: 13px 16px; width: 100%; font-family: 'Barlow', sans-serif; font-size: 1rem; outline: none; transition: border-color .2s; margin-bottom: 14px; }
+    .modal-input:focus { border-color: var(--white); }
+    .modal-submit { width: 100%; background: var(--white); color: var(--black); border: none; padding: 14px; font-family: 'Barlow', sans-serif; font-weight: 800; font-size: .92rem; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+    .modal-submit:hover { background: var(--silver-light); }
+    .modal-note { font-size: .72rem; color: var(--text-muted); text-align: center; margin-top: 10px; }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .hero-inner, .zone-grid, .contact-grid, .footer-inner { grid-template-columns: 1fr; }
+      .hero-btns { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-pills { justify-content: center; }
+      .hero-visual { margin-top: 20px; }
+      .footer-contact h5 { text-align: left; }
+      .footer-contact-items { align-items: flex-start; }
+      .footer-contact a { flex-direction: row; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 60px 5vw; }
+      .hero h1 { font-size: 3.2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-logo-ring { width: 240px; height: 240px; }
+      .counter-grid { grid-template-columns: repeat(2, 1fr); }
+      .counter-item { border-right: none; border-bottom: 1px solid var(--black-border); }
+      .counter-item:nth-child(even) { border-right: none; }
+      .photos-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-text">LDMÉNAGE</div>
+  <div class="loader-sub">Déménagement Professionnel</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<!-- PROMO BAR -->
+<div class="promo-bar" id="promoBar">
+  <p>📦 <strong>Devis gratuit & sans engagement</strong> — Réponse rapide garantie · 07 45 05 38 82</p>
+  <button class="promo-close" onclick="document.getElementById('promoBar').style.display='none'">✕</button>
+</div>
+
+<!-- BOUTON RAPPEL -->
+<button class="callback-float" onclick="openModal()">📞 Être rappelé</button>
+
+<!-- MODAL RAPPEL -->
+<div class="modal-overlay" id="callbackModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-icon">📲</div>
+    <h3>Être rappelé</h3>
+    <p>Laissez votre numéro, Dimitri vous rappelle rapidement pour discuter de votre déménagement.</p>
+    <input class="modal-input" type="tel" id="callbackNum" placeholder="Votre numéro · Ex : 06 XX XX XX XX" />
+    <button class="modal-submit" onclick="submitCallback()">📞 Me faire rappeler</button>
+    <p class="modal-note">Rappel rapide · 7j/7</p>
+  </div>
+</div>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/33745053882" class="wa-float" target="_blank" title="WhatsApp LDménage">💬</a>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="coco.png" class="nav-logo-badge" alt="Logo LDménage" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
+    <li><a href="#zone" data-fr="Zone" data-en="Coverage">Zone</a></li>
+    <li><a href="#realisations" data-fr="Photos" data-en="Photos">Photos</a></li>
+    <li><a href="#reseaux" data-fr="Instagram" data-en="Instagram">Instagram</a></li>
+    <li><a href="#contact" class="nav-cta" data-fr="Devis gratuit" data-en="Free Quote">Devis gratuit</a></li>
+  </ul>
+  <div class="nav-controls">
+    <div class="lang-switch">
+      <button class="lang-btn active" id="btnFR" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-controls">
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('fr');document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">FR</button>
+      <button class="lang-btn" onclick="setLang('en');document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">EN</button>
+    </div>
+  </div>
+  <a href="#services" class="m-link" data-fr="Services" data-en="Services">Services</a>
+  <a href="#zone" class="m-link" data-fr="Zone d'intervention" data-en="Coverage area">Zone d'intervention</a>
+  <a href="#realisations" class="m-link" data-fr="Photos" data-en="Photos">Photos</a>
+  <a href="#reseaux" class="m-link" data-fr="Instagram" data-en="Instagram">Instagram</a>
+  <a href="#contact" class="m-cta m-link" data-fr="📦 Devis gratuit" data-en="📦 Free Quote">📦 Devis gratuit</a>
+</div>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-label">Île-de-France · France · Europe</div>
+      <h1>
+        <span class="line1">VOTRE</span>
+        <span class="line2">DÉMÉNAGEMENT</span>
+        <span class="line3">Entre de bonnes mains</span>
+      </h1>
+      <p class="hero-desc">
+        LDménage prend en charge <strong>votre déménagement de A à Z</strong> — emballage, transport, montage — avec soin et professionnalisme. Île-de-France, France entière et pays voisins.
+      </p>
+      <div class="hero-pills">
+        <span class="hero-pill">📦 Déménagement complet</span>
+        <span class="hero-pill">🚛 Camion 20m³</span>
+        <span class="hero-pill">🔧 Montage / Démontage</span>
+        <span class="hero-pill">🎹 Piano & objets lourds</span>
+        <span class="hero-pill">7j/7</span>
+      </div>
+      <div class="hero-btns">
+        <a href="https://wa.me/33745053882" class="btn-primary" target="_blank">💬 WhatsApp</a>
+        <a href="tel:0745053882" class="btn-secondary">📞 07 45 05 38 82</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">7j/7</div>
+          <div class="stat-label">Disponible</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">20m³</div>
+          <div class="stat-label">Camion</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Devis gratuit</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-logo-rect reveal">
+        <img src="logo-ld.png" id="heroLogo" alt="LDménage" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COMPTEUR ══════════════════ -->
+<section id="compteur">
+  <div class="counter-grid">
+    <div class="counter-item reveal">
+      <div class="counter-top"><span class="counter-num" data-target="100">0</span><span class="counter-suffix">+</span></div>
+      <div class="counter-label">Déménagements réalisés</div>
+      <div class="counter-sublabel">Particuliers & professionnels</div>
+    </div>
+    <div class="counter-item reveal">
+      <div class="counter-top"><span class="counter-num" data-target="7">0</span><span class="counter-suffix">j/7</span></div>
+      <div class="counter-label">Disponibilité</div>
+      <div class="counter-sublabel">Même le week-end</div>
+    </div>
+    <div class="counter-item reveal">
+      <div class="counter-top"><span class="counter-num" data-target="20">0</span><span class="counter-suffix">m³</span></div>
+      <div class="counter-label">Camion dédié</div>
+      <div class="counter-sublabel">Toutes tailles de logement</div>
+    </div>
+    <div class="counter-item reveal">
+      <div class="counter-top"><span class="counter-num" data-target="100">0</span><span class="counter-suffix">%</span></div>
+      <div class="counter-label">Devis gratuit</div>
+      <div class="counter-sublabel">Sans engagement</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SERVICES ══════════════════ -->
+<section id="services">
+  <div class="section-header centered reveal">
+    <div class="section-label">Ce qu'on propose</div>
+    <h2 class="section-title">Nos <span>Services</span></h2>
+    <p class="section-sub">Tout ce dont vous avez besoin pour un déménagement serein, pris en charge par une équipe sérieuse et efficace.</p>
+  </div>
+
+  <!-- Bannière devis gratuit bien visible -->
+  <div class="devis-banner reveal">
+    <div class="devis-banner-icon">💬</div>
+    <div class="devis-banner-text">
+      <strong>Aucun tarif fixe — tout est sur devis</strong>
+      <span>Chaque déménagement est unique. Contactez-nous pour recevoir un devis personnalisé, <em>100% gratuit et sans engagement</em>.</span>
+    </div>
+    <a href="https://wa.me/33745053882" class="btn-primary" target="_blank" style="flex-shrink:0;">Devis gratuit →</a>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">🚛</span>
+      <h3>Déménagement Complet</h3>
+      <p>Prise en charge intégrale : emballage, chargement, transport et livraison dans votre nouveau logement.</p>
+      <span class="service-badge">Clé en main</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">📦</span>
+      <h3>Mise en carton & Emballage</h3>
+      <p>Emballage soigneux de tous vos effets personnels avec matériel adapté. Déballage et installation aussi disponibles.</p>
+      <span class="service-badge">Protection maximale</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🛡️</span>
+      <h3>Protection des biens</h3>
+      <p>Couvertures de protection, films plastiques, calages — vos meubles et objets sont sécurisés pendant tout le transport.</p>
+      <span class="service-badge">Inclus</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">💪</span>
+      <h3>Main d'œuvre & Manutention</h3>
+      <p>Équipe de 1 à 3 personnes selon le volume. Portage, chargement, déchargement rapide et soigné.</p>
+      <span class="service-badge">Équipe flexible</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🔧</span>
+      <h3>Montage / Démontage</h3>
+      <p>Démontage complet de vos meubles avant le départ et remontage dans votre nouveau logement.</p>
+      <span class="service-badge">Tous types de meubles</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🚐</span>
+      <h3>Location camion + chauffeur</h3>
+      <p>Camion 20m³ avec chauffeur disponible à la location pour votre déménagement à votre rythme.</p>
+      <span class="service-badge">Camion 20m³</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🎹</span>
+      <h3>Piano & objets lourds</h3>
+      <p>Manutention spécialisée pour les pianos, coffres-forts, antiquités et tout objet encombrant ou délicat.</p>
+      <span class="service-badge">Spécialisé</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🗑️</span>
+      <h3>Débarras & Évacuation</h3>
+      <p>Vidage de caves, greniers, appartements. Évacuation complète des encombrants et objets à jeter.</p>
+      <span class="service-badge">Sur devis</span>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:32px;font-size:.9rem;color:var(--text-muted);background:rgba(255,255,255,.03);border:1px solid var(--black-border);padding:18px 24px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.7;" class="reveal">
+    💬 Tous les devis sont <strong style="color:var(--white)">gratuits et sans engagement</strong>. Contactez Dimitri directement pour une estimation rapide de votre projet.
+  </p>
+</section>
+
+<!-- ══════════════════ ZONE ══════════════════ -->
+<section id="zone">
+  <div class="zone-grid">
+    <div class="zone-big reveal">
+      <div class="section-label">Où on intervient</div>
+      <div class="zone-main">Île-de-France</div>
+      <p class="zone-sub">Zone principale d'intervention — disponible rapidement pour tout déménagement en Île-de-France et alentours.</p>
+      <div class="zone-tags">
+        <span class="zone-tag">Paris</span>
+        <span class="zone-tag">Seine-et-Marne 77</span>
+        <span class="zone-tag">Yvelines 78</span>
+        <span class="zone-tag">Essonne 91</span>
+        <span class="zone-tag">Hauts-de-Seine 92</span>
+        <span class="zone-tag">Seine-Saint-Denis 93</span>
+        <span class="zone-tag">Val-de-Marne 94</span>
+        <span class="zone-tag">Val-d'Oise 95</span>
+      </div>
+    </div>
+    <div class="zone-info reveal">
+      <div class="section-title" style="font-size:2rem;">On va <span>partout</span></div>
+      <p>LDménage ne s'arrête pas à l'Île-de-France. On intervient sur <strong>toute la France</strong> et les pays frontaliers selon votre besoin.</p>
+      <div class="zone-avantage">
+        <h4>🇫🇷 France entière</h4>
+        <p>Du Nord au Sud, de l'Est à l'Ouest — devis adapté selon la distance et le volume.</p>
+      </div>
+      <div class="zone-avantage">
+        <h4>🌍 Pays voisins</h4>
+        <p>Suisse, Belgique, Luxembourg et autres pays frontaliers — sur devis spécifique.</p>
+      </div>
+      <div class="zone-avantage">
+        <h4>📅 7 jours / 7</h4>
+        <p>Disponible tous les jours, week-end compris. On s'adapte à votre planning.</p>
+      </div>
+      <a href="https://wa.me/33745053882" class="btn-primary" target="_blank" style="display:inline-flex;margin-top:8px;">
+        💬 Vérifier votre zone
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PHOTOS ══════════════════ -->
+<section id="realisations">
+  <div class="section-header centered reveal">
+    <div class="section-label">Nos réalisations</div>
+    <h2 class="section-title">En <span>action</span></h2>
+    <p class="section-sub">Quelques aperçus de notre travail sur le terrain.</p>
+  </div>
+  <div class="photos-grid">
+    <div class="photo-item reveal">
+      <img src="photo1.jpg" alt="Chargement camion LDménage" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="photo-placeholder" style="display:none">
+        <div class="pp-icon">🚛</div>
+        <div class="pp-name">photo1.jpg</div>
+      </div>
+    </div>
+    <div class="photo-item reveal">
+      <img src="photo2.jpg" alt="Déménagement LDménage" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="photo-placeholder" style="display:none">
+        <div class="pp-icon">📦</div>
+        <div class="pp-name">photo2.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<section id="contact">
+  <div class="section-header centered reveal">
+    <div class="section-label">Devis gratuit</div>
+    <h2 class="section-title"><span>Contactez</span> Dimitri</h2>
+    <p class="section-sub">Réponse rapide garantie. Devis gratuit et sans engagement, 7j/7.</p>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-card reveal">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Téléphone</div>
+          <a href="tel:0745053882" class="contact-value">07 45 05 38 82</a>
+          <p class="contact-note">Disponible 7j/7</p>
+        </div>
+      </div>
+      <div class="contact-card reveal">
+        <div class="contact-icon">💬</div>
+        <div>
+          <div class="contact-label">WhatsApp</div>
+          <a href="https://wa.me/33745053882" class="contact-value" target="_blank">07 45 05 38 82</a>
+          <p class="contact-note">Réponse rapide · Envoyez des photos de votre logement</p>
+        </div>
+      </div>
+      <div class="contact-card reveal">
+        <div class="contact-icon">📧</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <a href="mailto:ldmenage77@gmail.com" class="contact-value">ldmenage77@gmail.com</a>
+          <p class="contact-note">Réponse sous 24h</p>
+        </div>
+      </div>
+      <div class="zone-card reveal">
+        <h4>📍 Zone principale</h4>
+        <p>Île-de-France · France entière · Suisse · Belgique · Luxembourg<br/><br/>Devis gratuit quelque soit la distance.</p>
+      </div>
+    </div>
+
+    <div class="contact-form-side reveal">
+      <h3>Demande de devis détaillée</h3>
+      <p>Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement.</p>
+
+      <!-- BLOC 1 : Identité -->
+      <div class="form-bloc">
+        <div class="form-bloc-title">👤 Vos coordonnées</div>
+        <div class="form-row">
+          <div class="form-group"><label>Prénom *</label><input type="text" placeholder="Votre prénom" /></div>
+          <div class="form-group"><label>Téléphone *</label><input type="tel" placeholder="06 XX XX XX XX" /></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="votre@email.com" /></div>
+        <div class="form-group"><label>Date souhaitée *</label><input type="text" placeholder="Ex : 15 avril, début mai, flexible..." /></div>
+      </div>
+
+      <!-- BLOC 2 : Trajet -->
+      <div class="form-bloc">
+        <div class="form-bloc-title">📍 Le trajet</div>
+        <div class="form-row">
+          <div class="form-group"><label>Ville de départ *</label><input type="text" placeholder="Ex : Paris 75011" /></div>
+          <div class="form-group"><label>Ville d'arrivée *</label><input type="text" placeholder="Ex : Lyon 69001" /></div>
+        </div>
+      </div>
+
+      <!-- BLOC 3 : Logement départ -->
+      <div class="form-bloc">
+        <div class="form-bloc-title">🏠 Logement de départ</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Type de logement *</label>
+            <select>
+              <option value="">Choisissez</option>
+              <option>Studio</option>
+              <option>T2 (2 pièces)</option>
+              <option>T3 (3 pièces)</option>
+              <option>T4 (4 pièces)</option>
+              <option>T5 et plus</option>
+              <option>Maison</option>
+              <option>Bureau / Local professionnel</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Étage départ</label>
+            <select>
+              <option value="">Choisissez</option>
+              <option>Rez-de-chaussée</option>
+              <option>1er étage</option>
+              <option>2ème étage</option>
+              <option>3ème étage</option>
+              <option>4ème étage</option>
+              <option>5ème étage et +</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ascenseur au départ ?</label>
+            <div class="radio-inline">
+              <label class="radio-opt"><input type="radio" name="asc-dep" /> Oui</label>
+              <label class="radio-opt"><input type="radio" name="asc-dep" /> Non</label>
+              <label class="radio-opt"><input type="radio" name="asc-dep" /> Monte-charge</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Parking / accès camion départ ?</label>
+            <div class="radio-inline">
+              <label class="radio-opt"><input type="radio" name="park-dep" /> Facile</label>
+              <label class="radio-opt"><input type="radio" name="park-dep" /> Difficile</label>
+              <label class="radio-opt"><input type="radio" name="park-dep" /> Pas de place</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOC 4 : Logement arrivée -->
+      <div class="form-bloc">
+        <div class="form-bloc-title">🏡 Logement d'arrivée</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Étage arrivée</label>
+            <select>
+              <option value="">Choisissez</option>
+              <option>Rez-de-chaussée</option>
+              <option>1er étage</option>
+              <option>2ème étage</option>
+              <option>3ème étage</option>
+              <option>4ème étage</option>
+              <option>5ème étage et +</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Ascenseur à l'arrivée ?</label>
+            <div class="radio-inline">
+              <label class="radio-opt"><input type="radio" name="asc-arr" /> Oui</label>
+              <label class="radio-opt"><input type="radio" name="asc-arr" /> Non</label>
+              <label class="radio-opt"><input type="radio" name="asc-arr" /> Monte-charge</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Parking / accès camion arrivée ?</label>
+          <div class="radio-inline">
+            <label class="radio-opt"><input type="radio" name="park-arr" /> Facile</label>
+            <label class="radio-opt"><input type="radio" name="park-arr" /> Difficile</label>
+            <label class="radio-opt"><input type="radio" name="park-arr" /> Pas de place</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOC 5 : Services -->
+      <div class="form-bloc">
+        <div class="form-bloc-title">🔧 Services souhaités</div>
+        <div class="check-grid">
+          <label class="check-opt"><input type="checkbox" /> Déménagement complet</label>
+          <label class="check-opt"><input type="checkbox" /> Mise en cartons</label>
+          <label class="check-opt"><input type="checkbox" /> Emballage / protection</label>
+          <label class="check-opt"><input type="checkbox" /> Déballage à l'arrivée</label>
+          <label class="check-opt"><input type="checkbox" /> Montage meubles</label>
+          <label class="check-opt"><input type="checkbox" /> Démontage meubles</label>
+          <label class="check-opt"><input type="checkbox" /> Piano / objets lourds</label>
+          <label class="check-opt"><input type="checkbox" /> Débarras / évacuation</label>
+          <label class="check-opt"><input type="checkbox" /> Main d'œuvre uniquement</label>
+          <label class="check-opt"><input type="checkbox" /> Location camion + chauffeur</label>
+        </div>
+      </div>
+
+      <!-- BLOC 6 : Objets particuliers -->
+      <div class="form-bloc">
+        <div class="form-bloc-title">📦 Objets particuliers ou fragiles</div>
+        <div class="check-grid">
+          <label class="check-opt"><input type="checkbox" /> Piano</label>
+          <label class="check-opt"><input type="checkbox" /> Coffre-fort</label>
+          <label class="check-opt"><input type="checkbox" /> Aquarium</label>
+          <label class="check-opt"><input type="checkbox" /> Billard</label>
+          <label class="check-opt"><input type="checkbox" /> Œuvres d'art / antiquités</label>
+          <label class="check-opt"><input type="checkbox" /> Électroménager encastré</label>
+          <label class="check-opt"><input type="checkbox" /> Matériel informatique</label>
+          <label class="check-opt"><input type="checkbox" /> Aucun objet particulier</label>
+        </div>
+      </div>
+
+      <!-- BLOC 7 : Photos + infos libres -->
+      <div class="form-bloc">
+        <div class="form-bloc-title">📸 Photos & informations supplémentaires</div>
+        <div class="form-group">
+          <label>Décrivez votre situation</label>
+          <textarea style="min-height:120px;" placeholder="Toute info utile : nombre de cartons approximatif, cave ou grenier à vider, garde-meuble, contrainte d'horaire, code d'accès, animaux, plantes... Plus c'est précis, plus le devis sera juste !"></textarea>
+        </div>
+        <div class="photo-upload-hint">
+          <span>📷</span>
+          <p>Pour envoyer des <strong>photos</strong> de votre logement, envoyez-les directement sur <a href="https://wa.me/33745053882" target="_blank">WhatsApp</a> ou par <a href="mailto:ldmenage77@gmail.com">email</a> — c'est le moyen le plus rapide pour un devis précis !</p>
+        </div>
+      </div>
+
+      <button class="btn-submit" onclick="handleSubmit()">📦 Envoyer ma demande</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand-name">LDménage</div>
+      <p>Déménagement professionnel pour particuliers et entreprises. Île-de-France, France entière et pays voisins. Disponible 7j/7.</p>
+    </div>
+    <div class="footer-nav">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#zone">Zone d'intervention</a></li>
+        <li><a href="#realisations">Photos</a></li>
+        <li><a href="#reseaux">Instagram</a></li>
+        <li><a href="#contact">Contact & Devis</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h5>Contact</h5>
+      <div class="footer-contact-items">
+        <a href="tel:0745053882">📞 07 45 05 38 82</a>
+        <a href="https://wa.me/33745053882" target="_blank">💬 WhatsApp</a>
+        <a href="mailto:ldmenage77@gmail.com">📧 ldmenage77@gmail.com</a>
+        <a href="https://www.instagram.com/ldmenage/" target="_blank">📸 @ldmenage</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
+    <p class="footer-gold">Devis gratuit · 7j/7</p>
+  </div>
+</footer>
+
+<script>
+  // LOADER
+  window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1400));
+
+  // NAV SCROLL
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+
+  // BURGER
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => { burger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+  document.querySelectorAll('.m-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('open'); mobileMenu.classList.remove('open'); }));
+
+  // SCROLL REVEAL
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // COMPTEUR
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const step = target / (1800 / 16); let current = 0;
+    const t = setInterval(() => { current += step; if (current >= target) { current = target; clearInterval(t); } el.textContent = Math.floor(current); }, 16);
+  }
+  const cObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.counter-num').forEach(animateCounter); cObs.unobserve(e.target); } });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.counter-item').forEach(el => cObs.observe(el));
+
+  // MODAL
+  function openModal() { document.getElementById('callbackModal').classList.add('open'); }
+  function closeModal() { document.getElementById('callbackModal').classList.remove('open'); }
+  document.getElementById('callbackModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+  function submitCallback() {
+    const num = document.getElementById('callbackNum').value.trim();
+    if (!num) { alert(currentLang === 'fr' ? 'Veuillez entrer votre numéro.' : 'Please enter your phone number.'); return; }
+    const btn = document.querySelector('.modal-submit');
+    btn.textContent = '✅'; btn.style.background = '#25D366';
+    setTimeout(() => { window.open(`https://wa.me/33745053882?text=Bonjour Dimitri, rappel au ${num}.`, '_blank'); closeModal(); btn.textContent = currentLang === 'fr' ? '📞 Me faire rappeler' : '📞 Call me back'; btn.style.background = ''; }, 800);
+  }
+  function handleSubmit() {
+    const btn = document.querySelector('.btn-submit');
+    btn.textContent = currentLang === 'fr' ? '✅ Envoyé !' : '✅ Sent!'; btn.style.background = '#25D366'; btn.disabled = true;
+    setTimeout(() => window.open('https://wa.me/33745053882?text=Bonjour Dimitri, devis déménagement.', '_blank'), 800);
+  }
+
+  // MODE CLAIR UNIQUEMENT
+  document.body.classList.add('light');
+
+  // LANG
+  let currentLang = localStorage.getItem('ldmenage-lang') || 'fr';
+
+  const T = {
+    fr: {
+      'hero-label':'Île-de-France · France · Europe',
+      'line1':'VOTRE','line2':'DÉMÉNAGEMENT','line3':'Entre de bonnes mains',
+      'hero-desc':'LDménage prend en charge <strong>votre déménagement de A à Z</strong> — emballage, transport, montage — avec soin et professionnalisme. Île-de-France, France entière et pays voisins.',
+      'pill1':'📦 Déménagement complet','pill2':'🚛 Camion 20m³','pill3':'🔧 Montage / Démontage','pill4':'🎹 Piano & objets lourds','pill5':'7j/7',
+      'stat1':'Disponible','stat2':'Camion','stat3':'Devis gratuit',
+      'promo':'📦 <strong>Devis gratuit & sans engagement</strong> — Réponse rapide · 07 45 05 38 82',
+      'modal-title':'Être rappelé','modal-desc':'Laissez votre numéro, Dimitri vous rappelle rapidement.','modal-btn':'📞 Me faire rappeler','modal-note':'Rappel rapide · 7j/7',
+      'cb-float':'📞 Être rappelé',
+    },
+    en: {
+      'hero-label':'Île-de-France · All France · Europe',
+      'line1':'YOUR','line2':'MOVE','line3':'In good hands',
+      'hero-desc':'LDménage handles <strong>your entire move</strong> — packing, transport, assembly — with care and professionalism. Paris area, all of France and neighboring countries.',
+      'pill1':'📦 Full moving service','pill2':'🚛 20m³ truck','pill3':'🔧 Assembly / Disassembly','pill4':'🎹 Piano & heavy items','pill5':'7 days/week',
+      'stat1':'Available','stat2':'Truck','stat3':'Free quote',
+      'promo':'📦 <strong>Free & no-commitment quote</strong> — Fast response · 07 45 05 38 82',
+      'modal-title':'Get a callback','modal-desc':'Leave your number and Dimitri will call you back quickly.','modal-btn':'📞 Call me back','modal-note':'Quick callback · 7 days/week',
+      'cb-float':'📞 Get a callback',
+    }
+  };
+
+  function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('ldmenage-lang', lang);
+    const t = T[lang];
+    document.documentElement.lang = lang;
+
+    const q = sel => document.querySelector(sel);
+    const qa = sel => document.querySelectorAll(sel);
+
+    const promoP = q('.promo-bar p'); if(promoP) promoP.innerHTML = t['promo'];
+    const hl = q('.hero-label'); if(hl) hl.textContent = t['hero-label'];
+    const l1 = q('.line1'); if(l1) l1.textContent = t['line1'];
+    const l2 = q('.line2'); if(l2) l2.textContent = t['line2'];
+    const l3 = q('.line3'); if(l3) l3.textContent = t['line3'];
+    const hd = q('.hero-desc'); if(hd) hd.innerHTML = t['hero-desc'];
+
+    const pills = qa('.hero-pill');
+    ['pill1','pill2','pill3','pill4','pill5'].forEach((k,i) => { if(pills[i]) pills[i].textContent = t[k]; });
+
+    const stats = qa('.stat-label');
+    ['stat1','stat2','stat3'].forEach((k,i) => { if(stats[i]) stats[i].textContent = t[k]; });
+
+    const mt = q('.modal-box h3'); if(mt) mt.textContent = t['modal-title'];
+    const md = q('.modal-box > p'); if(md) md.textContent = t['modal-desc'];
+    const mb = q('.modal-submit'); if(mb) mb.textContent = t['modal-btn'];
+    const mn = q('.modal-note'); if(mn) mn.textContent = t['modal-note'];
+    const cb = q('.callback-float'); if(cb) cb.textContent = t['cb-float'];
+
+    // data-fr/en elements
+    qa('[data-fr]').forEach(el => { el.textContent = lang === 'fr' ? el.dataset.fr : el.dataset.en; });
+
+    // Lang button states
+    qa('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent === lang.toUpperCase()));
+  }
+
+  setLang(currentLang);
+</script>
+</body>
+</html>
