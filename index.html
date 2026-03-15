@@ -398,6 +398,21 @@
     #citationText.fade-in { opacity: 1; transform: translateY(0); }
     @media (max-width: 900px) { .nav-citation { display: none; } }
 
+    /* Citation mobile — sous la nav */
+    .nav-citation-mobile {
+      display: none;
+      position: fixed; top: 68px; left: 0; right: 0; z-index: 898;
+      background: var(--nav-bg); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--black-border);
+      padding: 7px 5vw; text-align: center;
+      font-size: .72rem; font-style: italic; font-weight: 700;
+      color: var(--white); letter-spacing: .3px;
+      overflow: hidden; white-space: nowrap;
+    }
+    #citationTextMobile { display: inline-block; transition: opacity .6s ease, transform .6s ease; }
+    #citationTextMobile.fade-out { opacity: 0; transform: translateY(-5px); }
+    @media (max-width: 900px) { .nav-citation-mobile { display: block; } }
+
     /* ─── BARRE DE PROGRESSION ─── */
     .form-progress-wrap { margin-bottom: 8px; }
     .form-progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
@@ -500,6 +515,11 @@
   <div class="loader-text">LDMÉNAGE</div>
   <div class="loader-sub">Déménagement Professionnel</div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+</div>
+
+<!-- CITATION MOBILE -->
+<div class="nav-citation-mobile">
+  <span id="citationTextMobile"></span>
 </div>
 
 <!-- PROMO BAR -->
@@ -1319,20 +1339,24 @@
   ];
   let citIdx = 0;
   const citEl = document.getElementById('citationText');
+  const citElMobile = document.getElementById('citationTextMobile');
+
+  function setCitation(idx) {
+    if (citEl) citEl.textContent = citations[idx];
+    if (citElMobile) citElMobile.textContent = citations[idx];
+  }
   function rotateCitation() {
-    citEl.classList.add('fade-out');
+    if (citEl) citEl.classList.add('fade-out');
+    if (citElMobile) citElMobile.classList.add('fade-out');
     setTimeout(() => {
       citIdx = (citIdx + 1) % citations.length;
-      citEl.textContent = citations[citIdx];
-      citEl.classList.remove('fade-out');
-      citEl.classList.add('fade-in');
+      setCitation(citIdx);
+      if (citEl) citEl.classList.remove('fade-out');
+      if (citElMobile) citElMobile.classList.remove('fade-out');
     }, 600);
   }
-  if (citEl) {
-    citEl.textContent = citations[0];
-    citEl.classList.add('fade-in');
-    setInterval(rotateCitation, 4000);
-  }
+  setCitation(0);
+  setInterval(rotateCitation, 4000);
   function updateProgress() {
     const blocs = document.querySelectorAll('#devisForm .form-bloc');
     let filled = 0;
