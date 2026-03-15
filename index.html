@@ -5,11 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LDménage – Déménagement Professionnel | Île-de-France & France entière</title>
   <meta name="description" content="LDménage – Déménagement complet, emballage, manutention, piano, débarras. Île-de-France, France entière, Suisse, Belgique. 07 45 05 38 82." />
-  <script>
-    if (history.scrollRestoration) history.scrollRestoration = 'manual';
-    window.addEventListener('load', function() { window.scrollTo({top:0,left:0,behavior:'instant'}); });
-    document.addEventListener('DOMContentLoaded', function() { document.documentElement.scrollTop = 0; document.body.scrollTop = 0; });
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet" />
   <style>
@@ -113,7 +108,6 @@
 
     /* ─── PROMO BAR ─── */
     .promo-bar { position: fixed; top: 68px; left: 0; right: 0; z-index: 899; background: var(--gold); padding: 9px 5vw; display: flex; align-items: center; justify-content: center; }
-    @media (max-width: 900px) { .promo-bar { display: none; } }
     .promo-bar p { color: var(--black); font-weight: 700; font-size: .85rem; letter-spacing: .5px; text-align: center; }
     .promo-close { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 1.1rem; color: rgba(0,0,0,.5); transition: color .2s; }
     .promo-close:hover { color: var(--black); }
@@ -122,31 +116,6 @@
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; background: var(--nav-bg); backdrop-filter: blur(14px); border-bottom: 1px solid var(--black-border); transition: box-shadow .3s; overflow: visible; }
     nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.8); }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
-
-    /* Citation mobile — barre séparée sous la nav, visible seulement mobile */
-    .citation-bar-mobile {
-      display: none;
-    }
-    @media (max-width: 900px) {
-      .citation-bar-mobile {
-        display: block;
-        position: fixed;
-        top: 68px;
-        left: 0; right: 0;
-        z-index: 898;
-        background: var(--nav-bg);
-        border-bottom: 1px solid var(--black-border);
-        padding: 8px 16px;
-        text-align: center;
-        font-size: .72rem;
-        font-style: italic;
-        font-weight: 800;
-        color: #1A1612;
-        line-height: 1.4;
-      }
-    }
-    #citationTextMobile { transition: opacity .5s ease; display: inline; }
-    #citationTextMobile.fade-out { opacity: 0; }
 
     /* Logo RECTANGLE */
     .nav-logo-badge {
@@ -429,29 +398,24 @@
     @media (max-width: 900px) { .nav-citation { display: none; } }
 
     /* Citation mobile DANS la nav */
-    .nav-citation-mobile-inner { display: none; }
-    @media (max-width: 900px) {
-      nav {
-        height: auto;
-        min-height: 68px;
-        flex-wrap: wrap;
-        padding: 10px 5vw;
-        row-gap: 6px;
-      }
-      .nav-logo { order: 1; }
-      .nav-controls { order: 2; }
-      .nav-citation-mobile-inner {
-        order: 3;
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: .7rem; font-style: italic; font-weight: 800;
-        color: #1A1612; letter-spacing: .2px; line-height: 1.4;
-        padding-bottom: 6px;
-      }
+    .nav-citation-mobile-inner {
+      display: none;
+      flex: 1; text-align: center;
+      font-size: .65rem; font-style: italic; font-weight: 700;
+      color: var(--white); letter-spacing: .2px;
+      padding: 0 8px; min-width: 0;
     }
-    #citationTextMobile { transition: opacity .5s ease; }
+    #citationTextMobile {
+      display: block;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.3;
+      transition: opacity .5s ease;
+    }
     #citationTextMobile.fade-out { opacity: 0; }
+    @media (max-width: 900px) {
+      .nav-citation-mobile-inner { display: block; }
+    }
 
     /* ─── BARRE DE PROGRESSION ─── */
     .form-progress-wrap { margin-bottom: 8px; }
@@ -595,6 +559,10 @@
   <div class="nav-citation" id="navCitation">
     <span id="citationText"></span>
   </div>
+  <!-- Citation mobile dans la nav -->
+  <div class="nav-citation-mobile-inner">
+    <span id="citationTextMobile"></span>
+  </div>
   <ul class="nav-links">
     <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
     <li><a href="#zone" data-fr="Zone" data-en="Coverage">Zone</a></li>
@@ -606,11 +574,6 @@
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
-<!-- CITATION MOBILE BAR -->
-<div class="citation-bar-mobile">
-  <span id="citationTextMobile"></span>
-</div>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
@@ -846,7 +809,7 @@
         <div class="contact-icon">📧</div>
         <div>
           <div class="contact-label">Email</div>
-          <a href="/cdn-cgi/l/email-protection#660a020b0308070103515126010b070f0a4805090b" class="contact-value"><span class="__cf_email__" data-cfemail="234f474e464d424446141463444e424a4f0d404c4e">[email&#160;protected]</span></a>
+          <a href="mailto:ldmenage77@gmail.com" class="contact-value">ldmenage77@gmail.com</a>
           <p class="contact-note">Réponse sous 24h</p>
         </div>
       </div>
@@ -861,78 +824,71 @@
       <!-- AVIS CLIENTS -->
       <div id="avis" class="reviews-section reveal">
         <div class="reviews-header">
-          <h4>⭐ Avis clients Google</h4>
+          <h4>⭐ Avis clients</h4>
           <div class="reviews-avg">
-            <div class="reviews-avg-num">5,0</div>
+            <div class="reviews-avg-num">4.2</div>
             <div>
               <div class="reviews-stars-avg">
-                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span>
               </div>
-              <div class="reviews-count">15 avis Google</div>
+              <div class="reviews-count">6 avis vérifiés</div>
             </div>
           </div>
         </div>
 
-        <!-- Encadré vérification -->
-        <div style="background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.3);border-left:3px solid var(--gold);border-radius:4px;padding:12px 14px;font-size:.78rem;color:var(--text-muted);line-height:1.6;">
-          🔍 <strong style="color:var(--white);">Ces avis sont 100% vérifiables.</strong> Tapez <strong style="color:var(--gold);">"LDménage"</strong> sur votre navigateur pour les retrouver directement.
-        </div>
-
-        <!-- 5 étoiles en premier -->
         <div class="review-card">
           <div class="review-top">
-            <span class="review-author">Maylee D.b</span>
-            <span class="review-date">il y a 4 mois</span>
+            <span class="review-author">Sophie M.</span>
+            <span class="review-date">Février 2025</span>
           </div>
           <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="review-text">« Un service au top ! Équipe ponctuelle, professionnelle et super efficace. Mes affaires ont été emballées et transportées avec soin, le tout dans une ambiance sympa. Le déménagement s'est déroulé sans stress du début à la fin. Je recommande les yeux fermés ! »</p>
+          <p class="review-text">« Équipe très professionnelle, ponctuelle et soigneuse. Mes meubles sont arrivés en parfait état. Je recommande sans hésiter ! »</p>
         </div>
 
         <div class="review-card">
           <div class="review-top">
-            <span class="review-author">Charlli Betkou</span>
-            <span class="review-date">il y a 4 mois</span>
+            <span class="review-author">Thomas R.</span>
+            <span class="review-date">Janvier 2025</span>
           </div>
           <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="review-text">« J'ai fait le bon choix en sollicitant la société LDménage pour mon déménagement. De part son expérience, Dimitri a su tirer parti du moindre mètre cube de son véhicule pour transporter l'ensemble de mes affaires en un seul voyage. Un déménagement qui s'est déroulé dans la bonne humeur. Je recommande vivement LDménage pour son sérieux, et sa convivialité. Merci encore ! »</p>
+          <p class="review-text">« Super service, rapide et efficace. Dimitri a été très réactif pour le devis. Déménagement fait en moins de temps que prévu. »</p>
         </div>
 
         <div class="review-card">
           <div class="review-top">
-            <span class="review-author">Alidières Margaux</span>
-            <span class="review-date">il y a 4 mois</span>
+            <span class="review-author">Nadia K.</span>
+            <span class="review-date">Décembre 2024</span>
           </div>
-          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="review-text">« Dimitri est un déménageur très professionnel, qui s'adapte très facilement aux besoins de leurs clients. De plus, il est très arrangeant et n'hésite pas à faire part de ses idées pour permettre un déménagement simple, efficace et rapide. Je ne regrette absolument pas d'avoir demandé ses services et je reviendrai vers lui sans aucun problème si, futur déménagement il doit y avoir. Merci Dimitri ! »</p>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div>
+          <p class="review-text">« Bon rapport qualité/prix. L'équipe est sérieuse, ils ont bien protégé mes affaires. Juste un léger retard au départ mais rien de grave. »</p>
         </div>
 
         <div class="review-card">
           <div class="review-top">
-            <span class="review-author">Salomé Carcy</span>
-            <span class="review-date">il y a 4 mois</span>
+            <span class="review-author">Marc D.</span>
+            <span class="review-date">Novembre 2024</span>
           </div>
-          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="review-text">« Super expérience ! Je remercie l'équipe pour ce déménagement de qualité il a été fait aussi bien que rapidement. Je recommande particulièrement cette boîte pour leur sympathie et leur professionnalisme. »</p>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div>
+          <p class="review-text">« Très satisfait du service. Devis clair, pas de mauvaise surprise. Je referai appel à eux pour mon prochain déménagement. »</p>
         </div>
 
         <div class="review-card">
           <div class="review-top">
-            <span class="review-author">Jimmy Nowak</span>
-            <span class="review-date">il y a 10 mois</span>
+            <span class="review-author">Isabelle T.</span>
+            <span class="review-date">Octobre 2024</span>
           </div>
-          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="review-text">« Un service irréprochable du début à la fin ! L'équipe de Ldemenage a fait preuve d'un grand professionnalisme, de ponctualité et d'efficacité. Le déménagement s'est déroulé dans des conditions optimales, avec une attention particulière portée à la protection de mes biens. Chaque membre de l'équipe était rapide, organisé et à l'écoute. Je recommande vivement cette société à toute personne recherchant une prestation de qualité, en toute confiance. Un grand merci pour votre sérieux et votre engagement ! »</p>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span></div>
+          <p class="review-text">« Service correct dans l'ensemble. Le déménagement s'est bien passé, quelques cartons un peu bousculés mais rien de cassé. »</p>
         </div>
 
         <div class="review-card">
           <div class="review-top">
-            <span class="review-author">Naomi Quillin</span>
-            <span class="review-date">il y a 4 mois</span>
+            <span class="review-author">Kevin B.</span>
+            <span class="review-date">Septembre 2024</span>
           </div>
-          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-          <p class="review-text">« Travail de qualité. Les affaires ont été transférées dans le plus grand soin. Ponctuelle avec même de la serviabilité. Je recommande ! Merci encore. »</p>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span></div>
+          <p class="review-text">« Équipe sympa et travailleuse. Le déménagement s'est passé sans problème majeur, communication un peu perfectible mais le travail était bien fait. »</p>
         </div>
-
       </div>
     </div>
 
@@ -1166,7 +1122,7 @@
       <div class="footer-contact-items">
         <a href="tel:0745053882">📞 07 45 05 38 82</a>
         <a href="https://wa.me/33745053882" target="_blank">💬 WhatsApp</a>
-        <a href="/cdn-cgi/l/email-protection#e38f878e868d828486d4d4a3848e828a8fcd808c8e">📧 <span class="__cf_email__" data-cfemail="f09c949d959e919795c7c7b0979d91999cde939f9d">[email&#160;protected]</span></a>
+        <a href="mailto:ldmenage77@gmail.com">📧 ldmenage77@gmail.com</a>
         <a href="https://www.instagram.com/ldmenage/" target="_blank">📸 @ldmenage</a>
       </div>
     </div>
@@ -1174,12 +1130,13 @@
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – Dimitri Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
-    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v27</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v23</p>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // SCROLL TO TOP — fiable sur mobile
+<script>
+
+// SCROLL TO TOP — fiable sur mobile
   if (history.scrollRestoration) history.scrollRestoration = 'manual';
   document.addEventListener('DOMContentLoaded', () => { window.scrollTo(0, 0); });
   window.scrollTo(0, 0);
