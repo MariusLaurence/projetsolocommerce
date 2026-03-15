@@ -303,10 +303,10 @@
     .form-bloc { background: var(--black-card); border: 1px solid var(--black-border); border-radius: 6px; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; overflow: hidden; box-sizing: border-box; width: 100%; }
     .form-bloc-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--white); padding-bottom: 10px; border-bottom: 1px solid var(--black-border); }
     .radio-inline { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-    .radio-opt { display: flex; align-items: center; gap: 8px; background: var(--black); border: 1px solid var(--black-border); padding: 8px 12px; border-radius: 2px; cursor: pointer; font-size: .85rem; color: var(--text); transition: border-color .2s; min-width: 0; overflow: hidden; }
+    .radio-opt { display: flex; align-items: center; gap: 10px; background: var(--black); border: 1px solid var(--black-border); padding: 10px 12px; border-radius: 2px; cursor: pointer; font-size: .85rem; color: var(--text); transition: border-color .2s; width: 100%; box-sizing: border-box; }
     .radio-opt:hover { border-color: var(--gold); }
-    .radio-opt input { accent-color: var(--gold); cursor: pointer; flex-shrink: 0; min-width: 16px; }
-    .radio-opt span { white-space: normal; word-break: break-word; flex: 1; }
+    .radio-opt input[type="radio"] { accent-color: var(--gold); cursor: pointer; flex-shrink: 0; width: 18px; height: 18px; }
+    .radio-opt span { flex: 1; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; line-height: 1.4; }
     .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .check-opt { display: flex; align-items: center; gap: 8px; background: var(--black); border: 1px solid var(--black-border); padding: 8px 12px; border-radius: 2px; cursor: pointer; font-size: .85rem; color: var(--text); transition: border-color .2s; }
     .check-opt:hover { border-color: var(--gold); }
@@ -416,9 +416,8 @@
       .photos-grid { grid-template-columns: 1fr; }
       .check-grid { grid-template-columns: 1fr; }
       .radio-inline { flex-direction: column; gap: 8px; }
-      .radio-opt { width: 100%; box-sizing: border-box; padding: 12px 14px; justify-content: flex-start; overflow: hidden; }
-      .radio-opt input { flex-shrink: 0; }
-      .radio-opt span { white-space: normal; word-break: normal; overflow-wrap: break-word; flex: 1; text-align: left; }
+      .radio-opt { width: 100%; box-sizing: border-box; }
+      .radio-opt span { white-space: normal; overflow-wrap: break-word; }
       .check-opt { width: 100%; padding: 12px 14px; }
       .devis-banner { flex-direction: column; text-align: center; }
       .devis-banner-icon { font-size: 1.8rem; }
