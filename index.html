@@ -124,10 +124,12 @@
       border-radius: 4px; border: 1px solid rgba(201,168,76,.3);
       object-fit: contain; flex-shrink: 0; display: block; background: transparent;
     }
-    body.light .nav-logo-badge { filter: invert(1); }
+    body.light .nav-logo-badge { filter: none; }
 
-    .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 3px; color: var(--white); }
-    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+    /* ─── LANG SWITCH supprimé ─── */
+    .lang-switch { display: none !important; }
+    .nav-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .mobile-controls { display: none !important; }
     .nav-links a { text-decoration: none; color: var(--silver); font-size: .78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; transition: color .2s; position: relative; }
     .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--white); transform: scaleX(0); transition: transform .2s; }
     .nav-links a:hover { color: var(--white); }
@@ -136,21 +138,8 @@
     .nav-cta:hover { background: var(--silver-light) !important; }
     .nav-cta::after { display: none !important; }
 
-    /* ─── LANG & THEME SWITCHERS ─── */
-    .nav-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-
-    .lang-switch {
-      display: flex; align-items: center;
-      background: rgba(255,255,255,.06); border: 1px solid var(--black-border);
-      border-radius: 2px; overflow: hidden;
-    }
-    .lang-btn {
-      padding: 6px 10px; background: none; border: none; cursor: pointer;
-      font-family: 'Barlow', sans-serif; font-size: .72rem; font-weight: 700;
-      letter-spacing: 1px; color: var(--silver-dark); transition: background .2s, color .2s;
-    }
-    .lang-btn.active { background: var(--white); color: var(--black); }
-    .lang-btn:hover:not(.active) { color: var(--white); }
+    .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 3px; color: var(--white); }
+    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
 
     /* Theme toggle demi-cercle style Chrome */
     .theme-toggle {
@@ -425,12 +414,15 @@
       .counter-item:nth-child(even) { border-right: none; }
       .photos-grid { grid-template-columns: 1fr; }
       .check-grid { grid-template-columns: 1fr; }
-      .radio-inline { flex-direction: column; gap: 6px; }
-      .radio-opt { width: 100%; }
-      .check-opt { width: 100%; }
+      .radio-inline { flex-direction: column; gap: 8px; }
+      .radio-opt { width: 100%; justify-content: flex-start; padding: 12px 14px; }
+      .radio-opt span { text-align: left; }
+      .check-opt { width: 100%; padding: 12px 14px; }
       .devis-banner { flex-direction: column; text-align: center; }
       .devis-banner-icon { font-size: 1.8rem; }
       .form-bloc { padding: 16px 14px; }
+      .form-bloc-title { font-size: .88rem; }
+      .contact-grid { gap: 30px; }
     }
   </style>
 </head>
@@ -481,22 +473,12 @@
     <li><a href="#contact" class="nav-cta" data-fr="Devis gratuit" data-en="Free Quote">Devis gratuit</a></li>
   </ul>
   <div class="nav-controls">
-    <div class="lang-switch">
-      <button class="lang-btn active" id="btnFR" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
-    </div>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-controls">
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLang('fr');document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">FR</button>
-      <button class="lang-btn" onclick="setLang('en');document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">EN</button>
-    </div>
-  </div>
   <a href="#services" class="m-link" data-fr="Services" data-en="Services">Services</a>
   <a href="#zone" class="m-link" data-fr="Zone d'intervention" data-en="Coverage area">Zone d'intervention</a>
   <a href="#realisations" class="m-link" data-fr="Photos" data-en="Photos">Photos</a>
@@ -595,7 +577,7 @@
       <strong>Aucun tarif fixe — tout est sur devis</strong>
       <span>Chaque déménagement est unique. Contactez-nous pour recevoir un devis personnalisé, <em>100% gratuit et sans engagement</em>.</span>
     </div>
-    <a href="https://wa.me/33745053882" class="btn-primary" target="_blank" style="flex-shrink:0;">Devis gratuit →</a>
+    <a href="#contact" class="btn-primary" style="flex-shrink:0;">Devis gratuit →</a>
   </div>
   <div class="services-grid">
     <div class="service-card reveal">
