@@ -113,7 +113,7 @@
 
     /* ─── PROMO BAR ─── */
     .promo-bar { position: fixed; top: 68px; left: 0; right: 0; z-index: 899; background: var(--gold); padding: 9px 5vw; display: flex; align-items: center; justify-content: center; }
-    @media (max-width: 900px) { .promo-bar { top: 100px; } }
+    @media (max-width: 900px) { .promo-bar { display: none; } }
     .promo-bar p { color: var(--black); font-weight: 700; font-size: .85rem; letter-spacing: .5px; text-align: center; }
     .promo-close { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 1.1rem; color: rgba(0,0,0,.5); transition: color .2s; }
     .promo-close:hover { color: var(--black); }
@@ -122,6 +122,31 @@
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; background: var(--nav-bg); backdrop-filter: blur(14px); border-bottom: 1px solid var(--black-border); transition: box-shadow .3s; overflow: visible; }
     nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.8); }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+
+    /* Citation mobile — barre séparée sous la nav, visible seulement mobile */
+    .citation-bar-mobile {
+      display: none;
+    }
+    @media (max-width: 900px) {
+      .citation-bar-mobile {
+        display: block;
+        position: fixed;
+        top: 68px;
+        left: 0; right: 0;
+        z-index: 898;
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--black-border);
+        padding: 8px 16px;
+        text-align: center;
+        font-size: .72rem;
+        font-style: italic;
+        font-weight: 800;
+        color: #1A1612;
+        line-height: 1.4;
+      }
+    }
+    #citationTextMobile { transition: opacity .5s ease; display: inline; }
+    #citationTextMobile.fade-out { opacity: 0; }
 
     /* Logo RECTANGLE */
     .nav-logo-badge {
@@ -570,10 +595,6 @@
   <div class="nav-citation" id="navCitation">
     <span id="citationText"></span>
   </div>
-  <!-- Citation mobile dans la nav -->
-  <div class="nav-citation-mobile-inner">
-    <span id="citationTextMobile"></span>
-  </div>
   <ul class="nav-links">
     <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
     <li><a href="#zone" data-fr="Zone" data-en="Coverage">Zone</a></li>
@@ -585,6 +606,11 @@
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- CITATION MOBILE BAR -->
+<div class="citation-bar-mobile">
+  <span id="citationTextMobile"></span>
+</div>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
@@ -1141,7 +1167,7 @@
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – Dimitri Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
-    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v26</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v27</p>
   </div>
 </footer>
 
