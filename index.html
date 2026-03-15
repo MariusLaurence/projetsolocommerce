@@ -387,7 +387,49 @@
     .modal-submit:hover { background: var(--silver-light); }
     .modal-note { font-size: .72rem; color: var(--text-muted); text-align: center; margin-top: 10px; }
 
-    /* ─── PHOTO PREVIEW ─── */
+    /* ─── CITATION NAV ─── */
+    .nav-citation {
+      font-size: .75rem; font-style: italic; color: var(--white);
+      font-weight: 700; letter-spacing: .5px; flex: 1; text-align: center; padding: 0 20px;
+      overflow: hidden; white-space: nowrap;
+    }
+    #citationText { display: inline-block; transition: opacity .6s ease, transform .6s ease; }
+    #citationText.fade-out { opacity: 0; transform: translateY(-6px); }
+    #citationText.fade-in { opacity: 1; transform: translateY(0); }
+    @media (max-width: 900px) { .nav-citation { display: none; } }
+
+    /* ─── BARRE DE PROGRESSION ─── */
+    .form-progress-wrap { margin-bottom: 8px; }
+    .form-progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .form-progress-label { font-size: .78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--silver-dark); }
+    .form-progress-pct { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: var(--gold); letter-spacing: 1px; }
+    .form-progress-bar { height: 4px; background: var(--black-border); border-radius: 2px; overflow: hidden; }
+    .form-progress-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 2px; width: 0%; transition: width .4s ease; }
+    .form-progress-steps { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+    .form-step-dot { flex: 1; min-width: 30px; height: 3px; border-radius: 2px; background: var(--black-border); transition: background .3s; }
+    .form-step-dot.done { background: var(--gold); }
+    .form-step-dot.active { background: var(--gold-light); }
+
+    /* ─── AVIS CLIENTS ─── */
+    .reviews-section { display: flex; flex-direction: column; gap: 12px; }
+    .reviews-header { margin-bottom: 6px; }
+    .reviews-header h4 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 4px; }
+    .reviews-avg { display: flex; align-items: center; gap: 10px; }
+    .reviews-avg-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--white); line-height: 1; }
+    .reviews-stars-avg { display: flex; gap: 2px; }
+    .star { color: var(--gold); font-size: 1rem; }
+    .star.empty { color: var(--black-border); }
+    .reviews-count { font-size: .78rem; color: var(--text-muted); }
+    .review-card { background: var(--black-card); border: 1px solid var(--black-border); border-radius: 6px; padding: 16px 18px; transition: border-color .2s; }
+    .review-card:hover { border-color: rgba(201,168,76,.2); }
+    .review-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+    .review-author { font-weight: 700; font-size: .88rem; color: var(--white); }
+    .review-date { font-size: .72rem; color: var(--text-muted); }
+    .review-stars { display: flex; gap: 2px; margin-bottom: 6px; }
+    .review-text { font-size: .85rem; color: var(--text-muted); line-height: 1.6; font-style: italic; }
+    body.light .review-card { background: #fff; border-color: #E0DAD0; }
+    body.light .review-author { color: #1A1612; }
+    body.light .review-text { color: #8A7A6A; }
     #photoDropZone:hover { border-color: var(--gold) !important; }
     .photo-thumb {
       position: relative; border-radius: 4px; overflow: hidden;
@@ -490,11 +532,13 @@
   <a href="#" class="nav-logo">
     <img src="logo-ld.png" class="nav-logo-badge" alt="Logo LDménage" />
   </a>
+  <div class="nav-citation" id="navCitation">
+    <span id="citationText"></span>
+  </div>
   <ul class="nav-links">
     <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
     <li><a href="#zone" data-fr="Zone" data-en="Coverage">Zone</a></li>
     <li><a href="#realisations" data-fr="Photos" data-en="Photos">Photos</a></li>
-    <li><a href="#reseaux" data-fr="Instagram" data-en="Instagram">Instagram</a></li>
     <li><a href="#contact" class="nav-cta" data-fr="Devis gratuit" data-en="Free Quote">Devis gratuit</a></li>
   </ul>
   <div class="nav-controls">
@@ -507,7 +551,6 @@
   <a href="#services" class="m-link" data-fr="Services" data-en="Services">Services</a>
   <a href="#zone" class="m-link" data-fr="Zone d'intervention" data-en="Coverage area">Zone d'intervention</a>
   <a href="#realisations" class="m-link" data-fr="Photos" data-en="Photos">Photos</a>
-  <a href="#reseaux" class="m-link" data-fr="Instagram" data-en="Instagram">Instagram</a>
   <a href="#contact" class="m-cta m-link" data-fr="📦 Devis gratuit" data-en="📦 Free Quote">📦 Devis gratuit</a>
 </div>
 
@@ -740,18 +783,108 @@
           <p class="contact-note">Réponse sous 24h</p>
         </div>
       </div>
-      <div class="zone-card reveal">
+      <div class="zone-card reveal" style="margin-bottom:24px;">
         <h4>📍 Zone principale</h4>
         <p>Île-de-France · France entière · Suisse · Belgique · Luxembourg<br/><br/>Devis gratuit quelque soit la distance.</p>
       </div>
-    </div>
 
+      <!-- AVIS CLIENTS -->
+
+
+      <!-- AVIS CLIENTS -->
+      <div class="reviews-section reveal">
+        <div class="reviews-header">
+          <h4>⭐ Avis clients</h4>
+          <div class="reviews-avg">
+            <div class="reviews-avg-num">4.2</div>
+            <div>
+              <div class="reviews-stars-avg">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span>
+              </div>
+              <div class="reviews-count">6 avis vérifiés</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <span class="review-author">Sophie M.</span>
+            <span class="review-date">Février 2025</span>
+          </div>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="review-text">« Équipe très professionnelle, ponctuelle et soigneuse. Mes meubles sont arrivés en parfait état. Je recommande sans hésiter ! »</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <span class="review-author">Thomas R.</span>
+            <span class="review-date">Janvier 2025</span>
+          </div>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+          <p class="review-text">« Super service, rapide et efficace. Dimitri a été très réactif pour le devis. Déménagement fait en moins de temps que prévu. »</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <span class="review-author">Nadia K.</span>
+            <span class="review-date">Décembre 2024</span>
+          </div>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div>
+          <p class="review-text">« Bon rapport qualité/prix. L'équipe est sérieuse, ils ont bien protégé mes affaires. Juste un léger retard au départ mais rien de grave. »</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <span class="review-author">Marc D.</span>
+            <span class="review-date">Novembre 2024</span>
+          </div>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span></div>
+          <p class="review-text">« Très satisfait du service. Devis clair, pas de mauvaise surprise. Je referai appel à eux pour mon prochain déménagement. »</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <span class="review-author">Isabelle T.</span>
+            <span class="review-date">Octobre 2024</span>
+          </div>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span></div>
+          <p class="review-text">« Service correct dans l'ensemble. Le déménagement s'est bien passé, quelques cartons un peu bousculés mais rien de cassé. »</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-top">
+            <span class="review-author">Kevin B.</span>
+            <span class="review-date">Septembre 2024</span>
+          </div>
+          <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span></div>
+          <p class="review-text">« Équipe sympa et travailleuse. Le déménagement s'est passé sans problème majeur, communication un peu perfectible mais le travail était bien fait. »</p>
+        </div>
+      </div>
+    </div>
 
     <form class="contact-form-side reveal" id="devisForm" action="https://formspree.io/f/meerlvrq" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="Nouvelle demande de devis LDménage" />
       <input type="text" name="_gotcha" style="display:none" />
       <h3 data-fr="Demande de devis détaillée" data-en="Detailed quote request">Demande de devis détaillée</h3>
       <p data-fr="Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement." data-en="The more details you give, the faster and more accurate the quote. Everything is free, no commitment.">Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement.</p>
+
+      <!-- BARRE DE PROGRESSION -->
+      <div class="form-progress-wrap">
+        <div class="form-progress-header">
+          <span class="form-progress-label">Progression du formulaire</span>
+          <span class="form-progress-pct" id="progressPct">0%</span>
+        </div>
+        <div class="form-progress-bar"><div class="form-progress-fill" id="progressFill"></div></div>
+        <div class="form-progress-steps" id="progressSteps">
+          <div class="form-step-dot" data-step="0"></div>
+          <div class="form-step-dot" data-step="1"></div>
+          <div class="form-step-dot" data-step="2"></div>
+          <div class="form-step-dot" data-step="3"></div>
+          <div class="form-step-dot" data-step="4"></div>
+          <div class="form-step-dot" data-step="5"></div>
+          <div class="form-step-dot" data-step="6"></div>
+        </div>
+      </div>
 
       <div class="form-bloc">
         <div class="form-bloc-title" data-fr="👤 Vos coordonnées" data-en="👤 Your details">👤 Vos coordonnées</div>
@@ -1173,7 +1306,56 @@
     qa('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent===lang.toUpperCase()));
   }
 
-  // GESTION PHOTOS
+  // CITATIONS NAV ROTATIVES
+  const citations = [
+    '🚛 Rapide, efficace et rigoureux — votre déménagement en de bonnes mains.',
+    '📦 Vos biens protégés à chaque étape du transport.',
+    '⚡ Sérieux et efficace — on s\'occupe de tout, vous n\'avez qu\'à emménager.',
+    '🛡️ Chaque meuble emballé avec soin, chaque carton livré intact.',
+    '🤝 Un déménagement réussi commence par une équipe de confiance.',
+    '✅ Ponctuel, soigneux et professionnel — c\'est notre engagement.',
+  ];
+  let citIdx = 0;
+  const citEl = document.getElementById('citationText');
+  function rotateCitation() {
+    citEl.classList.add('fade-out');
+    setTimeout(() => {
+      citIdx = (citIdx + 1) % citations.length;
+      citEl.textContent = citations[citIdx];
+      citEl.classList.remove('fade-out');
+      citEl.classList.add('fade-in');
+    }, 600);
+  }
+  if (citEl) {
+    citEl.textContent = citations[0];
+    citEl.classList.add('fade-in');
+    setInterval(rotateCitation, 4000);
+  }
+  function updateProgress() {
+    const blocs = document.querySelectorAll('#devisForm .form-bloc');
+    let filled = 0;
+    blocs.forEach((bloc, i) => {
+      const inputs = bloc.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"], select, textarea');
+      const radios = bloc.querySelectorAll('input[type="radio"]');
+      const checks = bloc.querySelectorAll('input[type="checkbox"]');
+      let blocFilled = false;
+      inputs.forEach(inp => { if (inp.value.trim() !== '' && inp.value !== '') blocFilled = true; });
+      if (radios.length > 0) {
+        const names = [...new Set([...radios].map(r => r.name))];
+        names.forEach(n => { if (bloc.querySelector(`input[name="${n}"]:checked`)) blocFilled = true; });
+      }
+      checks.forEach(c => { if (c.checked) blocFilled = true; });
+      if (blocFilled) filled++;
+      const dot = document.querySelector(`.form-step-dot[data-step="${i}"]`);
+      if (dot) { dot.classList.toggle('done', blocFilled); dot.classList.toggle('active', !blocFilled && i === filled); }
+    });
+    const pct = Math.round((filled / blocs.length) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressPct').textContent = pct + '%';
+  }
+  document.getElementById('devisForm').addEventListener('input', updateProgress);
+  document.getElementById('devisForm').addEventListener('change', updateProgress);
+  updateProgress();
   let selectedFiles = [];
 
   function handlePhotos(input) {
