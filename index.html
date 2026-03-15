@@ -387,6 +387,30 @@
     .modal-submit:hover { background: var(--silver-light); }
     .modal-note { font-size: .72rem; color: var(--text-muted); text-align: center; margin-top: 10px; }
 
+    /* ─── PHOTO PREVIEW ─── */
+    #photoDropZone:hover { border-color: var(--gold) !important; }
+    .photo-thumb {
+      position: relative; border-radius: 4px; overflow: hidden;
+      aspect-ratio: 1; background: var(--black-border);
+      border: 1px solid var(--black-border);
+    }
+    .photo-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-thumb-del {
+      position: absolute; top: 4px; right: 4px;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(0,0,0,.75); color: #fff; border: none;
+      font-size: .85rem; cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+      transition: background .2s; line-height: 1;
+    }
+    .photo-thumb-del:hover { background: #c0392b; }
+    .photo-thumb-name {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(0,0,0,.6); color: #fff;
+      font-size: .6rem; padding: 2px 4px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
     /* ─── REVEAL ─── */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -769,12 +793,12 @@
         <div class="form-bloc-title" data-fr="📍 Le trajet" data-en="📍 The route">📍 Le trajet</div>
         <div class="form-row">
           <div class="form-group">
-            <label data-fr="Ville de départ *" data-en="City of departure *">Ville de départ *</label>
-            <input type="text" name="ville_depart" placeholder="Ex : Paris 75011" required />
+            <label data-fr="Adresse complète de départ *" data-en="Full departure address *">Adresse complète de départ *</label>
+            <input type="text" name="adresse_depart" placeholder="N° rue, ville, code postal" required />
           </div>
           <div class="form-group">
-            <label data-fr="Ville d'arrivée *" data-en="City of arrival *">Ville d'arrivée *</label>
-            <input type="text" name="ville_arrivee" placeholder="Ex : Lyon 69001" required />
+            <label data-fr="Adresse complète d'arrivée *" data-en="Full arrival address *">Adresse complète d'arrivée *</label>
+            <input type="text" name="adresse_arrivee" placeholder="N° rue, ville, code postal" required />
           </div>
         </div>
       </div>
@@ -900,8 +924,20 @@
         </div>
         <div class="form-group">
           <label data-fr="📎 Ajouter des photos (optionnel)" data-en="📎 Add photos (optional)">📎 Ajouter des photos (optionnel)</label>
-          <input type="file" name="photos" multiple accept="image/*" style="background:var(--black-card);border:1px solid var(--black-border);color:var(--text);padding:10px 14px;font-family:'Barlow',sans-serif;font-size:.88rem;cursor:pointer;width:100%;" />
-          <span data-fr="Vous pouvez sélectionner plusieurs photos de votre logement" data-en="You can select multiple photos of your home" style="font-size:.75rem;color:var(--text-muted);margin-top:4px;">Vous pouvez sélectionner plusieurs photos de votre logement</span>
+
+          <!-- Zone d'upload cliquable -->
+          <div id="photoDropZone" onclick="document.getElementById('photoInput').click()" style="border:2px dashed var(--black-border);border-radius:6px;padding:28px 20px;text-align:center;cursor:pointer;transition:border-color .2s;background:var(--black);">
+            <div style="font-size:2rem;margin-bottom:8px;">📷</div>
+            <p style="font-size:.88rem;color:var(--text-muted);margin:0;" data-fr="Cliquez pour ajouter des photos" data-en="Click to add photos">Cliquez pour ajouter des photos</p>
+            <p style="font-size:.75rem;color:var(--silver-dark);margin-top:4px;" data-fr="JPG, PNG — plusieurs photos possibles" data-en="JPG, PNG — multiple photos allowed">JPG, PNG — plusieurs photos possibles</p>
+          </div>
+          <input type="file" id="photoInput" name="photos" multiple accept="image/*" style="display:none;" onchange="handlePhotos(this)" />
+
+          <!-- Grille de prévisualisation -->
+          <div id="photoPreview" style="display:none;margin-top:12px;">
+            <div id="photoGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:8px;"></div>
+            <button type="button" onclick="clearAllPhotos()" style="margin-top:10px;background:none;border:1px solid var(--black-border);color:var(--text-muted);padding:6px 14px;border-radius:2px;cursor:pointer;font-size:.78rem;font-family:'Barlow',sans-serif;letter-spacing:1px;transition:border-color .2s;width:100%;" data-fr="🗑️ Supprimer toutes les photos" data-en="🗑️ Remove all photos">🗑️ Supprimer toutes les photos</button>
+          </div>
         </div>
       </div>
 
@@ -1149,6 +1185,65 @@
 
     // Lang button states
     qa('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.textContent===lang.toUpperCase()));
+  }
+
+  // GESTION PHOTOS
+  let selectedFiles = [];
+
+  function handlePhotos(input) {
+    const newFiles = Array.from(input.files);
+    newFiles.forEach(f => {
+      if (!selectedFiles.find(x => x.name === f.name && x.size === f.size)) {
+        selectedFiles.push(f);
+      }
+    });
+    renderPhotoGrid();
+    input.value = '';
+  }
+
+  function renderPhotoGrid() {
+    const grid = document.getElementById('photoGrid');
+    const preview = document.getElementById('photoPreview');
+    const drop = document.getElementById('photoDropZone');
+    grid.innerHTML = '';
+    if (selectedFiles.length === 0) {
+      preview.style.display = 'none';
+      drop.style.display = 'block';
+      return;
+    }
+    preview.style.display = 'block';
+    drop.style.display = 'block';
+    selectedFiles.forEach((file, i) => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        const div = document.createElement('div');
+        div.className = 'photo-thumb';
+        div.innerHTML = `
+          <img src="${e.target.result}" alt="${file.name}" />
+          <button type="button" class="photo-thumb-del" onclick="removePhoto(${i})">✕</button>
+          <div class="photo-thumb-name">${file.name}</div>
+        `;
+        grid.appendChild(div);
+      };
+      reader.readAsDataURL(file);
+    });
+    syncFilesToInput();
+  }
+
+  function removePhoto(index) {
+    selectedFiles.splice(index, 1);
+    renderPhotoGrid();
+  }
+
+  function clearAllPhotos() {
+    selectedFiles = [];
+    renderPhotoGrid();
+  }
+
+  function syncFilesToInput() {
+    const dt = new DataTransfer();
+    selectedFiles.forEach(f => dt.items.add(f));
+    document.getElementById('photoInput').files = dt.files;
   }
 
   setLang(currentLang);
