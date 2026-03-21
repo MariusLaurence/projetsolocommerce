@@ -1764,46 +1764,6 @@
   function calPrev() { calDate.setMonth(calDate.getMonth() - 1); renderCal(); }
   function calNext() { calDate.setMonth(calDate.getMonth() + 1); renderCal(); }
 
-  // ══ POPUP DÉTAIL JOUR (mobile) ══
-  function openDayPopup(key, dateLabel, slots) {
-    document.getElementById('popup-date').textContent = dateLabel;
-    const container = document.getElementById('popup-slots');
-    container.innerHTML = '';
-    slots.forEach(s => {
-      const div = document.createElement('div');
-      div.style.cssText = `display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-weight:700;font-size:.9rem;`;
-      if (s.type === 'dispo') {
-        div.style.background = 'rgba(37,211,102,.12)';
-        div.style.border = '1px solid rgba(37,211,102,.25)';
-        div.style.color = '#25D366';
-        div.innerHTML = '<span style="font-size:1rem;">🟢</span><span>DISPONIBLE — ' + s.h + '</span>';
-      } else {
-        div.style.background = 'rgba(229,57,53,.12)';
-        div.style.border = '1px solid rgba(229,57,53,.25)';
-        div.style.color = '#E53935';
-        div.innerHTML = '<span style="font-size:1rem;">🔴</span><span>RÉSERVÉ — ' + s.h + '</span>';
-      }
-      container.appendChild(div);
-    });
-    const overlay = document.getElementById('day-popup-overlay');
-    overlay.style.display = 'flex';
-    setTimeout(() => overlay.style.opacity = '1', 10);
-  }
-
-  function closeDayPopup() {
-    document.getElementById('day-popup-overlay').style.display = 'none';
-  }
-
-  // Afficher le hint mobile
-  if (window.innerWidth <= 768) {
-    const hint = document.getElementById('cal-mobile-hint');
-    if (hint) hint.style.display = 'block';
-  }
-  window.addEventListener('resize', () => {
-    const hint = document.getElementById('cal-mobile-hint');
-    if (hint) hint.style.display = window.innerWidth <= 768 ? 'block' : 'none';
-  });
-
   renderCal();
   window.addEventListener('resize', renderCal);
 
