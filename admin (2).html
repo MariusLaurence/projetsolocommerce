@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Disponibilités LDménage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --black: #0E0E0E;
+      --card: #141414;
+      --border: #222;
+      --text: #CCC;
+      --muted: #666;
+      --white: #F5F5F5;
+      --green: #25D366;
+      --red: #E53935;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--black); color: var(--text); font-family: 'Barlow', sans-serif; min-height: 100vh; }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--card); border-bottom: 1px solid var(--border);
+      padding: 16px 5vw; display: flex; align-items: center;
+      justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 3px; color: var(--white); }
+    .header-sub { font-size: .75rem; color: var(--muted); margin-top: 2px; }
+    .btn-save {
+      background: var(--gold); color: #000; border: none; padding: 10px 24px;
+      border-radius: 4px; font-family: 'Barlow', sans-serif; font-weight: 800;
+      font-size: .88rem; letter-spacing: 1px; cursor: pointer; transition: background .2s;
+    }
+    .btn-save:hover { background: #D4AC5A; }
+    .btn-save.saved { background: var(--green); color: #fff; }
+
+    /* ── NAV CAL ── */
+    .cal-nav-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 5vw 12px; max-width: 900px; margin: 0 auto;
+    }
+    .cal-nav-btn {
+      background: var(--card); border: 1px solid var(--border); color: var(--white);
+      padding: 8px 20px; border-radius: 4px; cursor: pointer; font-size: 1.1rem;
+      transition: background .2s;
+    }
+    .cal-nav-btn:hover { background: #1F1F1F; }
+    .cal-month-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--white); letter-spacing: 4px; }
+
+    /* ── GRILLE ── */
+    .cal-container { max-width: 900px; margin: 0 auto; padding: 0 5vw 40px; }
+    .cal-head {
+      display: grid; grid-template-columns: repeat(7,1fr);
+      gap: 3px; margin-bottom: 3px;
+    }
+    .cal-head div {
+      text-align: center; font-size: .68rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); padding: 8px 0;
+    }
+    .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 3px; }
+
+    /* ── CELLULE ── */
+    .day-cell {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 6px; padding: 8px 6px; min-height: 100px;
+      display: flex; flex-direction: column; gap: 4px;
+      position: relative; cursor: pointer; transition: border-color .2s;
+    }
+    .day-cell:hover { border-color: var(--gold); }
+    .day-cell.empty { background: transparent; border-color: transparent; cursor: default; }
+    .day-cell.past { opacity: .3; pointer-events: none; }
+    .day-cell.today { border-color: var(--gold); }
+    .day-num {
+      font-size: .82rem; font-weight: 700; color: var(--white);
+      width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; flex-shrink: 0;
+    }
+    .day-cell.today .day-num { background: var(--gold); color: #000; }
+
+    /* ── CRÉNEAUX ── */
+    .slot-list { display: flex; flex-direction: column; gap: 3px; flex: 1; }
+    .slot-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 3px 6px; border-radius: 3px; font-size: .65rem; font-weight: 700;
+      letter-spacing: .5px; text-transform: uppercase; cursor: pointer;
+    }
+    .slot-item.dispo { background: rgba(37,211,102,.15); color: var(--green); border: 1px solid rgba(37,211,102,.25); }
+    .slot-item.res { background: rgba(229,57,53,.15); color: var(--red); border: 1px solid rgba(229,57,53,.25); }
+    .slot-del { background: none; border: none; color: currentColor; cursor: pointer; opacity: .6; font-size: .8rem; padding: 0 2px; transition: opacity .2s; }
+    .slot-del:hover { opacity: 1; }
+    .add-slot-btn {
+      background: rgba(201,168,76,.1); border: 1px dashed rgba(201,168,76,.3);
+      color: var(--gold); font-size: .6rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 3px; border-radius: 3px;
+      cursor: pointer; width: 100%; text-align: center; transition: background .2s;
+    }
+    .add-slot-btn:hover { background: rgba(201,168,76,.2); }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.85);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 500; padding: 20px; opacity: 0; visibility: hidden;
+      transition: opacity .25s, visibility .25s;
+    }
+    .modal-overlay.open { opacity: 1; visibility: visible; }
+    .modal {
+      background: var(--card); border: 1px solid var(--border);
+      border-top: 2px solid var(--gold); border-radius: 8px;
+      padding: 28px; max-width: 400px; width: 100%;
+      transform: translateY(12px); transition: transform .25s;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 2px; color: var(--white); margin-bottom: 6px; }
+    .modal-date { font-size: .78rem; color: var(--muted); margin-bottom: 20px; }
+    .modal-label { font-size: .7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; display: block; }
+    .modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .modal-input {
+      background: var(--black); border: 1px solid var(--border); color: var(--text);
+      padding: 10px 12px; font-family: 'Barlow', sans-serif; font-size: .88rem;
+      border-radius: 4px; outline: none; width: 100%; transition: border-color .2s;
+    }
+    .modal-input:focus { border-color: var(--gold); }
+    .modal-type { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+    .type-btn {
+      padding: 10px; border-radius: 4px; border: 2px solid transparent;
+      font-family: 'Barlow', sans-serif; font-size: .82rem; font-weight: 700;
+      cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all .2s;
+    }
+    .type-btn.dispo { background: rgba(37,211,102,.1); color: var(--green); border-color: rgba(37,211,102,.2); }
+    .type-btn.dispo.active { background: rgba(37,211,102,.25); border-color: var(--green); }
+    .type-btn.res { background: rgba(229,57,53,.1); color: var(--red); border-color: rgba(229,57,53,.2); }
+    .type-btn.res.active { background: rgba(229,57,53,.25); border-color: var(--red); }
+    .modal-btns { display: flex; gap: 10px; }
+    .btn-confirm {
+      flex: 1; background: var(--gold); color: #000; border: none;
+      padding: 11px; border-radius: 4px; font-family: 'Barlow', sans-serif;
+      font-weight: 800; font-size: .88rem; letter-spacing: 1px; cursor: pointer; transition: background .2s;
+    }
+    .btn-confirm:hover { background: #D4AC5A; }
+    .btn-cancel {
+      background: var(--black); color: var(--muted); border: 1px solid var(--border);
+      padding: 11px 18px; border-radius: 4px; font-family: 'Barlow', sans-serif;
+      font-size: .88rem; cursor: pointer; transition: background .2s;
+    }
+    .btn-cancel:hover { background: #1A1A1A; }
+
+    /* ── INFOS ── */
+    .info-bar {
+      background: rgba(201,168,76,.06); border: 1px solid rgba(201,168,76,.2);
+      border-radius: 6px; padding: 14px 20px; margin: 0 5vw 20px;
+      max-width: 900px; margin-left: auto; margin-right: auto;
+      font-size: .82rem; color: var(--muted); line-height: 1.6;
+    }
+    .info-bar strong { color: var(--gold); }
+
+    /* ── LÉGENDE ── */
+    .legend {
+      display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
+      padding: 0 5vw 16px; max-width: 900px; margin: 0 auto; font-size: .8rem;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+    @media (max-width: 600px) {
+      .cal-grid { grid-template-columns: repeat(7,1fr); }
+      .day-cell { min-height: 70px; padding: 5px 3px; }
+      .day-num { font-size: .72rem; width: 20px; height: 20px; }
+      .slot-item { font-size: .55rem; padding: 2px 4px; }
+      .add-slot-btn { font-size: .52rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="header-title">⚙️ Admin — Disponibilités</div>
+    <div class="header-sub">LDménage · Cliquez sur un jour pour ajouter un créneau</div>
+  </div>
+  <button class="btn-save" id="btnSave" onclick="saveAll()">💾 Sauvegarder</button>
+</div>
+
+<!-- INFO -->
+<div class="info-bar" style="margin-top:16px;">
+  💡 <strong>Par défaut</strong>, chaque jour est automatiquement <strong style="color:var(--green);">DISPO 7h-20h</strong>.<br>
+  Cliquez sur un jour pour ajouter un créneau <strong style="color:var(--red);">RES</strong> (ex: 10h-14h occupé) — les créneaux restants du jour passent automatiquement en <strong style="color:var(--green);">DISPO</strong>.<br>
+  <strong>Exemple :</strong> Si vous ajoutez RES 10h-14h → le site affichera DISPO 7h-10h + RES 10h-14h + DISPO 14h-20h.
+</div>
+
+<!-- LÉGENDE -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--green);"></div><span>DISPO (défaut automatique)</span></div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--red);"></div><span>RES (à ajouter manuellement)</span></div>
+  <div class="legend-item" style="margin-left:auto;font-size:.75rem;color:var(--muted);">Les modifications sont sauvegardées localement et visibles sur le site.</div>
+</div>
+
+<!-- NAV -->
+<div class="cal-nav-bar">
+  <button class="cal-nav-btn" onclick="calPrev()">‹ Mois préc.</button>
+  <div class="cal-month-title" id="calTitle"></div>
+  <button class="cal-nav-btn" onclick="calNext()">Mois suiv. ›</button>
+</div>
+
+<!-- CALENDRIER -->
+<div class="cal-container">
+  <div class="cal-head">
+    <div>Lun</div><div>Mar</div><div>Mer</div>
+    <div>Jeu</div><div>Ven</div><div>Sam</div><div>Dim</div>
+  </div>
+  <div class="cal-grid" id="calGrid"></div>
+</div>
+
+<!-- MODAL AJOUT CRÉNEAU -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h3>Ajouter un créneau</h3>
+    <div class="modal-date" id="modalDate"></div>
+    <span class="modal-label">Type de créneau</span>
+    <div class="modal-type">
+      <button class="type-btn dispo active" id="btnDispo" onclick="setType('dispo')">🟢 Disponible</button>
+      <button class="type-btn res" id="btnRes" onclick="setType('res')">🔴 Réservé</button>
+    </div>
+    <span class="modal-label">Horaires</span>
+    <div class="modal-row">
+      <div>
+        <span class="modal-label">De</span>
+        <input type="time" class="modal-input" id="inputStart" value="07:00" />
+      </div>
+      <div>
+        <span class="modal-label">À</span>
+        <input type="time" class="modal-input" id="inputEnd" value="20:00" />
+      </div>
+    </div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal()">Annuler</button>
+      <button class="btn-confirm" onclick="confirmSlot()">✅ Ajouter</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ══ DONNÉES ══
+  let calData = {};
+  try { calData = JSON.parse(localStorage.getItem('ldm_cal') || '{}'); } catch(e) {}
+
+  let currentDate = new Date();
+  let modalKey = null;
+  let modalType = 'dispo';
+
+  // ══ UTILS ══
+  function dateKey(d) {
+    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  }
+  // "07:30" -> "7h30" | "07:00" -> "7h"
+  function fmt(t) {
+    if (!t) return '';
+    const [hh, mm] = t.split(':').map(Number);
+    return hh + 'h' + (mm ? String(mm).padStart(2,'0') : '');
+  }
+
+  // Calcule DISPO automatiques + RES manuels pour un jour
+  function computeSlots(key) {
+    const res = (calData[key] || [])
+      .filter(s => s && s.start && s.end)
+      .sort((a, b) => a.start.localeCompare(b.start));
+
+    if (res.length === 0) {
+      return [{ type:'dispo', label:'DISPO', h:'7h-20h', start:'07:00', end:'20:00' }];
+    }
+
+    const result = [];
+    let cur = '07:00';
+    for (const s of res) {
+      if (s.start > cur) {
+        result.push({ type:'dispo', label:'DISPO', h: fmt(cur)+'-'+fmt(s.start), start:cur, end:s.start });
+      }
+      result.push({ type:'res', label:'RES', h: fmt(s.start)+'-'+fmt(s.end), start:s.start, end:s.end });
+      cur = s.end;
+    }
+    if (cur < '20:00') {
+      result.push({ type:'dispo', label:'DISPO', h: fmt(cur)+'-20h', start:cur, end:'20:00' });
+    }
+    return result;
+  }
+
+  // ══ RENDU CALENDRIER ══
+  function renderCal() {
+    const grid = document.getElementById('calGrid');
+    const title = document.getElementById('calTitle');
+    const y = currentDate.getFullYear();
+    const m = currentDate.getMonth();
+    const today = new Date();
+    const months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+    title.textContent = months[m] + ' ' + y;
+    const firstDay = new Date(y, m, 1);
+    const lastDay = new Date(y, m+1, 0);
+    let startDow = firstDay.getDay() - 1; if (startDow < 0) startDow = 6;
+    grid.innerHTML = '';
+
+    // Cellules vides
+    for (let i = 0; i < startDow; i++) {
+      const e = document.createElement('div'); e.className = 'day-cell empty'; grid.appendChild(e);
+    }
+
+    // Jours
+    for (let d = 1; d <= lastDay.getDate(); d++) {
+      const date = new Date(y, m, d);
+      const key = dateKey(date);
+      const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      const isToday = key === dateKey(today);
+      const cell = document.createElement('div');
+      cell.className = 'day-cell' + (isPast ? ' past' : '') + (isToday ? ' today' : '');
+
+      // Numéro
+      const num = document.createElement('div'); num.className = 'day-num'; num.textContent = d;
+      cell.appendChild(num);
+
+      // Créneaux
+      const slots = computeSlots(key);
+      const slotList = document.createElement('div'); slotList.className = 'slot-list';
+      slots.forEach(s => {
+        const item = document.createElement('div');
+        item.className = 'slot-item ' + s.type;
+        item.title = s.h;
+
+        const txt = document.createElement('span');
+        txt.textContent = s.label + (s.h ? ' ' + s.h : '');
+        item.appendChild(txt);
+
+        // Bouton supprimer seulement sur les RES
+        if (s.type === 'res') {
+          const del = document.createElement('button');
+          del.className = 'slot-del'; del.textContent = '✕';
+          del.onclick = (e) => { e.stopPropagation(); deleteRes(key, s.start, s.end); };
+          item.appendChild(del);
+        }
+        slotList.appendChild(item);
+      });
+      cell.appendChild(slotList);
+
+      // Bouton ajouter RES
+      if (!isPast) {
+        const addBtn = document.createElement('button');
+        addBtn.className = 'add-slot-btn';
+        addBtn.textContent = '+ Ajouter RES';
+        addBtn.onclick = (e) => { e.stopPropagation(); openModal(key, date); };
+        cell.appendChild(addBtn);
+      }
+
+      grid.appendChild(cell);
+    }
+  }
+
+  function deleteRes(key, start, end) {
+    if (!calData[key]) return;
+    calData[key] = calData[key].filter(s => !(s.start === start && s.end === end));
+    if (calData[key].length === 0) delete calData[key];
+    autoSave();
+    renderCal();
+  }
+
+  // ══ NAVIGATION ══
+  function calPrev() { currentDate.setMonth(currentDate.getMonth()-1); renderCal(); }
+  function calNext() { currentDate.setMonth(currentDate.getMonth()+1); renderCal(); }
+
+  // ══ MODAL ══
+  function openModal(key, date) {
+    modalKey = key;
+    const months = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+    document.getElementById('modalDate').textContent = date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
+    document.getElementById('inputStart').value = '07:00';
+    document.getElementById('inputEnd').value = '20:00';
+    setType('res');
+    document.getElementById('modalOverlay').classList.add('open');
+  }
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    modalKey = null;
+  }
+  function setType(t) {
+    modalType = t;
+    document.getElementById('btnDispo').classList.toggle('active', t === 'dispo');
+    document.getElementById('btnRes').classList.toggle('active', t === 'res');
+  }
+  function confirmSlot() {
+    if (!modalKey) return;
+    const start = document.getElementById('inputStart').value;
+    const end = document.getElementById('inputEnd').value;
+    if (!start || !end || start >= end) { alert('Horaires invalides !'); return; }
+    if (!calData[modalKey]) calData[modalKey] = [];
+    // Vérifier chevauchement
+    const conflict = calData[modalKey].some(s => s.type === 'res' && !(end <= s.start || start >= s.end));
+    if (conflict) { alert('Ce créneau chevauche un créneau existant !'); return; }
+    calData[modalKey].push({ type: 'res', start, end });
+    closeModal();
+    renderCal();
+  }
+
+  // Fermer modal en cliquant dehors
+  document.getElementById('modalOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // ══ SAUVEGARDER ══
+  function saveAll() {
+    localStorage.setItem('ldm_cal', JSON.stringify(calData));
+    const btn = document.getElementById('btnSave');
+    btn.textContent = '✅ Sauvegardé !';
+    btn.classList.add('saved');
+    setTimeout(() => { btn.textContent = '💾 Sauvegarder'; btn.classList.remove('saved'); }, 2000);
+  }
+
+  // Sauvegarder automatiquement à chaque modification
+  function autoSave() { localStorage.setItem('ldm_cal', JSON.stringify(calData)); }
+
+  // ══ INIT ══
+  renderCal();
+  // ══ PROTECTION MOT DE PASSE ══
+(function() {
+  const MOT_DE_PASSE = '77972';
+  const saisi = prompt('🔒 Code d\'accès admin :');
+  if (saisi !== MOT_DE_PASSE) {
+    alert('Accès refusé.');
+    window.location.replace('index.html');
+  }
+})();
+
+renderCal();
+</script>
+</body>
+</html>
