@@ -3,8 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LDménage – Déménagement Professionnel | Île-de-France & France entière</title>
-  <meta name="description" content="LDménage – Déménagement complet, emballage, manutention, piano, débarras. Île-de-France, France entière, Suisse, Belgique. 07 45 05 38 82." />
+
+  <!-- ══ SEO PRINCIPAL ══ -->
+  <title>LDménage – Déménageur Professionnel Seine-et-Marne 77 | Devis Gratuit</title>
+  <meta name="description" content="LDménage, déménageur professionnel en Seine-et-Marne (77) et toute la France. Déménagement complet, emballage, montage/démontage, piano, débarras. Devis gratuit 7j/7. ☎ 07 45 05 38 82." />
+  <meta name="keywords" content="déménageur Seine-et-Marne, déménagement 77, déménageur Île-de-France, déménagement professionnel, déménageur pas cher, LDménage, LD ménage, déménagement Fontainebleau, déménagement Melun, déménagement Provins, déménagement France entière, débarras, emballage déménagement, montage meubles, transport meubles, déménageur disponible, devis déménagement gratuit" />
+  <meta name="author" content="LDménage — Dimitri Laurencé" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ldmenage.fr/" />
+
+  <!-- ══ OPEN GRAPH (Facebook, WhatsApp, LinkedIn) ══ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ldmenage.fr/" />
+  <meta property="og:title" content="LDménage – Déménageur Professionnel 77 | Devis Gratuit" />
+  <meta property="og:description" content="Déménagement professionnel en Seine-et-Marne et toute la France. Rapide, sérieux, tous volumes. Devis 100% gratuit 7j/7. ☎ 07 45 05 38 82." />
+  <meta property="og:image" content="https://ldmenage.fr/grologo.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="LDménage" />
+
+  <!-- ══ TWITTER CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LDménage – Déménageur Professionnel 77" />
+  <meta name="twitter:description" content="Déménagement professionnel Seine-et-Marne et France entière. Devis gratuit 7j/7." />
+  <meta name="twitter:image" content="https://ldmenage.fr/grologo.png" />
+
+  <!-- ══ DONNÉES STRUCTURÉES GOOGLE (Schema.org) ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    "name": "LDménage",
+    "alternateName": "LD Ménage",
+    "description": "Déménagement professionnel pour particuliers et entreprises. Seine-et-Marne, Île-de-France, France entière. Emballage, montage/démontage, piano, débarras.",
+    "url": "https://ldmenage.fr",
+    "telephone": "+33745053882",
+    "email": "ldmenage77@gmail.com",
+    "vatID": "93960120900017",
+    "areaServed": [
+      "Seine-et-Marne",
+      "Île-de-France",
+      "France"
+    ],
+    "serviceType": [
+      "Déménagement complet",
+      "Emballage et déballage",
+      "Montage et démontage de meubles",
+      "Transport de piano",
+      "Débarras",
+      "Location camion avec chauffeur"
+    ],
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "Sur devis gratuit",
+    "sameAs": [
+      "https://www.instagram.com/ldmenage/"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "15",
+      "bestRating": "5"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet" />
   <style>
@@ -321,6 +382,83 @@
     body.light .photo-upload-hint p { color: #8A7A6A; }
     body.light .photo-upload-hint strong { color: #1A1612; }
 
+    /* ─── DISPONIBILITÉS ─── */
+    #disponibilites { background: var(--black-soft); }
+    .cal-legende { display: flex; align-items: center; justify-content: center; gap: 28px; margin-bottom: 32px; flex-wrap: wrap; }
+    .cal-legende-item { display: flex; align-items: center; gap: 8px; font-size: .82rem; color: var(--text); }
+    .cal-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .cal-dot.vert { background: #25D366; box-shadow: 0 0 8px rgba(37,211,102,.4); }
+    .cal-dot.rouge { background: #E53935; box-shadow: 0 0 8px rgba(229,57,53,.4); }
+    .cal-dot.gris { background: var(--black-border); }
+    .cal-wrapper { max-width: 640px; margin: 0 auto; background: var(--black-card); border: 1px solid var(--black-border); border-radius: 8px; overflow: hidden; }
+    .cal-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; border-bottom: 1px solid var(--black-border); }
+    .cal-month-year { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 3px; color: var(--white); }
+    .cal-nav { background: none; border: 1px solid var(--black-border); color: var(--text); width: 36px; height: 36px; border-radius: 4px; cursor: pointer; font-size: 1.2rem; transition: background .2s, color .2s; display: flex; align-items: center; justify-content: center; }
+    .cal-nav:hover { background: var(--white); color: var(--black); }
+    .cal-grid-head { display: grid; grid-template-columns: repeat(7, 1fr); background: var(--black); }
+    .cal-grid-head div { text-align: center; padding: 10px 4px; font-size: .68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0; }
+    .cal-day { min-height: 64px; padding: 8px 6px; border: 1px solid var(--black-border); display: flex; flex-direction: column; align-items: center; gap: 4px; position: relative; transition: background .2s; }
+    .cal-day.empty { background: transparent; border-color: transparent; }
+    .cal-day.today .cal-num { background: var(--gold); color: var(--black); border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+    .cal-day.past { opacity: .35; }
+    .cal-num { font-size: .82rem; color: var(--text); font-weight: 600; line-height: 1; }
+    .cal-status { width: 10px; height: 10px; border-radius: 50%; margin-top: 2px; }
+    .cal-status.vert { background: #25D366; box-shadow: 0 0 6px rgba(37,211,102,.5); }
+    .cal-status.rouge { background: #E53935; box-shadow: 0 0 6px rgba(229,57,53,.4); }
+    .cal-event-label { font-size: .55rem; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); text-align: center; line-height: 1.2; max-width: 100%; overflow: hidden; }
+    .cal-note { text-align: center; padding: 14px 20px; font-size: .78rem; color: var(--text-muted); border-top: 1px solid var(--black-border); }
+    body.light .cal-wrapper { background: #fff; border-color: #E0DAD0; }
+    body.light .cal-grid-head { background: #F5F0E8; }
+    body.light .cal-day { border-color: #E0DAD0; }
+    body.light .cal-num { color: #3A3028; }
+    @media (max-width: 600px) { .cal-day { min-height: 48px; padding: 5px 3px; } .cal-event-label { display: none; } }
+
+    /* ─── CALENDRIER ADAPTATIF ─── */
+    .cal-cell {
+      background: var(--black-card); border: 1px solid var(--black-border);
+      border-radius: 4px; padding: 6px 4px; text-align: center;
+      min-height: 56px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 3px;
+      cursor: default; transition: background .2s;
+    }
+    .cal-cell.empty { background: transparent; border-color: transparent; }
+    .cal-cell.past { opacity: .3; }
+    .cal-cell.today .cal-cell-num { background: var(--gold); color: var(--black); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+    .cal-cell-num { font-size: .82rem; font-weight: 600; color: var(--text); line-height: 1; }
+    .cal-cell-badge {
+      font-size: .6rem; font-weight: 800; letter-spacing: .5px;
+      padding: 2px 5px; border-radius: 3px; text-transform: uppercase; line-height: 1;
+    }
+    .cal-cell-badge.vert { background: rgba(37,211,102,.2); color: #25D366; }
+    .cal-cell-badge.rouge { background: rgba(229,57,53,.2); color: #E53935; }
+    .cal-head-cell { text-align: center; font-size: .65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); padding: 6px 0; }
+    @media (max-width: 600px) {
+      .cal-cell { min-height: 46px; padding: 4px 2px; }
+      .cal-cell-badge { font-size: .58rem; padding: 2px 4px; }
+    }
+
+
+    /* ─── CALENDRIER CUSTOM ─── */
+    #cal-head { display: grid; grid-template-columns: repeat(7,1fr); gap: 3px; margin-bottom: 3px; }
+    #cal-grid { display: grid; gap: 3px; }
+    .cal-hd { text-align:center; font-size:.62rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); padding:6px 0; }
+    .cal-cell { background:var(--black-card); border:1px solid var(--black-border); border-radius:4px; padding:5px 3px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:2px; min-height:70px; }
+    .cal-cell.empty { background:transparent; border-color:transparent; }
+    .cal-cell.past { opacity:.3; }
+    .cal-cell.today > .cal-num { background:var(--gold); color:var(--black); border-radius:50%; width:22px; height:22px; display:flex; align-items:center; justify-content:center; font-weight:800; }
+    .cal-num { font-size:.8rem; font-weight:600; color:var(--text); line-height:1.8; }
+    .slot { font-size:.58rem; font-weight:800; padding:2px 4px; border-radius:3px; text-transform:uppercase; letter-spacing:.3px; line-height:1.3; width:100%; text-align:center; }
+    .slot.dispo { background:rgba(37,211,102,.18); color:#25D366; }
+    .slot.res { background:rgba(229,57,53,.18); color:#E53935; }
+    body.light .cal-cell { background:#fff; border-color:#E0DAD0; }
+    body.light .cal-num { color:#2A2520; }
+    @media (max-width:600px) {
+      #cal-head, #cal-grid { grid-template-columns: repeat(7,1fr) !important; }
+      .cal-cell { min-height:52px; padding:3px 2px; }
+      .slot { font-size:.55rem; padding:1px 3px; }
+    }
+
     /* ─── CONTACT ─── */
     #contact { background: var(--black-soft); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
@@ -396,6 +534,28 @@
     #citationText.fade-out { opacity: 0; transform: translateY(-6px); }
     #citationText.fade-in { opacity: 1; transform: translateY(0); }
     @media (max-width: 900px) { .nav-citation { display: none; } }
+
+    /* Citation mobile dans la nav */
+    .nav-citation-mob {
+      display: none;
+      flex: 1;
+      text-align: center;
+      padding: 0 10px;
+      overflow: hidden;
+    }
+    .nav-citation-mob span {
+      font-size: .68rem;
+      font-style: italic;
+      font-weight: 700;
+      color: #1A1612;
+      line-height: 1.3;
+      display: block;
+      transition: opacity .5s ease;
+    }
+    .nav-citation-mob span.fade-out { opacity: 0; }
+    @media (max-width: 900px) {
+      .nav-citation-mob { display: flex; align-items: center; }
+    }
     /* citation mobile supprimée */
 
     /* ─── BARRE DE PROGRESSION ─── */
@@ -535,11 +695,16 @@
   <div class="nav-citation" id="navCitation">
     <span id="citationText"></span>
   </div>
+  <div class="nav-citation-mob">
+    <span id="citationTextMobile"></span>
+  </div>
   <ul class="nav-links">
     <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
     <li><a href="#zone" data-fr="Zone" data-en="Coverage">Zone</a></li>
     <li><a href="#realisations" data-fr="Photos" data-en="Photos">Photos</a></li>
     <li><a href="#avis" data-fr="Avis" data-en="Reviews">Avis</a></li>
+    <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
+    <li><a href="#disponibilites" data-fr="Disponibilités" data-en="Availability">Disponibilités</a></li>
     <li><a href="#contact" class="nav-cta" data-fr="Devis gratuit" data-en="Free Quote">Devis gratuit</a></li>
   </ul>
   <div class="nav-controls">
@@ -553,6 +718,8 @@
   <a href="#zone" class="m-link" data-fr="Zone d'intervention" data-en="Coverage area">Zone d'intervention</a>
   <a href="#realisations" class="m-link" data-fr="Photos" data-en="Photos">Photos</a>
   <a href="#avis" class="m-link" data-fr="Avis" data-en="Reviews">Avis</a>
+  <a href="#disponibilites" class="m-link" data-fr="Disponibilités" data-en="Availability">Disponibilités</a>
+  <a href="#contact" class="m-link" data-fr="Contact" data-en="Contact">Contact</a>
   <a href="#contact" class="m-cta m-link" data-fr="📦 Devis gratuit" data-en="📦 Free Quote">📦 Devis gratuit</a>
 </div>
 
@@ -567,7 +734,7 @@
         <span class="line3">Entre de bonnes mains</span>
       </h1>
       <p class="hero-desc">
-        LDménage prend en charge <strong>votre déménagement de A à Z</strong> — emballage, transport, montage — avec soin et professionnalisme. Île-de-France, France entière et pays voisins.
+        LDménage, votre <strong>déménageur professionnel en Seine-et-Marne (77)</strong> et partout en France — emballage, transport, montage, avec soin et sérieux. Devis gratuit 7j/7.
       </p>
       <div class="hero-pills">
         <span class="hero-pill">📦 Déménagement complet</span>
@@ -748,6 +915,43 @@
         <div class="pp-icon">📦</div>
         <div class="pp-name">photo2.jpg</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ DISPONIBILITÉS ══════════════════ -->
+<section id="disponibilites" style="background:var(--black);padding:70px 5vw;">
+  <div class="section-header centered reveal">
+    <div class="section-label">Planifiez votre déménagement</div>
+    <h2 class="section-title">Disponibilités <span>en temps réel</span></h2>
+    <p class="section-sub">Consultez les créneaux disponibles. Vert = disponible, rouge = réservé.</p>
+    <p style="text-align:center;font-size:.9rem;font-weight:700;color:var(--text-muted);margin-top:10px;">🟢 <strong style="color:#25D366;">DISPO</strong> = disponible &nbsp;·&nbsp; 🔴 <strong style="color:#E53935;">RES</strong> = réservé</p>
+    <!-- Message mobile uniquement -->
+    <p id="cal-mobile-hint" style="display:none;text-align:center;margin-top:14px;font-size:.82rem;font-weight:600;color:var(--gold);padding:10px 16px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:6px;max-width:400px;margin-left:auto;margin-right:auto;">
+      👆 Appuyez sur un jour pour voir les horaires disponibles et réservés
+    </p>
+  </div>
+
+  <div style="max-width:700px;margin:0 auto;" class="reveal">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <button onclick="calPrev()" style="background:var(--black-card);border:1px solid var(--black-border);color:var(--white);padding:8px 20px;border-radius:4px;cursor:pointer;font-size:1.1rem;transition:background .2s;">‹</button>
+      <div id="cal-title" style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);letter-spacing:3px;text-align:center;"></div>
+      <button onclick="calNext()" style="background:var(--black-card);border:1px solid var(--black-border);color:var(--white);padding:8px 20px;border-radius:4px;cursor:pointer;font-size:1.1rem;transition:background .2s;">›</button>
+    </div>
+    <div id="cal-head"></div>
+    <div id="cal-grid"></div>
+    <p style="text-align:center;margin-top:14px;font-size:.78rem;color:var(--text-muted);">📅 Pour réserver un créneau : <a href="https://wa.me/33745053882" style="color:var(--gold);font-weight:700;">WhatsApp →</a></p>
+  </div>
+
+  <!-- Popup détail jour (mobile) -->
+  <div id="day-popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:999;align-items:flex-end;justify-content:center;" onclick="closeDayPopup()">
+    <div id="day-popup" style="background:var(--black-card);border:1px solid var(--black-border);border-radius:16px 16px 0 0;padding:24px 20px 36px;width:100%;max-width:500px;" onclick="event.stopPropagation()">
+      <div style="width:36px;height:4px;background:var(--black-border);border-radius:2px;margin:0 auto 20px;"></div>
+      <div id="popup-date" style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white);letter-spacing:2px;margin-bottom:16px;text-align:center;"></div>
+      <div id="popup-slots" style="display:flex;flex-direction:column;gap:8px;"></div>
+      <a href="https://wa.me/33745053882" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;background:#25D366;color:#fff;padding:13px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.92rem;">
+        💬 Réserver ce créneau sur WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -1101,17 +1305,18 @@
         <a href="tel:0745053882">📞 07 45 05 38 82</a>
         <a href="https://wa.me/33745053882" target="_blank">💬 WhatsApp</a>
         <a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'ldmenage77'+'@'+'gmail.com'">📧 ldmenage77@gmail.com</a>
+        <a href="https://www.instagram.com/ldmenage/" target="_blank">📸 @ldmenage</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – Dimitri Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – Dimitri Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
-    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v30</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v36-admin</p>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 
 // SCROLL TO TOP — fiable sur mobile
   if (history.scrollRestoration) history.scrollRestoration = 'manual';
@@ -1431,6 +1636,176 @@
     selectedFiles.forEach(f => dt.items.add(f));
     document.getElementById('photoInput').files = dt.files;
   }
+
+
+  // ══ CALENDRIER CUSTOM (données partagées avec admin.html via localStorage) ══
+  let calDate = new Date();
+  const isMob = () => window.innerWidth <= 600;
+
+  // Charger données depuis localStorage (modifiées par admin.html)
+  function loadCalData() {
+    try { return JSON.parse(localStorage.getItem('ldm_cal') || '{}'); }
+    catch(e) { return {}; }
+  }
+
+  function dateKey(d) {
+    return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  }
+
+  function getSlotsForDay(key, calData) {
+    function fmt(t) {
+      if (!t) return '';
+      const [hh, mm] = t.split(':').map(Number);
+      return hh + 'h' + (mm ? String(mm).padStart(2,'0') : '');
+    }
+    const res = (calData[key] || [])
+      .filter(s => s && s.start && s.end)
+      .sort((a, b) => a.start.localeCompare(b.start));
+    if (res.length === 0) return [{ label:'DISPO', type:'dispo', h:'7h-20h' }];
+    const result = [];
+    let cur = '07:00';
+    for (const s of res) {
+      if (s.start > cur) result.push({ type:'dispo', label:'DISPO', h: fmt(cur)+'-'+fmt(s.start) });
+      result.push({ type:'res', label:'RES', h: fmt(s.start)+'-'+fmt(s.end) });
+      cur = s.end;
+    }
+    if (cur < '20:00') result.push({ type:'dispo', label:'DISPO', h: fmt(cur)+'-20h' });
+    return result;
+  }
+
+  function renderCal() {
+    const calData = loadCalData();
+    const grid = document.getElementById('cal-grid');
+    const head = document.getElementById('cal-head');
+    const title = document.getElementById('cal-title');
+    const hint = document.getElementById('cal-mobile-hint');
+    if (!grid) return;
+
+    const mob = window.innerWidth <= 600;
+    if (hint) hint.style.display = mob ? 'block' : 'none';
+
+    const y = calDate.getFullYear();
+    const m = calDate.getMonth();
+    const today = new Date();
+    const months = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+    const jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+
+    title.textContent = months[m] + ' ' + y;
+    head.style.gridTemplateColumns = 'repeat(7,1fr)';
+    grid.style.gridTemplateColumns = 'repeat(7,1fr)';
+    head.innerHTML = ['L','M','M','J','V','S','D'].map(d => '<div class="cal-hd">' + d + '</div>').join('');
+    const firstDay = new Date(y, m, 1);
+    const lastDay = new Date(y, m+1, 0);
+    let startDow = firstDay.getDay() - 1; if (startDow < 0) startDow = 6;
+    grid.innerHTML = '';
+    for (let i = 0; i < startDow; i++) {
+      const e = document.createElement('div'); e.className = 'cal-cell empty'; grid.appendChild(e);
+    }
+    for (let d = 1; d <= lastDay.getDate(); d++) {
+      const date = new Date(y, m, d);
+      const key = dateKey(date);
+      const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      const isToday = key === dateKey(today);
+      const slots = getSlotsForDay(key, calData);
+      const cell = document.createElement('div');
+      cell.className = 'cal-cell' + (isPast ? ' past' : '') + (isToday ? ' today' : '');
+      if (!isPast && mob) cell.style.cursor = 'pointer';
+      const num = document.createElement('div'); num.className = 'cal-num'; num.textContent = d;
+      cell.appendChild(num);
+      if (!isPast) {
+        slots.forEach(s => {
+          const sl = document.createElement('div');
+          sl.className = 'slot ' + s.type;
+          sl.textContent = mob ? s.label : (s.label + (s.h ? ' ' + s.h : ''));
+          cell.appendChild(sl);
+        });
+        cell.dataset.slots = JSON.stringify(slots);
+        cell.dataset.label = jours[date.getDay()] + ' ' + d + ' ' + months[m];
+        cell.style.cursor = 'pointer';
+        cell.addEventListener('click', function() {
+          const s = JSON.parse(this.dataset.slots || '[]');
+          openDayPopup(this.dataset.label, s);
+        });
+      }
+      grid.appendChild(cell);
+    }
+  }
+
+  // ── POPUP JOUR (mobile) ──
+  function openDayPopup(titre, slots) {
+    if (!slots || !Array.isArray(slots)) slots = [{ type:'dispo', label:'DISPO', h:'7h-20h' }];
+    let existing = document.getElementById('day-popup-overlay');
+    if (existing) existing.remove();
+    const overlay = document.createElement('div');
+    overlay.id = 'day-popup-overlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:2000;display:flex;align-items:flex-end;justify-content:center;padding:20px;';
+    const box = document.createElement('div');
+    box.style.cssText = 'background:var(--black-card);border:1px solid var(--black-border);border-top:2px solid var(--gold);border-radius:12px 12px 0 0;width:100%;max-width:420px;padding:24px;';
+    let html = '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">';
+    html += '<div style="font-family:\'Bebas Neue\',sans-serif;font-size:1.3rem;color:var(--white);letter-spacing:2px;">' + titre + '</div>';
+    html += '<button onclick="document.getElementById(\'day-popup-overlay\').remove()" style="background:none;border:none;color:var(--text-muted);font-size:1.4rem;cursor:pointer;padding:0 4px;">✕</button></div>';
+    html += '<div style="display:flex;flex-direction:column;gap:8px;">';
+    slots.forEach(s => {
+      const bg = s.type === 'dispo' ? 'rgba(37,211,102,.12)' : 'rgba(229,57,53,.12)';
+      const col = s.type === 'dispo' ? '#25D366' : '#E53935';
+      html += '<div style="background:' + bg + ';border:1px solid ' + col + '33;border-radius:6px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;">';
+      html += '<span style="font-weight:800;font-size:.95rem;color:' + col + ';">' + s.label + '</span>';
+      html += '<span style="font-size:.9rem;color:var(--text);">' + (s.h || '') + '</span>';
+      html += '</div>';
+    });
+    html += '</div>';
+    html += '<a href="https://wa.me/33745053882" target="_blank" style="display:block;margin-top:16px;background:var(--gold);color:#000;text-align:center;padding:13px;border-radius:6px;font-weight:800;font-size:.9rem;text-decoration:none;letter-spacing:1px;">💬 Réserver ce créneau</a>';
+    box.innerHTML = html;
+    overlay.appendChild(box);
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+    document.body.appendChild(overlay);
+  }
+
+  function calPrev() { calDate.setMonth(calDate.getMonth() - 1); renderCal(); }
+  function calNext() { calDate.setMonth(calDate.getMonth() + 1); renderCal(); }
+
+  // ══ POPUP DÉTAIL JOUR (mobile) ══
+  function openDayPopup(key, dateLabel, slots) {
+    document.getElementById('popup-date').textContent = dateLabel;
+    const container = document.getElementById('popup-slots');
+    container.innerHTML = '';
+    slots.forEach(s => {
+      const div = document.createElement('div');
+      div.style.cssText = `display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-weight:700;font-size:.9rem;`;
+      if (s.type === 'dispo') {
+        div.style.background = 'rgba(37,211,102,.12)';
+        div.style.border = '1px solid rgba(37,211,102,.25)';
+        div.style.color = '#25D366';
+        div.innerHTML = '<span style="font-size:1rem;">🟢</span><span>DISPONIBLE — ' + s.h + '</span>';
+      } else {
+        div.style.background = 'rgba(229,57,53,.12)';
+        div.style.border = '1px solid rgba(229,57,53,.25)';
+        div.style.color = '#E53935';
+        div.innerHTML = '<span style="font-size:1rem;">🔴</span><span>RÉSERVÉ — ' + s.h + '</span>';
+      }
+      container.appendChild(div);
+    });
+    const overlay = document.getElementById('day-popup-overlay');
+    overlay.style.display = 'flex';
+    setTimeout(() => overlay.style.opacity = '1', 10);
+  }
+
+  function closeDayPopup() {
+    document.getElementById('day-popup-overlay').style.display = 'none';
+  }
+
+  // Afficher le hint mobile
+  if (window.innerWidth <= 768) {
+    const hint = document.getElementById('cal-mobile-hint');
+    if (hint) hint.style.display = 'block';
+  }
+  window.addEventListener('resize', () => {
+    const hint = document.getElementById('cal-mobile-hint');
+    if (hint) hint.style.display = window.innerWidth <= 768 ? 'block' : 'none';
+  });
+
+  renderCal();
+  window.addEventListener('resize', renderCal);
 
   setLang(currentLang);
 </script>
