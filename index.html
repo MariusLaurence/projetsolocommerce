@@ -70,9 +70,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --gold: #C9A84C;
-      --gold-light: #E8C97A;
-      --gold-glow: rgba(201,168,76,0.25);
+      --gold: #1565C0;
+      --gold-light: #1E88E5;
+      --gold-glow: rgba(21,101,192,0.25);
       --black: #080808;
       --black-soft: #0E0E0E;
       --black-card: #141414;
@@ -87,71 +87,71 @@
       --mobile-bg: rgba(8,8,8,.99);
     }
 
-    /* ─── LIGHT MODE — crème luxe ─── */
+    /* ─── LIGHT MODE — bleu luxe ─── */
     body.light {
-      --black: #FAF8F5;
-      --black-soft: #F2EFE9;
+      --black: #EEF3FB;
+      --black-soft: #E3EAF7;
       --black-card: #FFFFFF;
-      --black-border: #E0DAD0;
-      --white: #1A1612;
-      --silver: #5A5045;
-      --silver-light: #2A2018;
-      --silver-dark: #9A9080;
-      --text: #3A3028;
-      --text-muted: #8A7A6A;
-      --nav-bg: rgba(250,248,245,.97);
-      --mobile-bg: rgba(250,248,245,.99);
+      --black-border: #C5D3E8;
+      --white: #0D1B2A;
+      --silver: #1A3A5C;
+      --silver-light: #0D2040;
+      --silver-dark: #5A7A9A;
+      --text: #1A2A3A;
+      --text-muted: #4A6A8A;
+      --nav-bg: rgba(238,243,251,.97);
+      --mobile-bg: rgba(238,243,251,.99);
     }
-    body.light .hero { background: #FAF8F5; }
-    body.light .hero::before { background: repeating-linear-gradient(-55deg, transparent, transparent 80px, rgba(201,168,76,.025) 80px, rgba(201,168,76,.025) 81px); }
-    body.light .hero::after { background: linear-gradient(to left, rgba(201,168,76,.06), transparent); }
-    body.light .logo-circle { background: radial-gradient(circle at 40% 35%, #FFFFFF, #F5F0E8); border: 1px solid rgba(201,168,76,.2); box-shadow: 0 0 40px rgba(201,168,76,.1); }
+    body.light .hero { background: #EEF3FB; }
+    body.light .hero::before { background: repeating-linear-gradient(-55deg, transparent, transparent 80px, rgba(21,101,192,.025) 80px, rgba(21,101,192,.025) 81px); }
+    body.light .hero::after { background: linear-gradient(to left, rgba(21,101,192,.06), transparent); }
+    body.light .logo-circle { background: radial-gradient(circle at 40% 35%, #FFFFFF, #EBF1FA); border: 1px solid rgba(21,101,192,.2); box-shadow: 0 0 40px rgba(21,101,192,.1); }
     body.light .hero-logo-ring::before { border-color: rgba(0,0,0,.06); }
-    body.light .hero-logo-ring::after { border-color: rgba(201,168,76,.12); }
+    body.light .hero-logo-ring::after { border-color: rgba(21,101,192,.12); }
     body.light #heroLogo { filter: none; }
     body.light .nav-logo-badge { filter: none; }
     body.light nav { background: var(--nav-bg); border-bottom-color: var(--black-border); }
     body.light .mobile-menu { background: var(--mobile-bg); }
-    body.light .btn-primary { background: #1A1612; color: #FAF8F5; box-shadow: 0 4px 16px rgba(0,0,0,.2); }
-    body.light .btn-primary:hover { background: #3A3028; }
-    body.light .btn-secondary { border-color: #C8C0B0; color: #3A3028; }
-    body.light .btn-secondary:hover { border-color: #1A1612; color: #1A1612; }
-    body.light .nav-cta { background: #1A1612 !important; color: #FAF8F5 !important; }
-    body.light .nav-cta:hover { background: #3A3028 !important; }
-    body.light .mobile-menu .m-cta { background: #1A1612; color: #FAF8F5 !important; }
-    body.light .loader-text { color: #1A1612; }
-    body.light .loader-bar-wrap { background: #E0DAD0; }
+    body.light .btn-primary { background: #0D1B2A; color: #EEF3FB; box-shadow: 0 4px 16px rgba(0,0,0,.2); }
+    body.light .btn-primary:hover { background: #1A3A5C; }
+    body.light .btn-secondary { border-color: #B5C5D8; color: #1A2A3A; }
+    body.light .btn-secondary:hover { border-color: #0D1B2A; color: #0D1B2A; }
+    body.light .nav-cta { background: #0D1B2A !important; color: #EEF3FB !important; }
+    body.light .nav-cta:hover { background: #1A3A5C !important; }
+    body.light .mobile-menu .m-cta { background: #0D1B2A; color: #EEF3FB !important; }
+    body.light .loader-text { color: #0D1B2A; }
+    body.light .loader-bar-wrap { background: #C5D3E8; }
     body.light .loader-bar { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
-    body.light #loader { background: #FAF8F5; }
+    body.light #loader { background: #EEF3FB; }
     body.light .zone-big::before { color: rgba(0,0,0,.03); }
-    body.light .services-grid { background: #E0DAD0; border-color: #E0DAD0; }
+    body.light .services-grid { background: #C5D3E8; border-color: #C5D3E8; }
     body.light .service-card { background: #FFFFFF; }
-    body.light .service-card:hover { background: #FFFCF7; }
-    body.light .btn-submit { background: #1A1612; color: #FAF8F5; }
-    body.light .btn-submit:hover { background: #3A3028; }
-    body.light .insta-cta-box { background: #FFFFFF; border-color: #E0DAD0; }
-    body.light .section-title { color: #1A1612; }
-    body.light .counter-num { color: #1A1612; }
-    body.light .counter-item:hover { background: rgba(201,168,76,.04); }
+    body.light .service-card:hover { background: #F0F5FF; }
+    body.light .btn-submit { background: #0D1B2A; color: #EEF3FB; }
+    body.light .btn-submit:hover { background: #1A3A5C; }
+    body.light .insta-cta-box { background: #FFFFFF; border-color: #C5D3E8; }
+    body.light .section-title { color: #0D1B2A; }
+    body.light .counter-num { color: #0D1B2A; }
+    body.light .counter-item:hover { background: rgba(21,101,192,.04); }
     body.light .zone-big { background: #FFFFFF; }
-    body.light .zone-avantage { background: #FFFFFF; border-color: #E0DAD0; }
-    body.light .contact-card { background: #FFFFFF; border-color: #E0DAD0; }
-    body.light .zone-card { background: #FFFFFF; border-color: #E0DAD0; }
-    body.light .contact-icon { background: rgba(201,168,76,.08); border-color: rgba(201,168,76,.2); }
-    body.light .modal-box { background: #FFFFFF; border-color: #E0DAD0; }
-    body.light .modal-input { background: #FAF8F5; border-color: #E0DAD0; color: #1A1612; }
-    body.light .modal-submit { background: #1A1612; color: #FAF8F5; }
+    body.light .zone-avantage { background: #FFFFFF; border-color: #C5D3E8; }
+    body.light .contact-card { background: #FFFFFF; border-color: #C5D3E8; }
+    body.light .zone-card { background: #FFFFFF; border-color: #C5D3E8; }
+    body.light .contact-icon { background: rgba(21,101,192,.08); border-color: rgba(21,101,192,.2); }
+    body.light .modal-box { background: #FFFFFF; border-color: #C5D3E8; }
+    body.light .modal-input { background: #EEF3FB; border-color: #C5D3E8; color: #0D1B2A; }
+    body.light .modal-submit { background: #0D1B2A; color: #EEF3FB; }
     body.light .form-group input,
     body.light .form-group textarea,
-    body.light .form-group select { background: #FFFFFF; border-color: #E0DAD0; color: #1A1612; }
-    body.light footer { background: #F2EFE9; border-color: #E0DAD0; }
-    body.light .lang-switch { background: rgba(0,0,0,.04); border-color: #E0DAD0; }
-    body.light .lang-btn { color: #9A9080; }
-    body.light .lang-btn.active { background: #1A1612; color: #FAF8F5; }
+    body.light .form-group select { background: #FFFFFF; border-color: #C5D3E8; color: #0D1B2A; }
+    body.light footer { background: #E3EAF7; border-color: #C5D3E8; }
+    body.light .lang-switch { background: rgba(0,0,0,.04); border-color: #C5D3E8; }
+    body.light .lang-btn { color: #5A7A9A; }
+    body.light .lang-btn.active { background: #0D1B2A; color: #EEF3FB; }
     body.light .wa-float { box-shadow: 0 6px 24px rgba(37,211,102,.3); }
-    body.light .callback-float { background: #1A1612; color: #FAF8F5; box-shadow: 0 6px 20px rgba(0,0,0,.2); }
-    body.light .hero-label { background: rgba(201,168,76,.08); border-color: rgba(201,168,76,.2); color: #8A6A30; }
-    body.light .hero-pill { background: rgba(0,0,0,.04); border-color: #E0DAD0; color: #5A5045; }
+    body.light .callback-float { background: #0D1B2A; color: #EEF3FB; box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+    body.light .hero-label { background: rgba(21,101,192,.08); border-color: rgba(21,101,192,.2); color: #1565C0; }
+    body.light .hero-pill { background: rgba(0,0,0,.04); border-color: #C5D3E8; color: #1A3A5C; }
     body.light .promo-bar p { color: #080808; }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -690,7 +690,7 @@
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
-    <img src="logo-ld.png" class="nav-logo-badge" alt="Logo LDménage" />
+    <img src="grologo.png" class="nav-logo-badge" alt="Logo LDménage" />
   </a>
   <div class="nav-citation" id="navCitation">
     <span id="citationText"></span>
@@ -928,11 +928,14 @@
     <p style="text-align:center;font-size:.9rem;font-weight:700;color:var(--text-muted);margin-top:10px;">🟢 <strong style="color:#25D366;">DISPO</strong> = disponible &nbsp;·&nbsp; 🔴 <strong style="color:#E53935;">RES</strong> = réservé</p>
     <!-- Message mobile uniquement -->
     <p id="cal-mobile-hint" style="display:none;text-align:center;margin-top:14px;font-size:.82rem;font-weight:600;color:var(--gold);padding:10px 16px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:6px;max-width:400px;margin-left:auto;margin-right:auto;">
-      👆 Appuyez sur un jour pour voir les horaires disponibles et réservés
+      Appuyez sur un jour pour voir les horaires disponibles et réservés
     </p>
   </div>
 
   <div style="max-width:700px;margin:0 auto;" class="reveal">
+    <p style="text-align:center;margin-bottom:18px;font-size:.88rem;font-weight:600;color:var(--gold);background:rgba(21,101,192,.08);border:1px solid rgba(21,101,192,.25);padding:10px 20px;border-radius:8px;">
+       Cliquez sur un jour pour voir les disponibilités et réserver votre créneau
+    </p>
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
       <button onclick="calPrev()" style="background:var(--black-card);border:1px solid var(--black-border);color:var(--white);padding:8px 20px;border-radius:4px;cursor:pointer;font-size:1.1rem;transition:background .2s;">‹</button>
       <div id="cal-title" style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--white);letter-spacing:3px;text-align:center;"></div>
@@ -944,14 +947,116 @@
   </div>
 
   <!-- Popup détail jour (mobile) -->
-  <div id="day-popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:999;align-items:flex-end;justify-content:center;" onclick="closeDayPopup()">
-    <div id="day-popup" style="background:var(--black-card);border:1px solid var(--black-border);border-radius:16px 16px 0 0;padding:24px 20px 36px;width:100%;max-width:500px;" onclick="event.stopPropagation()">
-      <div style="width:36px;height:4px;background:var(--black-border);border-radius:2px;margin:0 auto 20px;"></div>
-      <div id="popup-date" style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--white);letter-spacing:2px;margin-bottom:16px;text-align:center;"></div>
-      <div id="popup-slots" style="display:flex;flex-direction:column;gap:8px;"></div>
-      <a href="https://wa.me/33745053882" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;background:#25D366;color:#fff;padding:13px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.92rem;">
-        💬 Réserver ce créneau sur WhatsApp
-      </a>
+  <div id="day-popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:999;align-items:flex-end;justify-content:center;" onclick="closeDayPopup()">
+    <div id="day-popup" style="background:var(--black-card);border:1px solid var(--black-border);border-top:3px solid var(--gold);border-radius:16px 16px 0 0;padding:20px 20px 30px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;" onclick="event.stopPropagation()">
+      <div style="width:36px;height:4px;background:var(--black-border);border-radius:2px;margin:0 auto 14px;"></div>
+      <!-- Titre + fermer -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div id="popup-date" style="font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--white);letter-spacing:2px;"></div>
+        <button onclick="closeDayPopup()" style="background:none;border:none;color:var(--text-muted);font-size:1.3rem;cursor:pointer;padding:4px;">✕</button>
+      </div>
+      <!-- Créneaux -->
+      <div id="popup-slots" style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;"></div>
+
+      <!-- Formulaire devis complet -->
+      <div style="border-top:1px solid var(--black-border);padding-top:16px;">
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">📋 Demande de devis</div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Heure début</div>
+            <input id="pop-hdebut" type="time" value="07:00" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;"/>
+          </div>
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Heure fin</div>
+            <input id="pop-hfin" type="time" value="20:00" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;"/>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Prénom / Nom *</div>
+            <input id="pop-nom" type="text" placeholder="Marie Dupont" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;"/>
+          </div>
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Téléphone *</div>
+            <input id="pop-tel" type="tel" placeholder="06 XX XX XX XX" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;"/>
+          </div>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Email</div>
+          <input id="pop-email" type="email" placeholder="votre@email.com" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;"/>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Adresse départ *</div>
+            <input id="pop-dep" type="text" placeholder="Rue, ville, code postal" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;"/>
+          </div>
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Adresse arrivée *</div>
+            <input id="pop-arr" type="text" placeholder="Rue, ville, code postal" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;"/>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Type logement</div>
+            <select id="pop-type" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;">
+              <option value="">Choisir...</option>
+              <option>Studio</option><option>T2</option><option>T3</option><option>T4</option><option>T5 et plus</option><option>Maison</option><option>Bureau / Local</option>
+            </select>
+          </div>
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Étage départ</div>
+            <select id="pop-etage" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;">
+              <option value="">Choisir...</option>
+              <option>RDC</option><option>1er</option><option>2ème</option><option>3ème</option><option>4ème</option><option>5ème+</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Ascenseur départ</div>
+            <select id="pop-asc-dep" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;">
+              <option value="">?</option><option>Oui</option><option>Non</option><option>Monte-charge</option>
+            </select>
+          </div>
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Ascenseur arrivée</div>
+            <select id="pop-asc-arr" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;">
+              <option value="">?</option><option>Oui</option><option>Non</option><option>Monte-charge</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;">Services souhaités</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+            <label style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text);cursor:pointer;"><input type="checkbox" class="pop-service" value="Déménagement complet" style="accent-color:var(--gold);"/>Déménagement complet</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text);cursor:pointer;"><input type="checkbox" class="pop-service" value="Emballage/cartons" style="accent-color:var(--gold);"/>Emballage/cartons</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text);cursor:pointer;"><input type="checkbox" class="pop-service" value="Montage meubles" style="accent-color:var(--gold);"/>Montage meubles</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text);cursor:pointer;"><input type="checkbox" class="pop-service" value="Piano/objets lourds" style="accent-color:var(--gold);"/>Piano/objets lourds</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text);cursor:pointer;"><input type="checkbox" class="pop-service" value="Débarras" style="accent-color:var(--gold);"/>Débarras</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--text);cursor:pointer;"><input type="checkbox" class="pop-service" value="Main d'oeuvre uniquement" style="accent-color:var(--gold);"/>Main d'oeuvre seule</label>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Informations complémentaires</div>
+          <textarea id="pop-info" rows="2" placeholder="Volume estimé, objets fragiles, accès difficile..." style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;resize:none;"></textarea>
+        </div>
+
+        <button onclick="envoyerDevisEmail()" style="width:100%;background:var(--gold);color:#fff;border:none;padding:13px;border-radius:6px;font-family:'Barlow',sans-serif;font-weight:800;font-size:.9rem;cursor:pointer;letter-spacing:1px;transition:background .2s;">
+          📧 Envoyer ma demande par email
+        </button>
+        <div id="popup-success" style="display:none;text-align:center;padding:14px;margin-top:10px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:6px;color:#25D366;font-weight:700;font-size:.9rem;">
+          ✅ Demande envoyée ! LDménage vous contacte rapidement.
+        </div>
+        <p style="text-align:center;font-size:.68rem;color:var(--text-muted);margin-top:8px;">Envoi sécurisé · Gratuit & sans engagement</p>
+      </div>
     </div>
   </div>
 </section>
@@ -985,7 +1090,7 @@
         <div class="contact-icon">📧</div>
         <div>
           <div class="contact-label">Email</div>
-          <a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'ldmenage77'+'@'+'gmail.com'" class="contact-value">ldmenage77@gmail.com</a>
+          <a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'ldmenage77'+'@'+'gmail.com'" class="contact-value"><span class="__cf_email__" data-cfemail="69050d040c07080e0c5e5e290e04080005470a0604">[email&#160;protected]</span></a>
           <p class="contact-note">Réponse sous 24h</p>
         </div>
       </div>
@@ -1272,7 +1377,7 @@
         </div>
       </div>
 
-      <button type="submit" class="btn-submit" id="submitBtn" data-fr="📦 Envoyer ma demande par email" data-en="📦 Send my request by email">📦 Envoyer ma demande par email</button>
+      <button type="submit" class="btn-submit" id="submitBtn" >📧 Envoyer ma demande par email</button>
       <div id="formSuccess" style="display:none;text-align:center;padding:18px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:4px;color:#25D366;font-weight:700;font-size:.95rem;"
         data-fr="✅ Demande envoyée ! LDménage vous contacte dans les plus brefs délais."
         data-en="✅ Request sent! LDménage will contact you as soon as possible.">
@@ -1304,7 +1409,7 @@
       <div class="footer-contact-items">
         <a href="tel:0745053882">📞 07 45 05 38 82</a>
         <a href="https://wa.me/33745053882" target="_blank">💬 WhatsApp</a>
-        <a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'ldmenage77'+'@'+'gmail.com'">📧 ldmenage77@gmail.com</a>
+        <a href="javascript:void(0)" onclick="window.location='mai'+'lto:'+'ldmenage77'+'@'+'gmail.com'">📧 <span class="__cf_email__" data-cfemail="87ebe3eae2e9e6e0e2b0b0c7e0eae6eeeba9e4e8ea">[email&#160;protected]</span></a>
         <a href="https://www.instagram.com/ldmenage/" target="_blank">📸 @ldmenage</a>
       </div>
     </div>
@@ -1312,11 +1417,11 @@
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – LDménage Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – LDménage Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – LDménage Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
-    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v36-admin</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v37</p>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 // SCROLL TO TOP — fiable sur mobile
   if (history.scrollRestoration) history.scrollRestoration = 'manual';
@@ -1732,42 +1837,81 @@
   }
 
   // ── POPUP JOUR (mobile) ──
+  // ── POPUP : ouvrir ──
   function openDayPopup(titre, slots) {
     if (!slots || !Array.isArray(slots)) slots = [{ type:'dispo', label:'DISPO', h:'7h-20h' }];
-    let existing = document.getElementById('day-popup-overlay');
-    if (existing) existing.remove();
-    const overlay = document.createElement('div');
-    overlay.id = 'day-popup-overlay';
-    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:2000;display:flex;align-items:flex-end;justify-content:center;padding:20px;';
-    const box = document.createElement('div');
-    box.style.cssText = 'background:var(--black-card);border:1px solid var(--black-border);border-top:2px solid var(--gold);border-radius:12px 12px 0 0;width:100%;max-width:420px;padding:24px;';
-    let html = '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">';
-    html += '<div style="font-family:\'Bebas Neue\',sans-serif;font-size:1.3rem;color:var(--white);letter-spacing:2px;">' + titre + '</div>';
-    html += '<button onclick="document.getElementById(\'day-popup-overlay\').remove()" style="background:none;border:none;color:var(--text-muted);font-size:1.4rem;cursor:pointer;padding:0 4px;">✕</button></div>';
-    html += '<div style="display:flex;flex-direction:column;gap:8px;">';
+    document.getElementById('popup-date').textContent = titre;
+    document.getElementById('day-popup-overlay').dataset.jour = titre;
+    document.getElementById('popup-success').style.display = 'none';
+    const container = document.getElementById('popup-slots');
+    container.innerHTML = '';
     slots.forEach(s => {
       const bg = s.type === 'dispo' ? 'rgba(37,211,102,.12)' : 'rgba(229,57,53,.12)';
       const col = s.type === 'dispo' ? '#25D366' : '#E53935';
-      html += '<div style="background:' + bg + ';border:1px solid ' + col + '33;border-radius:6px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;">';
-      html += '<span style="font-weight:800;font-size:.95rem;color:' + col + ';">' + s.label + '</span>';
-      html += '<span style="font-size:.9rem;color:var(--text);">' + (s.h || '') + '</span>';
-      html += '</div>';
+      const div = document.createElement('div');
+      div.style.cssText = 'background:' + bg + ';border:1px solid ' + col + '33;border-radius:6px;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;';
+      div.innerHTML = '<span style="font-weight:800;font-size:.9rem;color:' + col + ';">' + s.label + '</span><span style="font-size:.85rem;color:var(--text);">' + (s.h||'') + '</span>';
+      container.appendChild(div);
     });
-    html += '</div>';
-    html += '<a href="https://wa.me/33745053882" target="_blank" style="display:block;margin-top:16px;background:var(--gold);color:#000;text-align:center;padding:13px;border-radius:6px;font-weight:800;font-size:.9rem;text-decoration:none;letter-spacing:1px;">💬 Réserver ce créneau</a>';
-    box.innerHTML = html;
-    overlay.appendChild(box);
-    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
-    document.body.appendChild(overlay);
+    const overlay = document.getElementById('day-popup-overlay');
+    overlay.style.display = 'flex';
   }
 
-  function calPrev() { calDate.setMonth(calDate.getMonth() - 1); renderCal(); }
-  function calNext() { calDate.setMonth(calDate.getMonth() + 1); renderCal(); }
+  // ── POPUP : fermer ──
+  function closeDayPopup() {
+    document.getElementById('day-popup-overlay').style.display = 'none';
+    // Reset champs
+    ['pop-nom','pop-tel','pop-email','pop-dep','pop-arr','pop-info'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.value = '';
+    });
+    document.querySelectorAll('.pop-service').forEach(cb => cb.checked = false);
+    document.getElementById('popup-success').style.display = 'none';
+  }
 
-  renderCal();
-  window.addEventListener('resize', renderCal);
+  // ── POPUP : envoyer par email (Formspree) ──
+  async function envoyerDevisEmail() {
+    const g = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+    const nom = g('pop-nom'), tel = g('pop-tel'), dep = g('pop-dep'), arr = g('pop-arr');
+    if (!nom || !tel || !dep || !arr) { alert('Merci de renseigner au minimum : prénom/nom, téléphone, adresse départ et arrivée.'); return; }
+    const services = [...document.querySelectorAll('.pop-service:checked')].map(el => el.value).join(', ');
+    const fmt = t => { if(!t) return ''; const [h,m]=t.split(':'); return h+'h'+(m!=='00'?m:''); };
+    const jour = document.getElementById('day-popup-overlay').dataset.jour || '';
+    const body = {
+      _subject: 'Nouvelle demande de devis LDménage',
+      nom, tel,
+      email: g('pop-email'),
+      date: jour + ' de ' + fmt(g('pop-hdebut')) + ' à ' + fmt(g('pop-hfin')),
+      adresse_depart: dep,
+      adresse_arrivee: arr,
+      type_logement: g('pop-type'),
+      etage_depart: g('pop-etage'),
+      ascenseur_depart: g('pop-asc-dep'),
+      ascenseur_arrivee: g('pop-asc-arr'),
+      services,
+      message: g('pop-info')
+    };
+    const btn = document.querySelector('#day-popup button[onclick="envoyerDevisEmail()"]');
+    if (btn) { btn.textContent = '⏳ Envoi...'; btn.disabled = true; }
+    try {
+      const res = await fetch('https://formspree.io/f/meerlvrq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (res.ok) {
+        document.getElementById('popup-success').style.display = 'block';
+        if (btn) btn.style.display = 'none';
+      } else {
+        if (btn) { btn.textContent = '❌ Erreur — Réessayez'; btn.disabled = false; }
+      }
+    } catch {
+      if (btn) { btn.textContent = '❌ Erreur réseau'; btn.disabled = false; }
+    }
+  }
 
   setLang(currentLang);
+  renderCal();
+  window.addEventListener('resize', renderCal);
 </script>
 </body>
 </html>
