@@ -1107,7 +1107,7 @@
         <div class="contact-icon">📧</div>
         <div>
           <div class="contact-label">Email</div>
-          <a href="mailto:ldmenage77@gmail.com" class="contact-value">ldmenage77@gmail.com</a>
+          <a href="/cdn-cgi/l/email-protection#117d757c747f707674262651767c70787d3f727e7c" class="contact-value"><span class="__cf_email__" data-cfemail="fd91999098939c9a98cacabd9a909c9491d39e9290">[email&#160;protected]</span></a>
           <p class="contact-note">Réponse sous 24h</p>
         </div>
       </div>
@@ -1225,20 +1225,20 @@
         <div class="form-row">
           <div class="form-group">
             <label data-fr="Prénom *" data-en="First name *">Prénom *</label>
-            <input type="text" name="prenom" id="inp-prenom" placeholder="Votre prénom" required />
+            <input type="text" data-field="prenom" id="inp-prenom" placeholder="Votre prénom" required />
           </div>
           <div class="form-group">
             <label data-fr="Téléphone *" data-en="Phone *">Téléphone *</label>
-            <input type="tel" name="telephone" placeholder="06 XX XX XX XX" required />
+            <input type="tel" data-field="telephone" placeholder="06 XX XX XX XX" required />
           </div>
         </div>
         <div class="form-group">
           <label data-fr="Email *" data-en="Email *">Email *</label>
-          <input type="email" name="email" id="inp-email" placeholder="votre@email.com" required />
+          <input type="email" data-field="email" id="inp-email" placeholder="votre@email.com" required />
         </div>
         <div class="form-group">
           <label data-fr="Date souhaitée *" data-en="Desired date *">Date souhaitée *</label>
-          <input type="text" name="date" id="inp-date" placeholder="Ex : 15 avril, début mai, flexible..." />
+          <input type="text" data-field="date" id="inp-date" placeholder="Ex : 15 avril, début mai, flexible..." />
         </div>
       </div>
 
@@ -1247,11 +1247,11 @@
         <div class="form-row">
           <div class="form-group">
             <label data-fr="Adresse complète de départ *" data-en="Full departure address *">Adresse complète de départ *</label>
-            <input type="text" name="adresse_depart" placeholder="N° rue, ville, code postal" required />
+            <input type="text" data-field="adresse_depart" placeholder="N° rue, ville, code postal" required />
           </div>
           <div class="form-group">
             <label data-fr="Adresse complète d'arrivée *" data-en="Full arrival address *">Adresse complète d'arrivée *</label>
-            <input type="text" name="adresse_arrivee" placeholder="N° rue, ville, code postal" required />
+            <input type="text" data-field="adresse_arrivee" placeholder="N° rue, ville, code postal" required />
           </div>
         </div>
       </div>
@@ -1261,7 +1261,7 @@
         <div class="form-row">
           <div class="form-group">
             <label data-fr="Type de logement *" data-en="Type of property *">Type de logement *</label>
-            <select name="type_logement" id="sel-type">
+            <select data-field="type_logement" id="sel-type">
               <option value="" data-fr="Choisissez" data-en="Choose">Choisissez</option>
               <option data-fr="Studio" data-en="Studio">Studio</option>
               <option data-fr="T2 (2 pièces)" data-en="1 bedroom">T2 (2 pièces)</option>
@@ -1274,7 +1274,7 @@
           </div>
           <div class="form-group">
             <label data-fr="Étage départ" data-en="Departure floor">Étage départ</label>
-            <select name="etage_depart" id="sel-etage-dep">
+            <select data-field="etage_depart" id="sel-etage-dep">
               <option value="" data-fr="Choisissez" data-en="Choose">Choisissez</option>
               <option data-fr="Rez-de-chaussée" data-en="Ground floor">Rez-de-chaussée</option>
               <option data-fr="1er étage" data-en="1st floor">1er étage</option>
@@ -1289,17 +1289,17 @@
           <div class="form-group">
             <label data-fr="Ascenseur au départ ?" data-en="Lift at departure ?">Ascenseur au départ ?</label>
             <div class="radio-inline">
-              <label class="radio-opt"><input type="radio" name="asc-dep" value="Oui" /> <span data-fr="Oui" data-en="Yes">Oui</span></label>
-              <label class="radio-opt"><input type="radio" name="asc-dep" value="Non" /> <span data-fr="Non" data-en="No">Non</span></label>
-              <label class="radio-opt"><input type="radio" name="asc-dep" value="Monte-charge" /> <span data-fr="Monte-charge" data-en="Goods lift">Monte-charge</span></label>
+              <label class="radio-opt"><input type="radio" data-field="asc-dep" value="Oui" /> <span data-fr="Oui" data-en="Yes">Oui</span></label>
+              <label class="radio-opt"><input type="radio" data-field="asc-dep" value="Non" /> <span data-fr="Non" data-en="No">Non</span></label>
+              <label class="radio-opt"><input type="radio" data-field="asc-dep" value="Monte-charge" /> <span data-fr="Monte-charge" data-en="Goods lift">Monte-charge</span></label>
             </div>
           </div>
           <div class="form-group">
             <label data-fr="Parking / accès camion départ ?" data-en="Parking / truck access at departure ?">Parking / accès camion départ ?</label>
             <div class="radio-inline">
-              <label class="radio-opt"><input type="radio" name="park-dep" value="Facile" /> <span data-fr="Facile" data-en="Easy">Facile</span></label>
-              <label class="radio-opt"><input type="radio" name="park-dep" value="Difficile" /> <span data-fr="Difficile" data-en="Difficult">Difficile</span></label>
-              <label class="radio-opt"><input type="radio" name="park-dep" value="Pas de place" /> <span data-fr="Pas de place" data-en="No space">Pas de place</span></label>
+              <label class="radio-opt"><input type="radio" data-field="park-dep" value="Facile" /> <span data-fr="Facile" data-en="Easy">Facile</span></label>
+              <label class="radio-opt"><input type="radio" data-field="park-dep" value="Difficile" /> <span data-fr="Difficile" data-en="Difficult">Difficile</span></label>
+              <label class="radio-opt"><input type="radio" data-field="park-dep" value="Pas de place" /> <span data-fr="Pas de place" data-en="No space">Pas de place</span></label>
             </div>
           </div>
         </div>
@@ -1309,8 +1309,21 @@
         <div class="form-bloc-title" data-fr="🏡 Logement d'arrivée" data-en="🏡 Arrival home">🏡 Logement d'arrivée</div>
         <div class="form-row">
           <div class="form-group">
+            <label data-fr="Type de logement arrivée" data-en="Type of property arrival">Type de logement arrivée</label>
+            <select data-field="type_logement_arrivee" id="sel-type-arr">
+              <option value="" data-fr="Choisissez" data-en="Choose">Choisissez</option>
+              <option data-fr="Studio" data-en="Studio">Studio</option>
+              <option data-fr="T2 (2 pièces)" data-en="1 bedroom">T2 (2 pièces)</option>
+              <option data-fr="T3 (3 pièces)" data-en="2 bedrooms">T3 (3 pièces)</option>
+              <option data-fr="T4 (4 pièces)" data-en="3 bedrooms">T4 (4 pièces)</option>
+              <option data-fr="T5 et plus" data-en="4+ bedrooms">T5 et plus</option>
+              <option data-fr="Maison" data-en="House">Maison</option>
+              <option data-fr="Bureau / Local professionnel" data-en="Office / Business premises">Bureau / Local professionnel</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label data-fr="Étage arrivée" data-en="Arrival floor">Étage arrivée</label>
-            <select name="etage_arrivee" id="sel-etage-arr">
+            <select data-field="etage_arrivee" id="sel-etage-arr">
               <option value="" data-fr="Choisissez" data-en="Choose">Choisissez</option>
               <option data-fr="Rez-de-chaussée" data-en="Ground floor">Rez-de-chaussée</option>
               <option data-fr="1er étage" data-en="1st floor">1er étage</option>
@@ -1320,21 +1333,23 @@
               <option data-fr="5ème étage et +" data-en="5th floor and above">5ème étage et +</option>
             </select>
           </div>
+        </div>
+        <div class="form-row">
           <div class="form-group">
             <label data-fr="Ascenseur à l'arrivée ?" data-en="Lift at arrival ?">Ascenseur à l'arrivée ?</label>
             <div class="radio-inline">
-              <label class="radio-opt"><input type="radio" name="asc-arr" value="Oui" /> <span data-fr="Oui" data-en="Yes">Oui</span></label>
-              <label class="radio-opt"><input type="radio" name="asc-arr" value="Non" /> <span data-fr="Non" data-en="No">Non</span></label>
-              <label class="radio-opt"><input type="radio" name="asc-arr" value="Monte-charge" /> <span data-fr="Monte-charge" data-en="Goods lift">Monte-charge</span></label>
+              <label class="radio-opt"><input type="radio" data-field="asc-arr" value="Oui" /> <span data-fr="Oui" data-en="Yes">Oui</span></label>
+              <label class="radio-opt"><input type="radio" data-field="asc-arr" value="Non" /> <span data-fr="Non" data-en="No">Non</span></label>
+              <label class="radio-opt"><input type="radio" data-field="asc-arr" value="Monte-charge" /> <span data-fr="Monte-charge" data-en="Goods lift">Monte-charge</span></label>
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label data-fr="Parking / accès camion arrivée ?" data-en="Parking / truck access at arrival ?">Parking / accès camion arrivée ?</label>
-          <div class="radio-inline">
-            <label class="radio-opt"><input type="radio" name="park-arr" value="Facile" /> <span data-fr="Facile" data-en="Easy">Facile</span></label>
-            <label class="radio-opt"><input type="radio" name="park-arr" value="Difficile" /> <span data-fr="Difficile" data-en="Difficult">Difficile</span></label>
-            <label class="radio-opt"><input type="radio" name="park-arr" value="Pas de place" /> <span data-fr="Pas de place" data-en="No space">Pas de place</span></label>
+          <div class="form-group">
+            <label data-fr="Parking / accès camion arrivée ?" data-en="Parking / truck access at arrival ?">Parking / accès camion arrivée ?</label>
+            <div class="radio-inline">
+              <label class="radio-opt"><input type="radio" data-field="park-arr" value="Facile" /> <span data-fr="Facile" data-en="Easy">Facile</span></label>
+              <label class="radio-opt"><input type="radio" data-field="park-arr" value="Difficile" /> <span data-fr="Difficile" data-en="Difficult">Difficile</span></label>
+              <label class="radio-opt"><input type="radio" data-field="park-arr" value="Pas de place" /> <span data-fr="Pas de place" data-en="No space">Pas de place</span></label>
+            </div>
           </div>
         </div>
       </div>
@@ -1342,30 +1357,30 @@
       <div class="form-bloc">
         <div class="form-bloc-title" data-fr="🔧 Services souhaités" data-en="🔧 Requested services">🔧 Services souhaités</div>
         <div class="check-grid">
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Déménagement complet" /> <span data-fr="Déménagement complet" data-en="Full moving service">Déménagement complet</span></label>
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Mise en cartons" /> <span data-fr="Mise en cartons" data-en="Packing into boxes">Mise en cartons</span></label>
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Emballage / protection" /> <span data-fr="Emballage / protection" data-en="Wrapping / protection">Emballage / protection</span></label>
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Déballage à l'arrivée" /> <span data-fr="Déballage à l'arrivée" data-en="Unpacking on arrival">Déballage à l'arrivée</span></label>
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Montage meubles" /> <span data-fr="Montage meubles" data-en="Furniture assembly">Montage meubles</span></label>
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Démontage meubles" /> <span data-fr="Démontage meubles" data-en="Furniture disassembly">Démontage meubles</span></label>
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Piano / objets lourds" /> <span data-fr="Piano / objets lourds" data-en="Piano / heavy items">Piano / objets lourds</span></label>
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Débarras / évacuation" /> <span data-fr="Débarras / évacuation" data-en="Clearance / disposal">Débarras / évacuation</span></label>
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Main d'œuvre uniquement" /> <span data-fr="Main d'œuvre uniquement" data-en="Labour only">Main d'œuvre uniquement</span></label>
-          <label class="check-opt"><input type="checkbox" name="service[]" value="Location camion + chauffeur" /> <span data-fr="Location camion + chauffeur" data-en="Truck + driver hire">Location camion + chauffeur</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Déménagement complet" /> <span data-fr="Déménagement complet" data-en="Full moving service">Déménagement complet</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Mise en cartons" /> <span data-fr="Mise en cartons" data-en="Packing into boxes">Mise en cartons</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Emballage / protection" /> <span data-fr="Emballage / protection" data-en="Wrapping / protection">Emballage / protection</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Déballage à l'arrivée" /> <span data-fr="Déballage à l'arrivée" data-en="Unpacking on arrival">Déballage à l'arrivée</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Montage meubles" /> <span data-fr="Montage meubles" data-en="Furniture assembly">Montage meubles</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Démontage meubles" /> <span data-fr="Démontage meubles" data-en="Furniture disassembly">Démontage meubles</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Piano / objets lourds" /> <span data-fr="Piano / objets lourds" data-en="Piano / heavy items">Piano / objets lourds</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Débarras / évacuation" /> <span data-fr="Débarras / évacuation" data-en="Clearance / disposal">Débarras / évacuation</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Main d'œuvre uniquement" /> <span data-fr="Main d'œuvre uniquement" data-en="Labour only">Main d'œuvre uniquement</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="service" value="Location camion + chauffeur" /> <span data-fr="Location camion + chauffeur" data-en="Truck + driver hire">Location camion + chauffeur</span></label>
         </div>
       </div>
 
       <div class="form-bloc">
         <div class="form-bloc-title" data-fr="📦 Objets particuliers ou fragiles" data-en="📦 Special or fragile items">📦 Objets particuliers ou fragiles</div>
         <div class="check-grid">
-          <label class="check-opt"><input type="checkbox" name="objet[]" value="Piano" /> <span data-fr="Piano" data-en="Piano">Piano</span></label>
-          <label class="check-opt"><input type="checkbox" name="objet[]" value="Coffre-fort" /> <span data-fr="Coffre-fort" data-en="Safe">Coffre-fort</span></label>
-          <label class="check-opt"><input type="checkbox" name="objet[]" value="Aquarium" /> <span data-fr="Aquarium" data-en="Aquarium">Aquarium</span></label>
-          <label class="check-opt"><input type="checkbox" name="objet[]" value="Billard" /> <span data-fr="Billard" data-en="Billiard table">Billard</span></label>
-          <label class="check-opt"><input type="checkbox" name="objet[]" value="Œuvres d'art / antiquités" /> <span data-fr="Œuvres d'art / antiquités" data-en="Artwork / antiques">Œuvres d'art / antiquités</span></label>
-          <label class="check-opt"><input type="checkbox" name="objet[]" value="Électroménager encastré" /> <span data-fr="Électroménager encastré" data-en="Built-in appliances">Électroménager encastré</span></label>
-          <label class="check-opt"><input type="checkbox" name="objet[]" value="Matériel informatique" /> <span data-fr="Matériel informatique" data-en="Computer equipment">Matériel informatique</span></label>
-          <label class="check-opt"><input type="checkbox" name="objet[]" value="Aucun objet particulier" /> <span data-fr="Aucun objet particulier" data-en="No special items">Aucun objet particulier</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="objet" value="Piano" /> <span data-fr="Piano" data-en="Piano">Piano</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="objet" value="Coffre-fort" /> <span data-fr="Coffre-fort" data-en="Safe">Coffre-fort</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="objet" value="Aquarium" /> <span data-fr="Aquarium" data-en="Aquarium">Aquarium</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="objet" value="Billard" /> <span data-fr="Billard" data-en="Billiard table">Billard</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="objet" value="Œuvres d'art / antiquités" /> <span data-fr="Œuvres d'art / antiquités" data-en="Artwork / antiques">Œuvres d'art / antiquités</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="objet" value="Électroménager encastré" /> <span data-fr="Électroménager encastré" data-en="Built-in appliances">Électroménager encastré</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="objet" value="Matériel informatique" /> <span data-fr="Matériel informatique" data-en="Computer equipment">Matériel informatique</span></label>
+          <label class="check-opt"><input type="checkbox" data-field="objet" value="Aucun objet particulier" /> <span data-fr="Aucun objet particulier" data-en="No special items">Aucun objet particulier</span></label>
         </div>
       </div>
 
@@ -1373,7 +1388,7 @@
         <div class="form-bloc-title" data-fr="📸 Photos & informations supplémentaires" data-en="📸 Photos & additional information">📸 Photos & informations supplémentaires</div>
         <div class="form-group">
           <label data-fr="Décrivez votre situation" data-en="Describe your situation">Décrivez votre situation</label>
-          <textarea name="message" id="inp-message" style="min-height:120px;" placeholder="Toute info utile..."></textarea>
+          <textarea data-field="infos_complementaires" id="inp-message" style="min-height:120px;" placeholder="Toute info utile..."></textarea>
         </div>
         <div class="form-group">
           <label data-fr="📎 Ajouter des photos (optionnel)" data-en="📎 Add photos (optional)">📎 Ajouter des photos (optionnel)</label>
@@ -1394,7 +1409,8 @@
         </div>
       </div>
 
-      <button type="submit" class="btn-submit" id="submitBtn" >📧 Envoyer ma demande par email</button>
+      <input type="hidden" name="message" id="formRecap" value="" />
+      <button type="submit" class="btn-submit" id="submitBtn">📧 ENVOYER MA DEMANDE PAR MAIL</button>
       <div id="formSuccess" style="display:none;text-align:center;padding:18px;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:4px;color:#25D366;font-weight:700;font-size:.95rem;"
         data-fr="✅ Demande envoyée ! LDménage vous contacte dans les plus brefs délais."
         data-en="✅ Request sent! LDménage will contact you as soon as possible.">
@@ -1426,18 +1442,18 @@
       <div class="footer-contact-items">
         <a href="tel:0745053882">📞 07 45 05 38 82</a>
         <a href="https://wa.me/33745053882" target="_blank">💬 WhatsApp</a>
-        <a href="mailto:ldmenage77@gmail.com">📧 ldmenage77@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#204c444d454e414745171760474d41494c0e434f4d">📧 <span class="__cf_email__" data-cfemail="b9d5ddd4dcd7d8dedc8e8ef9ded4d8d0d597dad6d4">[email&#160;protected]</span></a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – LDménage Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – LDménage Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – LDménage Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
-    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v38</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v39</p>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 // SCROLL TO TOP — fiable sur mobile
   if (history.scrollRestoration) history.scrollRestoration = 'manual';
@@ -1485,30 +1501,122 @@
     btn.textContent = '✅'; btn.style.background = '#25D366';
     setTimeout(() => { window.open(`https://wa.me/33745053882?text=Bonjour LDménage, rappel au ${num}.`, '_blank'); closeModal(); btn.textContent = currentLang === 'fr' ? '📞 Me faire rappeler' : '📞 Call me back'; btn.style.background = ''; }, 800);
   }
+  // ── RÉFÉRENCE UNIQUE basée sur la date + l'heure exacte ──
+  function genRef() {
+    const now  = new Date();
+    const jj   = String(now.getDate()).padStart(2,'0');
+    const mm   = String(now.getMonth()+1).padStart(2,'0');
+    const aaaa = now.getFullYear();
+    const hh   = String(now.getHours()).padStart(2,'0');
+    const min  = String(now.getMinutes()).padStart(2,'0');
+    const ss   = String(now.getSeconds()).padStart(2,'0');
+    return `DEV-${jj}/${mm}/${aaaa}-N°${hh}-${min}-${ss}`;
+  }
+
   // FORMSPREE — envoi par email
   const devisForm = document.getElementById('devisForm');
   if (devisForm) {
     devisForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const btn = document.getElementById('submitBtn');
+      const btn     = document.getElementById('submitBtn');
       const success = document.getElementById('formSuccess');
-      // Sujet unique pour éviter le regroupement Gmail
-      const now = new Date();
-      const ref = 'DEV-' + now.getFullYear() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + '-' + String(now.getHours()).padStart(2,'0') + String(now.getMinutes()).padStart(2,'0');
-      const nomVal = (document.getElementById('inp-prenom') || {}).value || '';
-      document.getElementById('formSubject').value = `[${ref}] Devis — ${nomVal} — ${now.toLocaleDateString('fr-FR')}`;
+
+      // Helpers
+      const gv     = field => { const el = devisForm.querySelector(`[data-field="${field}"]`); return el ? el.value.trim() : ''; };
+      const gid    = id    => { const el = document.getElementById(id);                        return el ? el.value.trim() : ''; };
+      const gRadio = field => { const el = devisForm.querySelector(`[data-field="${field}"]:checked`); return el ? el.value : '—'; };
+      const gChecks= field => { const els=[...devisForm.querySelectorAll(`[data-field="${field}"]:checked`)]; return els.length ? els.map(e=>e.value).join(', ') : '—'; };
+
+      const now      = new Date();
+      const ref      = genRef();
+      const prenom   = gv('prenom');
+      const nbPhotos = selectedFiles.length;
+
+      // Sujet email
+      document.getElementById('formSubject').value = `[${ref}] Devis — ${prenom} — ${now.toLocaleDateString('fr-FR')}`;
+
+      // Section photos dans l'email
+      let photoEmailSection = '';
+      if (nbPhotos > 0) {
+        photoEmailSection = `
+📸 PHOTOS JOINTES : ${nbPhotos} photo(s) — envoyées séparément via WhatsApp
+   ➡ Référence à indiquer sur WhatsApp : ${ref}`;
+      } else {
+        photoEmailSection = `\n📸 PHOTOS JOINTES : Aucune`;
+      }
+
+      // Corps du mail structuré
+      const recap = `
+╔══════════════════════════════════════════════════════╗
+       NOUVELLE DEMANDE DE DEVIS — ${ref}
+╚══════════════════════════════════════════════════════╝
+
+👤 CLIENT
+   Prénom       : ${prenom}
+   Téléphone    : ${gv('telephone')}
+   Email        : ${gv('email')}
+   Date souhait.: ${gv('date') || '—'}
+
+🚚 TRAJET
+   Départ       : ${gv('adresse_depart')}
+   Arrivée      : ${gv('adresse_arrivee')}
+
+🏠 LOGEMENT DÉPART
+   Type         : ${gv('type_logement') || '—'}
+   Étage        : ${gv('etage_depart') || '—'}
+   Ascenseur    : ${gRadio('asc-dep')}
+   Accès camion : ${gRadio('park-dep')}
+
+🏡 LOGEMENT ARRIVÉE
+   Type         : ${gv('type_logement_arrivee') || '—'}
+   Étage        : ${gv('etage_arrivee') || '—'}
+   Ascenseur    : ${gRadio('asc-arr')}
+   Accès camion : ${gRadio('park-arr')}
+
+🔧 SERVICES SOUHAITÉS
+   ${gChecks('service')}
+
+📦 OBJETS PARTICULIERS
+   ${gChecks('objet')}
+
+📝 INFORMATIONS COMPLÉMENTAIRES
+   ${gid('inp-message') || '—'}
+${photoEmailSection}
+
+══════════════════════════════════════════════════════
+Envoyé depuis ldménage.fr — ${now.toLocaleDateString('fr-FR')} à ${now.toLocaleTimeString('fr-FR')}
+`;
+      document.getElementById('formRecap').value = recap;
+
       btn.textContent = '⏳ Envoi en cours...';
       btn.disabled = true;
       try {
+        const payload = {
+          _subject : document.getElementById('formSubject').value,
+          message  : recap,
+          _replyto : gv('email') || 'noreply@ldmenage.fr'
+        };
+
         const res = await fetch('https://formspree.io/f/meerlvrq', {
-          method: 'POST',
-          body: new FormData(devisForm),
-          headers: { 'Accept': 'application/json' }
+          method : 'POST',
+          body   : JSON.stringify(payload),
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
         });
+
         if (res.ok) {
           btn.style.display = 'none';
           success.style.display = 'block';
           devisForm.reset();
+          selectedFiles = [];
+          renderPhotoGrid();
+
+          // Si photos : ouvre WhatsApp automatiquement
+          if (nbPhotos > 0) {
+            const waMsg = encodeURIComponent(`Photos devis ${ref} ${prenom}`);
+            setTimeout(() => {
+              window.open(`https://wa.me/33745053882?text=${waMsg}`, '_blank');
+            }, 600);
+          }
         } else {
           btn.textContent = '❌ Erreur — Réessayez ou appelez le 07 45 05 38 82';
           btn.disabled = false;
@@ -1542,7 +1650,7 @@
       'photos-label':'Nos réalisations','photos-sub':'Quelques aperçus de notre travail sur le terrain.',
       'contact-label':'Devis gratuit','contact-title':'<span>Contactez</span> LDménage','contact-sub':'Réponse rapide garantie. Devis gratuit et sans engagement, 7j/7.',
       'form-title':'Demande de devis détaillée','form-desc':'Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement.',
-      'form-submit':'📦 Envoyer ma demande par email',
+      'form-submit':'📧 ENVOYER MA DEMANDE PAR MAIL',
       'c1l':'Déménagements réalisés','c1s':'Particuliers & professionnels',
       'c2l':'Disponibilité','c2s':'Même le week-end',
       'c3l':'Volume accepté','c3s':'Studio, maison, entrepôt',
@@ -1563,7 +1671,7 @@
       'photos-label':'Our work','photos-sub':'A few glimpses of our work in the field.',
       'contact-label':'Free quote','contact-title':'<span>Contact</span> LDménage','contact-sub':'Fast response guaranteed. Free and no-commitment quote, 7 days a week.',
       'form-title':'Detailed quote request','form-desc':'The more details you give, the faster and more accurate the quote. Everything is free, no commitment.',
-      'form-submit':'📦 Send my request by email',
+      'form-submit':'📧 SEND MY REQUEST BY EMAIL',
       'c1l':'Moves completed','c1s':'Individuals & businesses',
       'c2l':'Availability','c2s':'Including weekends',
       'c3l':'Volume accepted','c3s':'Studio, house, warehouse',
@@ -1857,8 +1965,14 @@
     }
   }
 
-  // ── POPUP JOUR (mobile) ──
-  // ── POPUP : ouvrir ──
+  // ── NAVIGATION CALENDRIER ──
+  function calPrev() { calDate.setMonth(calDate.getMonth() - 1); renderCal(); }
+  function calNext() { calDate.setMonth(calDate.getMonth() + 1); renderCal(); }
+
+  // ── INIT CALENDRIER ──
+  renderCal();
+
+  // ── POPUP JOUR ──
   function openDayPopup(titre, slots) {
     if (!slots || !Array.isArray(slots)) slots = [{ type:'dispo', label:'DISPO', h:'7h-20h' }];
     document.getElementById('popup-date').textContent = titre;
@@ -1955,7 +2069,8 @@ Envoyé depuis ldménage.fr — ${now.toLocaleDateString('fr-FR')} à ${now.toLo
       });
       if (res.ok) {
         document.getElementById('popup-success').style.display = 'block';
-        if (btn) btn.style.display = 'none';
+        if (btn) { btn.textContent = '✅ Envoyé !'; btn.style.background = '#25D366'; }
+        setTimeout(() => { closeDayPopup(); }, 2200);
       } else {
         if (btn) { btn.textContent = '❌ Erreur — Réessayez'; btn.disabled = false; }
       }
@@ -1964,9 +2079,6 @@ Envoyé depuis ldménage.fr — ${now.toLocaleDateString('fr-FR')} à ${now.toLo
     }
   }
 
-  setLang(currentLang);
-  renderCal();
-  window.addEventListener('resize', renderCal);
 </script>
 </body>
 </html>
