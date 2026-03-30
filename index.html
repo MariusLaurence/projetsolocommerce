@@ -705,7 +705,7 @@
     <li><a href="#avis" data-fr="Avis" data-en="Reviews">Avis</a></li>
     <li><a href="#contact" data-fr="Contact" data-en="Contact">Contact</a></li>
     <li><a href="#disponibilites" data-fr="Disponibilités" data-en="Availability">Disponibilités</a></li>
-    <li><a href="#contact" class="nav-cta" data-fr="Devis gratuit" data-en="Free Quote">Devis gratuit</a></li>
+    <li><a href="#devisForm" class="nav-cta" data-fr="Devis gratuit" data-en="Free Quote">Devis gratuit</a></li>
   </ul>
   <div class="nav-controls">
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -720,7 +720,7 @@
   <a href="#avis" class="m-link" data-fr="Avis" data-en="Reviews">Avis</a>
   <a href="#disponibilites" class="m-link" data-fr="Disponibilités" data-en="Availability">Disponibilités</a>
   <a href="#contact" class="m-link" data-fr="Contact" data-en="Contact">Contact</a>
-  <a href="#contact" class="m-cta m-link" data-fr="📦 Devis gratuit" data-en="📦 Free Quote">📦 Devis gratuit</a>
+  <a href="#devisForm" class="m-cta m-link" data-fr="📦 Devis gratuit" data-en="📦 Free Quote">📦 Devis gratuit</a>
 </div>
 
 <!-- ══════════════════ HERO ══════════════════ -->
@@ -926,6 +926,10 @@
     <h2 class="section-title">Disponibilités <span>en temps réel</span></h2>
     <p class="section-sub">Consultez les créneaux disponibles. Vert = disponible, rouge = réservé.</p>
     <p style="text-align:center;font-size:.9rem;font-weight:700;color:var(--text-muted);margin-top:10px;">🟢 <strong style="color:#25D366;">DISPO</strong> = disponible &nbsp;·&nbsp; 🔴 <strong style="color:#E53935;">RES</strong> = réservé</p>
+    <!-- Message mobile uniquement -->
+    <p id="cal-mobile-hint" style="display:none;text-align:center;margin-top:14px;font-size:.82rem;font-weight:600;color:var(--gold);padding:10px 16px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:6px;max-width:400px;margin-left:auto;margin-right:auto;">
+      Appuyez sur un jour pour voir les horaires disponibles et réservés
+    </p>
   </div>
 
   <div style="max-width:700px;margin:0 auto;" class="reveal">
@@ -998,15 +1002,32 @@
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
           <div>
-            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Type logement</div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Type logement départ</div>
             <select id="pop-type" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;">
               <option value="">Choisir...</option>
               <option>Studio</option><option>T2</option><option>T3</option><option>T4</option><option>T5 et plus</option><option>Maison</option><option>Bureau / Local</option>
             </select>
           </div>
           <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Type logement arrivée</div>
+            <select id="pop-type-arr" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;">
+              <option value="">Choisir...</option>
+              <option>Studio</option><option>T2</option><option>T3</option><option>T4</option><option>T5 et plus</option><option>Maison</option><option>Bureau / Local</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
+          <div>
             <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Étage départ</div>
             <select id="pop-etage" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;">
+              <option value="">Choisir...</option>
+              <option>RDC</option><option>1er</option><option>2ème</option><option>3ème</option><option>4ème</option><option>5ème+</option>
+            </select>
+          </div>
+          <div>
+            <div style="font-size:.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;">Étage arrivée</div>
+            <select id="pop-etage-arr" style="width:100%;background:var(--black);border:1px solid var(--black-border);color:var(--text);padding:7px 10px;border-radius:4px;font-family:'Barlow',sans-serif;font-size:.85rem;outline:none;">
               <option value="">Choisir...</option>
               <option>RDC</option><option>1er</option><option>2ème</option><option>3ème</option><option>4ème</option><option>5ème+</option>
             </select>
@@ -1176,7 +1197,7 @@
     </div>
 
     <form class="contact-form-side reveal" id="devisForm" action="https://formspree.io/f/meerlvrq" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_subject" value="Nouvelle demande de devis LDménage" />
+      <input type="hidden" name="_subject" id="formSubject" value="Nouvelle demande de devis LDménage" />
       <input type="text" name="_gotcha" style="display:none" />
       <h3 data-fr="Demande de devis détaillée" data-en="Detailed quote request">Demande de devis détaillée</h3>
       <p data-fr="Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement." data-en="The more details you give, the faster and more accurate the quote. Everything is free, no commitment.">Plus vous êtes précis, plus le devis sera rapide et juste. Tout est gratuit et sans engagement.</p>
@@ -1412,7 +1433,7 @@
   <div class="footer-bottom">
     <p data-fr="© 2025 LDménage – LDménage Laurencé · Île-de-France · Tous droits réservés" data-en="© 2025 LDménage – LDménage Laurencé · Île-de-France · All rights reserved">© 2025 LDménage – LDménage Laurencé · Île-de-France · Tous droits réservés</p>
     <p class="footer-gold" data-fr="Devis gratuit · 7j/7" data-en="Free quote · 7 days/week">Devis gratuit · 7j/7</p>
-    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v37</p>
+    <p style="font-size:.65rem;color:var(--silver-dark);width:100%;text-align:center;margin-top:6px;">v38</p>
   </div>
 </footer>
 
@@ -1471,6 +1492,11 @@
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
       const success = document.getElementById('formSuccess');
+      // Sujet unique pour éviter le regroupement Gmail
+      const now = new Date();
+      const ref = 'DEV-' + now.getFullYear() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + '-' + String(now.getHours()).padStart(2,'0') + String(now.getMinutes()).padStart(2,'0');
+      const nomVal = (document.getElementById('inp-prenom') || {}).value || '';
+      document.getElementById('formSubject').value = `[${ref}] Devis — ${nomVal} — ${now.toLocaleDateString('fr-FR')}`;
       btn.textContent = '⏳ Envoi en cours...';
       btn.disabled = true;
       try {
@@ -1856,8 +1882,11 @@
   function closeDayPopup() {
     document.getElementById('day-popup-overlay').style.display = 'none';
     // Reset champs
-    ['pop-nom','pop-tel','pop-email','pop-dep','pop-arr','pop-info'].forEach(id => {
+    ['pop-nom','pop-tel','pop-email','pop-dep','pop-arr','pop-info','pop-hdebut','pop-hfin'].forEach(id => {
       const el = document.getElementById(id); if (el) el.value = '';
+    });
+    ['pop-type','pop-type-arr','pop-etage','pop-etage-arr','pop-asc-dep','pop-asc-arr'].forEach(id => {
+      const el = document.getElementById(id); if (el) el.selectedIndex = 0;
     });
     document.querySelectorAll('.pop-service').forEach(cb => cb.checked = false);
     document.getElementById('popup-success').style.display = 'none';
@@ -1868,22 +1897,53 @@
     const g = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
     const nom = g('pop-nom'), tel = g('pop-tel'), dep = g('pop-dep'), arr = g('pop-arr');
     if (!nom || !tel || !dep || !arr) { alert('Merci de renseigner au minimum : prénom/nom, téléphone, adresse départ et arrivée.'); return; }
-    const services = [...document.querySelectorAll('.pop-service:checked')].map(el => el.value).join(', ');
+    const services = [...document.querySelectorAll('.pop-service:checked')].map(el => el.value).join(', ') || '—';
     const fmt = t => { if(!t) return ''; const [h,m]=t.split(':'); return h+'h'+(m!=='00'?m:''); };
-    const jour = document.getElementById('day-popup-overlay').dataset.jour || '';
+    const jour = document.getElementById('day-popup-overlay').dataset.jour || '—';
+    const now = new Date();
+    const ref = 'DEV-' + now.getFullYear() + String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + '-' + String(now.getHours()).padStart(2,'0') + String(now.getMinutes()).padStart(2,'0');
+
+    const tableau = `
+╔══════════════════════════════════════════════════════╗
+       NOUVELLE DEMANDE DE DEVIS — ${ref}
+╚══════════════════════════════════════════════════════╝
+
+👤 CLIENT
+   Nom          : ${nom}
+   Téléphone    : ${tel}
+   Email        : ${g('pop-email') || '—'}
+
+📅 DATE SOUHAITÉE
+   Jour         : ${jour}
+   Horaire      : ${fmt(g('pop-hdebut')) || '—'} à ${fmt(g('pop-hfin')) || '—'}
+
+🚚 DÉMÉNAGEMENT
+   Départ       : ${dep}
+   Arrivée      : ${arr}
+
+🏠 LOGEMENT DÉPART
+   Type         : ${g('pop-type') || '—'}
+   Étage        : ${g('pop-etage') || '—'}
+   Ascenseur    : ${g('pop-asc-dep') || '—'}
+
+🏡 LOGEMENT ARRIVÉE
+   Type         : ${g('pop-type-arr') || '—'}
+   Étage        : ${g('pop-etage-arr') || '—'}
+   Ascenseur    : ${g('pop-asc-arr') || '—'}
+
+🔧 SERVICES SOUHAITÉS
+   ${services}
+
+📝 INFORMATIONS COMPLÉMENTAIRES
+   ${g('pop-info') || '—'}
+
+══════════════════════════════════════════════════════
+Envoyé depuis ldménage.fr — ${now.toLocaleDateString('fr-FR')} à ${now.toLocaleTimeString('fr-FR')}
+`;
+
     const body = {
-      _subject: 'Nouvelle demande de devis LDménage',
-      nom, tel,
-      email: g('pop-email'),
-      date: jour + ' de ' + fmt(g('pop-hdebut')) + ' à ' + fmt(g('pop-hfin')),
-      adresse_depart: dep,
-      adresse_arrivee: arr,
-      type_logement: g('pop-type'),
-      etage_depart: g('pop-etage'),
-      ascenseur_depart: g('pop-asc-dep'),
-      ascenseur_arrivee: g('pop-asc-arr'),
-      services,
-      message: g('pop-info')
+      _subject: `[${ref}] Devis — ${nom} — ${jour}`,
+      message: tableau
     };
     const btn = document.querySelector('#day-popup button[onclick="envoyerDevisEmail()"]');
     if (btn) { btn.textContent = '⏳ Envoi...'; btn.disabled = true; }
